@@ -1,2 +1,2 @@
 # aecSpace
-Classes useful for managing and displaying volumes indicating building spaces and objects
+Classes useful for creating and editing volumes indicating building spaces.
