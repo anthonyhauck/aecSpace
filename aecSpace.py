@@ -1,4 +1,3 @@
-import fractions
 import math
 import random
 import traceback
@@ -8,86 +7,98 @@ from sympy import geometry
 
 from aecErrorCheck import aecErrorCheck
 
-# -------------------------------------------------------------------------
-# aecSpace
-#
-# Defines the geometric enclosure of a region defined
-# by a list of 2D coordinates and a height.
-#
-# Current Assumptions + Limitations
-#
-# Spaces are prisms with bases parallel to the ground plane and
-# vertical boundaries.
-#
-# No curved walls yet.
-# -------------------------------------------------------------------------   
-
 class aecSpace:
+    """
+    aecSpace
+    
+    Defines the geometric enclosure of a region defined
+    by a list of 2D coordinates and a height.
+    
+    Current Assumptions + Limitations
+    
+    Spaces are prisms with bases parallel to the ground plane
+    and vertical boundaries.
+    
+    No curved walls yet.
+    """
 
-# __aecErrorCheck is an instance of aecErrorCheck
-    
+    # An instance of aecErrorCheck.
     __aecErrorCheck = None
-    
-    # __color[R G B] variables designate the RGB 
-    # color components of a Spacein the 0 - 255 range.
-    
+
+    # __color[R G B] variables designate the RGB color
+    # components as integers in the 0 - 255 range.  
     __colorR = 0
     __colorG = 0
     __colorB = 0
         
-    # __height is the height of the Space prism.
-    
+    # __height is the height of the prism.
     __height = 0
-    
-    # __identifier is a UUID for the Space.
-    
+
+    # __id is a UUID.
     __id = ""
     
-    # __level is the position of the Space perimeter above the zero plane.
-    
+    # __level is the position of the perimeter above the zero plane.
     __level = 0
     
-    # __perimeter is a sympy 2D polygon representing the boundary of the Space.
-    
+    # __perimeter is a sympy 2D polygon representing the boundary..
     __perimeter = None
     
-    # __name is a custom string designation for the Space.
-    
+    # __name is a custom string designation.
     __name = ""
        
-    # Transparency sets the percentage of transparency of the Space
+    # __transparency sets the percentage of transparency of the volume
     # for a compatible rendering system as a value from 0 to 1.
-    
     __transparency = 0
 
-# -------------------------------------------------------------------------    
-# aecSpace Constructor
-# -------------------------------------------------------------------------    
-    
     def __init__(self):
+        """
+        aecSpace Constructor
+        Sets the dimensions to a unit cube with a corner at (0, 0, 0).
+        Sets the color to random RGB values.
+        Sets the ID to a new UUID.
+        Creates a new aecErrorCheck object.
+        """
         self.unit()
         self.setColor()
         self.Identifier = uuid.uuid4()
         self.__aecErrorCheck = aecErrorCheck()
 
-# -------------------------------------------------------------------------
-# float getArea()
-# Returns the area of the Space.
-# -------------------------------------------------------------------------
-
-    def getArea(self):     
+    def getArea(self):
+        """
+        float getArea()
+        Returns the area.
+        """
         try:           
             return float(self.__perimeter.area)
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
             
-# -------------------------------------------------------------------------
-# [[3 floats], [3 floats], [3 floats], [3 floats]]  getBoundingBox()
-# Returns the bounding box of the Space as four 3D points
-# -------------------------------------------------------------------------
+    def getBoundingBox2D(self):
+        """
+        [[2 floats], [2 floats], [2 floats], [2 floats]]  getBoundingBox()
+        Returns the bounding box as four 2D points in counter-clockwise
+        order from the minimum vertex in the coordinate plane.
+        """
+        try:   
+            bounds = list(map(float, list(self.__perimeter.bounds)))
+            bounds = \
+                [
+                    [bounds[0], bounds[1]],
+                    [bounds[2], bounds[1]],
+                    [bounds[2], bounds[3]],
+                    [bounds[0], bounds[3]]
+                ]
+            return bounds
+        except:
+            return self.__aecErrorCheck.errorMessage \
+            (self.__class__.__name__, traceback)
 
-    def getBoundingBox(self):     
+    def getBoundingBox3D(self):
+        """
+        [[3 floats], [3 floats], [3 floats], [3 floats]]  getBoundingBox()
+        Returns the bounding box of as four 3D points.
+        """
         try:   
             bounds = list(map(float, list(self.__perimeter.bounds)))
             bounds = \
@@ -102,12 +113,11 @@ class aecSpace:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
     
-# -------------------------------------------------------------------------
-# [float, float] getCentroid2D()
-# Returns the centroid of the space as a 2D point.
-# -------------------------------------------------------------------------
-
-    def getCentroid2D(self):     
+    def getCentroid2D(self):
+        """
+        [2 floats] getCentroid2D()
+        Returns the centroid of the space as a 2D point.
+        """
         try:           
             centroid = self.__perimeter.centroid
             return [float(centroid.x), float(centroid.y)]
@@ -115,12 +125,11 @@ class aecSpace:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
 
-# -------------------------------------------------------------------------
-# [float, float, float] getCentroid3D()
-# Returns the centroid of the space as a 3D point.
-# -------------------------------------------------------------------------
-
-    def getCentroid3D(self):     
+    def getCentroid3D(self): 
+        """
+        [3 floats] getCentroid3D()
+        Returns the centroid as a 3D point.
+        """
         try:           
             centroid = self.__perimeter.centroid
             return [float(centroid.x), float(centroid.y), float(self.__level)]
@@ -128,12 +137,11 @@ class aecSpace:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
 
-# -------------------------------------------------------------------------
-# [float, float, float] getColor01()
-# Returns the color of the Space as an RGB 0 - 1 list.
-# -------------------------------------------------------------------------
-
     def getColor01(self):     
+        """
+        [3 floats] getColor01()
+        Returns the color as an RGB in the 0 - 1 range.
+        """
         try:
             return \
             [
@@ -145,12 +153,11 @@ class aecSpace:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
 
-# -------------------------------------------------------------------------
-# [int, int, int] getColor256()
-# Returns the color of the space as a [R G B] list in the 0 - 255 range.
-# -------------------------------------------------------------------------
-
-    def getColor256(self):     
+    def getColor256(self):
+        """
+        [3 integers] getColor256()
+        Returns the color as an RGB in the 0 - 255 range.
+        """
         try:           
             return \
             [
@@ -162,60 +169,55 @@ class aecSpace:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
     
-# -------------------------------------------------------------------------
-# float getHeight()
-# Returns the Space height
-# -------------------------------------------------------------------------
-           
-    def getHeight(self):     
+    def getHeight(self):
+        """
+        float getHeight()
+        Returns the height.
+        """
         try:           
             return float(self.__height)
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
-
-# -------------------------------------------------------------------------
-# string getID()
-# Returns the Space UUID.
-# -------------------------------------------------------------------------
-           
-    def getID(self):     
+            
+    def getID(self):
+        """
+        string getID()
+        Returns the UUID.
+        """
         try:           
             return str(self.__id)
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
-
-# -------------------------------------------------------------------------
-# float getLevel()
-# Returns the Space level
-# -------------------------------------------------------------------------
-           
-    def getLevel(self):     
+        
+    def getLevel(self):
+        """
+        float getLevel()
+        Returns the level.
+        """
         try:           
             return float(self.__level)
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
 
-# -------------------------------------------------------------------------
-# string getName()
-# Returns the Space Name.
-# -------------------------------------------------------------------------
-           
-    def getName(self):     
+    def getName(self):
+        """
+        string getName()
+        Returns the custom designation.
+        """
         try:           
             return str(self.__name)
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
 
-# -------------------------------------------------------------------------
-# [[float float],] getPoints2D()
-# Returns a list of 2D points of the Space perimeter.
-# -------------------------------------------------------------------------
-
     def getPoints2D(self):     
+        """
+        [[2 floats],...] getPoints2D()
+        Returns the list of 2D perimeter points.
+        """
         try:
             return \
                 list(map (lambda point: \
@@ -228,13 +230,12 @@ class aecSpace:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
 
-# -------------------------------------------------------------------------
-# [[float float float],]getPoints3D()
-# Returns a list of 3D points of the Space perimeter vertices by combining
-# the Space's 2D Perimeter points with the Level of the Space.
-# -------------------------------------------------------------------------
-
-    def getPoints3D(self):     
+    def getPoints3D(self):   
+        """
+        [[3 floats],...] getPoints3D()
+        Returns the list of 3D perimeter points by combining
+        the 2D Perimeter points with the Level.
+        """
         try:
             return \
                  list(map (lambda point: \
@@ -247,38 +248,37 @@ class aecSpace:
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
-
-# -------------------------------------------------------------------------
-# float getTransparency()
-# Returns the Space Transparency as a float between 0 and 1.
-# -------------------------------------------------------------------------
-           
-    def getTransparency(self):     
+         
+    def getTransparency(self):
+        """
+        float getTransparency()
+        Returns the Transparency as a percentage between 0 and 1.
+        """
         try:           
             return float(self.__transparency)
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
 
-# -------------------------------------------------------------------------
-# float getVolume()
-# Returns the volume of the Space.
-# -------------------------------------------------------------------------
-
-    def getVolume(self):     
+    def getVolume(self):  
+        """
+        float getVolume()
+        Returns the volume.
+        """
         try:           
             return float(self.__perimeter.area * self.__height)
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
 
-# -------------------------------------------------------------------------
-# bool setColor ([0 - 255], [0 - 255], [0 - 255])
-# Sets the Color[R G B] values or without argument randomizes the color.
-# -------------------------------------------------------------------------
-
     def setColor(self, newColor = []):
+        """
+        bool setColor (integers [0 - 255], [0 - 255], [0 - 255])
+        Sets the Color[R G B] values or without argument randomizes the color.
+        Returns True if successful.
+        """
         try:
+            newColor = list(newColor)
             if len(newColor) > 0:
                 newColor = self.__aecErrorCheck.inRange([0, 255], newColor)
                 newColor = list(map(int, newColor))
@@ -300,25 +300,25 @@ class aecSpace:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
 
-# -------------------------------------------------------------------------
-# bool setHeight(number | string)
-# Sets the Space Height, converting it to a float.
-# -------------------------------------------------------------------------
-
     def setHeight(self, newHeight = 1):
+        """
+        bool setHeight(number | string)
+        Sets the Height as a float.
+        Returns True if successful.
+        """
         try:
             self.__height = float(newHeight)
             return True
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
-    
-# -------------------------------------------------------------------------
-# bool setLevel(number)
-# Sets the Space Level, converting it to a float.
-# -------------------------------------------------------------------------
 
     def setLevel(self, newLevel = 0):
+        """
+        bool setLevel(number | string)
+        Sets the Level as a float.
+        Returns True if successful.
+        """
         try:
             self.__level = float(newLevel)
             return True
@@ -326,12 +326,12 @@ class aecSpace:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
 
-# -------------------------------------------------------------------------
-# bool setName(string)
-# Sets the Space Name, converting it to a string.
-# -------------------------------------------------------------------------
-
     def setName(self, newName = ""):
+        """
+        bool setName(string)
+        Sets the Name as a string.
+        Returns True if successful.
+        """
         try:
             self.__name = str(newName)
             return True
@@ -339,28 +339,28 @@ class aecSpace:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
 
-# -------------------------------------------------------------------------
-# bool setPerimeter(list of points)
-# Creates a new Perimeter from the delivered 2D points.
-# -------------------------------------------------------------------------
-
     def setPerimeter(self, points):
+        """
+        bool setPerimeter([2 numbers],...)
+        Creates a new Perimeter from the delivered 2D points.
+        Returns True if successful.
+        TODO:
+        Add error checking here.
+        """
         try:
-            # might need some error checking here
             self.__perimeter = geometry.Polygon(*points)
             return True
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)        
     
-# -------------------------------------------------------------------------
-# bool setTransparency(number | string)
-# Sets the Transparent percentage or without argument turns the Space opaque
-# by setting Transparency to 0. Converts inputs to a range from 0 to 1.
-# 
-# -------------------------------------------------------------------------
-
     def setTransparency(self, newTrans = 0):
+        """
+        bool setTransparency(number | string)
+        Sets the Transparent percentage or without argument sets Transparency to 0.
+        Converts inputs to a range from 0 to 1.
+        Returns True if successful.
+        """
         try:
             newTrans = self.__aecErrorCheck.inRange([0, 1], [float(newTrans)])
             self.__transparency = float(newTrans[0])
@@ -369,12 +369,11 @@ class aecSpace:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
 
-# -------------------------------------------------------------------------
-# bool encloses([number, number, number])
-# Returns whether the delivered point is inside the Space.
-# -------------------------------------------------------------------------
-
-    def encloses(self, point = [0, 0, 0]):     
+    def encloses(self, point = [0, 0, 0]):
+        """
+        bool encloses([3 numbers])
+        Returns whether the delivered point falls within the 3D aecSpace.
+        """
         try:
             point = self.__aecErrorCheck.isPoint(point)
             pointZ = point[2]
@@ -388,13 +387,13 @@ class aecSpace:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
 
-# -------------------------------------------------------------------------
-# bool makeBox([number, number, number], [number, number, number])
-# Creates a rectangular space from constructed from an origin point
-# and dimensions fror length, width, and height.
-# -------------------------------------------------------------------------
-
-    def makeBox(self, origin = [0, 0, 0], vector = [1, 1, 1]):     
+    def makeBox(self, origin = [0, 0, 0], vector = [1, 1, 1]):
+        """
+        bool makeBox([3 numbers], [3 numbers])
+        Creates a rectangular aecSpace constructed from an origin point
+        and dimensions for length, width, and height.
+        Returns True if successful.
+        """
         try:
             origin = self.__aecErrorCheck.isPoint(origin, True)
             vector = self.__aecErrorCheck.isPoint(vector, True)
@@ -412,12 +411,13 @@ class aecSpace:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
 
-# -------------------------------------------------------------------------
-# bool move([number, number, number])
-# Moves the origin point of the Space along the delivered vector.
-# -------------------------------------------------------------------------
-
-    def move (self, moveBy = [0, 0, 0]):     
+    def move (self, moveBy = [0, 0, 0]):  
+        """
+        bool move([3 numbers])
+        Moves the origin point accoding to the delivered vector
+        aand reconstructs the perimeter.
+        Returns True if successful.
+        """
         try:
             moveBy = self.__aecErrorCheck.isPoint(moveBy)
             self.__perimeter = self.__perimeter.translate(float(moveBy[0]), float(moveBy[1]))
@@ -426,13 +426,16 @@ class aecSpace:
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
-
-# -------------------------------------------------------------------------
-# bool rotate ([float, float], float)
-# Rotates of the Space by a vector.
-# -------------------------------------------------------------------------    
     
     def rotate(self, rotation = math.pi, pivot = None):
+        """
+        bool rotate (float, [2 floats])
+        Rotates the aecSpace counterclockwise around the 2D pivot point
+        by the delivered rotation in radians.
+        If no pivot point is provided, the aecSpace will rotate around
+        its centroid.
+        Return True if successful.
+        """
         try:
             if pivot:
                 pivot = self.__aecErrorCheck.isPoint(pivot)
@@ -445,34 +448,36 @@ class aecSpace:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
 
-# -------------------------------------------------------------------------
-# bool scale ([float, float, float], [float, float, float])
-# Scales the Space by a vector.
-# -------------------------------------------------------------------------    
-    
-    def scale(self, scaleBy = [1, 1, 1], fromPoint = None):
+    def scale(self, scaleBy = [1, 1, 1], scalePoint = None):
+        """
+        bool scale ([3 floats], [2 floats])
+        Scales the aecSpace by a vector from the delivered point.
+        by the delivered rotation in radians.
+        If no scale point is provided, the aecSpace will scale from
+        its centroid.
+        Return True if successful.        
+        """
         try:
             if len(scaleBy) > 0:
                 if not scaleBy[1]:
                     scaleBy.append(1)
                 if not scaleBy[2]:
                     scaleBy.append(1)
-                if not fromPoint:
-                    fromPoint = self.getCentroid2D()
-                self.__perimeter = self.__perimeter.scale(scaleBy[0], scaleBy[1], fromPoint)
+                if not scalePoint:
+                    scalePoint = self.getCentroid2D()
+                self.__perimeter = self.__perimeter.scale(scaleBy[0], scaleBy[1], scalePoint)
                 self.__height *= scaleBy[2]
             return True
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
- 
-# -------------------------------------------------------------------------    
-# unit()
-# Resets the space volume to the default unit Space 
-# at the coordinate system origin.
-# -------------------------------------------------------------------------    
     
     def unit(self):
+        """
+        unit()
+        Sets the aecSpace to a unit cube with one corner 
+        at the coordinate system origin.
+        """
         try:
             self.__height = float(1)
             self.__level = float(0)
@@ -480,7 +485,6 @@ class aecSpace:
             return True
         except:
             return self.__aecErrorCheck.errorMessage \
-            (self.__class__.__name__, traceback)
-    # end def       
+            (self.__class__.__name__, traceback)       
 
 # end class
