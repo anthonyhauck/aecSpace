@@ -1,5 +1,5 @@
 """
-aecSpatial Example
+aecSpace Tower Example
 
 Assuming you've downloaded this source to s your desktop, these instrictions
 should work.
