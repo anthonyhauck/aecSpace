@@ -16,7 +16,7 @@ conda install -c conda-forge -c dlr-sc -c pythonocc -c oce pythonocc-core==0.18.
 
 After this you theoretically have everything you need to run this example.
 Make sure your IDE can find the folder where you've stored these *.py files.
-All the code outside of this example file has been encapsulated as discrete objects.
+All the code outside of the tower example file has been encapsulated as discrete objects.
 
 Please leave questions and comments.
 
