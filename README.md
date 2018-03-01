@@ -18,6 +18,9 @@ After this you theoretically have everything you need to run this example.
 Make sure your IDE can find the folder where you've stored these *.py files.
 All the code outside of the tower example file has been encapsulated as discrete objects.
 
+The immdiate issue I see with this methodology is speed -- the sympy library handling geometric
+transformations might be a bit slow. I'll be profiling to track down the most constly operations.
+
 Please leave questions and comments.
 
 Anthony Hauck | Black Arts Consulting
