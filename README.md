@@ -33,8 +33,9 @@ When you run the examples, you might have to wait up to 10 seconds to see someth
 The sympy library handling geometric transformations might be a bit slow. 
 I'll be profiling to track down the most constly operations.
 
-Please leave questions and comments.
+# Contact
+
+Please leave questions and comments here or send to the e-mail address below:
 
 Anthony Hauck | Black Arts Consulting
-
 anthony |at| blackarts.co
