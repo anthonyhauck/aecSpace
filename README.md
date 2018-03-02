@@ -19,10 +19,19 @@ Make sure your IDE can find the folder where you've stored these *.py files and 
 
 aecSpaceTowerExample.py
 
-All the code outside of the tower example file has been encapsulated as discrete objects.
+All the code outside of any *Example.py files has been encapsulated as discrete objects.
 
-The immdiate issue I see with this methodology is speed -- the sympy library handling geometric
-transformations might be a bit slow. I'll be profiling to track down the most constly operations.
+# Geometric Limitations
+
+* No curved walls
+* No slanted walls
+* No sloped floors or ceilings
+
+# Performance Limitations
+
+When you run the examples, you might have to wait up to 10 seconds to see something happen.
+The sympy library handling geometric transformations might be a bit slow. 
+I'll be profiling to track down the most constly operations.
 
 Please leave questions and comments.
 
