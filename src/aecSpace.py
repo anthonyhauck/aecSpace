@@ -112,6 +112,36 @@ class aecSpace:
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
+            
+    def getBoxXdistance(self):
+        """
+        float getBoxXdistance()
+        Returns the 2D X-axis distance between the 
+        first two points of the aecSpace bounding box.
+        """
+        try:
+            boundpoints = self.getBoundingBox2D()
+            point1 = geometry.Point2D(boundpoints[0])
+            point2 = geometry.Point2D(boundpoints[1])
+            return point1.distance(point2)
+        except:
+            return self.__aecErrorCheck.errorMessage \
+            (self.__class__.__name__, traceback) 
+            
+    def getBoxYdistance(self):
+        """
+        float getBoxYdistance()
+        Returns the 2D Y-axis distance between the first and
+        third points of the aecSpace bounding box.
+        """
+        try:
+            boundpoints = self.getBoundingBox2D()
+            point1 = geometry.Point2D(boundpoints[0])
+            point2 = geometry.Point2D(boundpoints[2])
+            return point1.distance(point2)
+        except:
+            return self.__aecErrorCheck.errorMessage \
+            (self.__class__.__name__, traceback) 
     
     def getCentroid2D(self):
         """
@@ -190,7 +220,7 @@ class aecSpace:
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
-        
+            
     def getLevel(self):
         """
         float getLevel()
@@ -395,8 +425,8 @@ class aecSpace:
         Returns True if successful.
         """
         try:
-            origin = self.__aecErrorCheck.isPoint(origin, True)
-            vector = self.__aecErrorCheck.isPoint(vector, True)
+            origin = self.__aecErrorCheck.isPoint(origin)
+            vector = self.__aecErrorCheck.isPoint(vector)
             self.setPerimeter(
                 [
                     [origin[0], origin[1]],
