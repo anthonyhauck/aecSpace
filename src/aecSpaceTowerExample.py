@@ -1,7 +1,7 @@
 """
-aecSpace Tower Example
+aecSpaceTowerExample
 
-Assuming you've downloaded this source to s your desktop, these instrictions
+Assuming you've downloaded this source to your desktop, these instructions
 should work.
 
 These classes and this example were developed using the Anaconda development
@@ -103,7 +103,7 @@ site.setHeight(0.01)
 # if greater than 0.
 # TODO: make these variable without editing code.
 
-spaces = spacer.stacker(space, 19, 1)
+spaces = spacer.stack(space, 19, 1)
 
 # Since we stacked the aecSpaces upward, the first two aecSpaces
 # in the spaces list will be the first and second floors of our
@@ -177,7 +177,7 @@ for floor in tower:
     
 # Now ask the aecSpacer to find the outermost of all those points.    
 
-towerPoints = spacer.wrapper(floorPoints)
+towerPoints = spacer.wrap(floorPoints)
 
 # Copy the lowest floor of the tower to start constructing our tower shell.
 
