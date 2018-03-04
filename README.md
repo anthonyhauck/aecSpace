@@ -1,4 +1,4 @@
-# aecSpace
+# aecSpace 0.2 | 2018.03.04
 Python classes useful for creating and editing volumes indicating building spaces.
 
 These classes and this example were developed using the Anaconda development
