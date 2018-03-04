@@ -123,9 +123,7 @@ class aecSpace:
         """
         try:
             axes = self.getAxes2D()
-            xLength = abs(axes[0][1][0] - axes[0][0][0])
-            yLength = abs(axes[1][1][1] - axes[1][0][1])
-            if xLength >= yLength:
+            if self.getBoxXsize() >= self.getBoxYsize():
                 return axes[0]
             else:
                 return axes[1]
@@ -158,9 +156,7 @@ class aecSpace:
         """
         try:
             axes = self.getAxes2D()
-            xLength = abs(axes[0][1][0] - axes[0][0][0])
-            yLength = abs(axes[1][1][1] - axes[1][0][1])
-            if xLength >= yLength:
+            if self.getBoxXsize() > self.getBoxYsize():
                 return axes[1]
             else:
                 return axes[0]
@@ -204,14 +200,13 @@ class aecSpace:
         """
         try:   
             bounds = list(map(float, list(self.__boundary.bounds)))
-            bounds = \
+            return \
                 [
                     [bounds[0], bounds[1]],
                     [bounds[2], bounds[1]],
                     [bounds[2], bounds[3]],
                     [bounds[0], bounds[3]]
                 ]
-            return bounds
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
@@ -224,14 +219,13 @@ class aecSpace:
         try: 
             level = self.getLevel()
             bounds = list(map(float, list(self.__boundary.bounds)))
-            bounds = \
+            return \
                 [
                     [bounds[0], bounds[1], level],
                     [bounds[2], bounds[1], level],
                     [bounds[2], bounds[3], level],
                     [bounds[0], bounds[3], level]
                 ]
-            return bounds
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
@@ -273,7 +267,7 @@ class aecSpace:
             boundpoints = self.getBoundingBox2D()
             point1 = geometry.Point2D(boundpoints[0])
             point2 = geometry.Point2D(boundpoints[1])
-            return point1.distance(point2)
+            return float(point1.distance(point2))
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback) 
@@ -288,7 +282,7 @@ class aecSpace:
             boundpoints = self.getBoundingBox2D()
             point1 = geometry.Point2D(boundpoints[1])
             point2 = geometry.Point2D(boundpoints[2])
-            return point1.distance(point2)
+            return float(point1.distance(point2))
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback) 
@@ -342,9 +336,9 @@ class aecSpace:
         try:           
             return \
             [
-                self.__colorR, 
-                self.__colorG,
-                self.__colorB
+                int(self.__colorR), 
+                int(self.__colorG),
+                int(self.__colorB)
             ]
         except:
             return self.__aecErrorCheck.errorMessage \
