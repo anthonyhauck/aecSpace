@@ -5,6 +5,7 @@ import uuid
 
 from sympy import geometry
 
+
 from aecErrorCheck import aecErrorCheck
 
 class aecSpace:
@@ -40,8 +41,8 @@ class aecSpace:
     # __level is the position of the perimeter above the zero plane.
     __level = 0
     
-    # __perimeter is a sympy 2D polygon representing the boundary..
-    __perimeter = None
+    # __boundary is a sympy 2D polygon representing the boundary.
+    __boundary = None
     
     # __name is a custom string designation.
     __name = ""
@@ -69,11 +70,132 @@ class aecSpace:
         Returns the area.
         """
         try:           
-            return float(self.__perimeter.area)
+            return float(self.__boundary.area)
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
             
+    def getAxes2D(self):
+        """
+        [[[2 floats], [2 floats]], [[2 floats], [2 floats]]] getAxes2D()
+        Returns two sets of 2D endpoints of the two axes 
+        of the bounding box, X-Axis followed by Y-Axis.
+        """
+        try:
+            boundingBoxX = self.getBoundingBox2D()
+            boundingBoxY = self.getBoundingBox2D()
+            xAxis = [boundingBoxX[0], boundingBoxX[1]]
+            yAxis = [boundingBoxY[0], boundingBoxY[3]]          
+            xDisplace = (abs(xAxis[1][0] - xAxis[0][0])) / 2
+            yDisplace = (abs(yAxis[1][1] - yAxis[0][1])) / 2
+            xAxis[0][1] = yDisplace
+            xAxis[1][1] = yDisplace
+            yAxis[0][0] = xDisplace
+            yAxis[1][0] = xDisplace
+            return [xAxis, yAxis]
+        except:
+            return self.__aecErrorCheck.errorMessage \
+            (self.__class__.__name__, traceback)
+            
+    def getAxes3D(self):
+        """
+        [[[3 floats], [3 floats]], [[3 floats], [3 floats]]] getAxes3D()
+        Returns two sets of 3D endpoints of the two axes 
+        of the bounding box, X-Axis followed by Y-Axis.       
+        """
+        try:
+            axes = self.getAxes2D()
+            level = self.getLevel()
+            axes[0][0].append(level)
+            axes[0][1].append(level)
+            axes[1][0].append(level)
+            axes[1][1].append(level)
+            return axes
+        except:
+            return self.__aecErrorCheck.errorMessage \
+            (self.__class__.__name__, traceback)  
+            
+    def getAxisMajor2D(self):
+        """
+        [[2 floats], [2 floats]] getAxisMajor2D()
+        Returns the 2D endpoints of the major axis of the bounding box.
+        If axes are of equal length, the X-Axis endpoints are returned.
+        """
+        try:
+            axes = self.getAxes2D()
+            xLength = abs(axes[0][1][0] - axes[0][0][0])
+            yLength = abs(axes[1][1][1] - axes[1][0][1])
+            if xLength >= yLength:
+                return axes[0]
+            else:
+                return axes[1]
+        except:
+            return self.__aecErrorCheck.errorMessage \
+            (self.__class__.__name__, traceback)
+            
+    def getAxisMajor3D(self):
+        """
+        [[3 floats], [3 floats]] getAxisMajor3D()
+        Returns the 3D endpoints of the major axis of the bounding box
+        at half the height of the space.
+        If axes are of equal length, the X-Axis endpoints are returned.
+        """
+        try:
+            majorAxis = self.getAxisMajor2D()
+            midHeight = self.getLevel() + (self.getHeight() / 2)
+            majorAxis[0].append(midHeight)
+            majorAxis[1].append(midHeight)
+            return majorAxis
+        except:
+            return self.__aecErrorCheck.errorMessage \
+            (self.__class__.__name__, traceback)
+            
+    def getAxisMinor2D(self):
+        """
+        [[2 floats], [2 floats]] getAxisMinor2D()
+        Returns the 2D endpoints of the minor axis of the bounding box.
+        If axes are of equal length, the Y-Axis endpoints are returned.
+        """
+        try:
+            axes = self.getAxes2D()
+            xLength = abs(axes[0][1][0] - axes[0][0][0])
+            yLength = abs(axes[1][1][1] - axes[1][0][1])
+            if xLength >= yLength:
+                return axes[1]
+            else:
+                return axes[0]
+        except:
+            return self.__aecErrorCheck.errorMessage \
+            (self.__class__.__name__, traceback)
+            
+    def getAxisMinor3D(self):
+        """
+        [[3 floats], [3 floats]] getAxisMinor3D()
+        Returns the 3D endpoints of the major axis of the bounding box
+        at half the height of the space.
+        If axes are of equal length, the X-Axis endpoints are returned.
+        """
+        try:
+            minorAxis = self.getAxisMinor2D()
+            midHeight = self.getLevel() + (self.getHeight() / 2)
+            minorAxis[0].append(midHeight)
+            minorAxis[1].append(midHeight)
+            return minorAxis
+        except:
+            return self.__aecErrorCheck.errorMessage \
+            (self.__class__.__name__, traceback)
+           
+    def getBoundaryLength(self):
+        """
+        float getPerimeterLength()
+        Returns the length of the perimeter.
+        """
+        try:
+            return self.__boundary.perimeter.evalf()
+        except:
+            return self.__aecErrorCheck.errorMessage \
+            (self.__class__.__name__, traceback)   
+
     def getBoundingBox2D(self):
         """
         [[2 floats], [2 floats], [2 floats], [2 floats]]  getBoundingBox()
@@ -81,7 +203,7 @@ class aecSpace:
         order from the minimum vertex in the coordinate plane.
         """
         try:   
-            bounds = list(map(float, list(self.__perimeter.bounds)))
+            bounds = list(map(float, list(self.__boundary.bounds)))
             bounds = \
                 [
                     [bounds[0], bounds[1]],
@@ -96,22 +218,80 @@ class aecSpace:
 
     def getBoundingBox3D(self):
         """
-        [[3 floats], [3 floats], [3 floats], [3 floats]]  getBoundingBox()
+        [[3 floats], [3 floats], [3 floats], [3 floats]]  getBoundingBox3D()
         Returns the bounding box of as four 3D points.
         """
-        try:   
-            bounds = list(map(float, list(self.__perimeter.bounds)))
+        try: 
+            level = self.getLevel()
+            bounds = list(map(float, list(self.__boundary.bounds)))
             bounds = \
                 [
-                    [bounds[0], bounds[1], self.__level],
-                    [bounds[2], bounds[1], self.__level],
-                    [bounds[2], bounds[3], self.__level],
-                    [bounds[0], bounds[3], self.__level]
+                    [bounds[0], bounds[1], level],
+                    [bounds[2], bounds[1], level],
+                    [bounds[2], bounds[3], level],
+                    [bounds[0], bounds[3], level]
                 ]
             return bounds
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
+            
+    def getBoundingCube(self):
+        """
+        [
+            [[3 floats], [3 floats], [3 floats], [3 floats]],
+            [[3 floats], [3 floats], [3 floats], [3 floats]]
+        ]
+        getBoundingCube()
+        Returns the bounding cube of as two lists of four 3D points, 
+        the first list of the four vertices of the lower cube boundary,
+        and the second list the four vertices of the upper cube boundary.
+        """
+        try: 
+            top = self.getHeight() + self.getLevel()
+            bounds = list(map(float, list(self.__boundary.bounds)))
+            lower = self.getBoundingBox3D()
+            upper = \
+                [
+                    [bounds[0], bounds[1], top],
+                    [bounds[2], bounds[1], top],
+                    [bounds[2], bounds[3], top],
+                    [bounds[0], bounds[3], top]
+                ]           
+            return [lower, upper]
+        except:
+            return self.__aecErrorCheck.errorMessage \
+            (self.__class__.__name__, traceback)
+            
+    def getBoxXsize(self):
+        """
+        float getBoxXdistance()
+        Returns the 2D X-axis distance between the 
+        first two points of the aecSpace bounding box.
+        """
+        try:
+            boundpoints = self.getBoundingBox2D()
+            point1 = geometry.Point2D(boundpoints[0])
+            point2 = geometry.Point2D(boundpoints[1])
+            return point1.distance(point2)
+        except:
+            return self.__aecErrorCheck.errorMessage \
+            (self.__class__.__name__, traceback) 
+            
+    def getBoxYsize(self):
+        """
+        float getBoxYdistance()
+        Returns the 2D Y-axis distance between the first and
+        third points of the aecSpace bounding box.
+        """
+        try:
+            boundpoints = self.getBoundingBox2D()
+            point1 = geometry.Point2D(boundpoints[1])
+            point2 = geometry.Point2D(boundpoints[2])
+            return point1.distance(point2)
+        except:
+            return self.__aecErrorCheck.errorMessage \
+            (self.__class__.__name__, traceback) 
     
     def getCentroid2D(self):
         """
@@ -119,7 +299,7 @@ class aecSpace:
         Returns the centroid of the space as a 2D point.
         """
         try:           
-            centroid = self.__perimeter.centroid
+            centroid = self.__boundary.centroid
             return [float(centroid.x), float(centroid.y)]
         except:
             return self.__aecErrorCheck.errorMessage \
@@ -128,11 +308,12 @@ class aecSpace:
     def getCentroid3D(self): 
         """
         [3 floats] getCentroid3D()
-        Returns the centroid as a 3D point.
+        Returns the centroid as a 3D point at half the height.
         """
         try:           
-            centroid = self.__perimeter.centroid
-            return [float(centroid.x), float(centroid.y), float(self.__level)]
+            centroid = self.__boundary.centroid
+            midHeight = self.getLevel() + (self.getHeight() / 2)
+            return [float(centroid.x), float(centroid.y), midHeight]
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
@@ -155,7 +336,7 @@ class aecSpace:
 
     def getColor256(self):
         """
-        [3 integers] getColor256()
+        [int, int, int] getColor256()
         Returns the color as an RGB in the 0 - 255 range.
         """
         try:           
@@ -190,7 +371,7 @@ class aecSpace:
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
-        
+            
     def getLevel(self):
         """
         float getLevel()
@@ -213,9 +394,35 @@ class aecSpace:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
 
+    def getOrigin2D(self):
+        """
+        [float, float] getOrigin2D()
+        Returns the first 2D point in the sequence 
+        defining the current perimeter.
+        """
+        try:           
+            return self.getPoints2D()[0]
+        except:
+            return self.__aecErrorCheck.errorMessage \
+            (self.__class__.__name__, traceback)        
+        
+    def getOrigin3D(self):
+        """
+        [float, float] getOrigin()
+        Returns the first 3D point in the sequence 
+        defining the current perimeter.        
+        """
+        try:
+            point = self.getOrigin2D()
+            point.append(self.getLevel())
+            return point
+        except:
+            return self.__aecErrorCheck.errorMessage \
+            (self.__class__.__name__, traceback)  
+     
     def getPoints2D(self):     
         """
-        [[2 floats],...] getPoints2D()
+        [[float, float],...] getPoints2D()
         Returns the list of 2D perimeter points.
         """
         try:
@@ -225,30 +432,30 @@ class aecSpace:
                     float(point.x), 
                     float(point.y)
                 ], 
-                self.__perimeter.vertices))
+                self.__boundary.vertices))
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
 
     def getPoints3D(self):   
         """
-        [[3 floats],...] getPoints3D()
+        [[float, float, float],...] getPoints3D()
         Returns the list of 3D perimeter points by combining
         the 2D Perimeter points with the Level.
         """
         try:
             return \
-                 list(map (lambda point: \
-                 [
-                    float(point.x), 
-                    float(point.y), 
-                    float(self.__level)
-                 ],
-                 self.__perimeter.vertices))
+            list(map (lambda point: \
+            [
+                float(point.x), 
+                float(point.y), 
+                self.getLevel()
+            ],
+            self.__boundary.vertices))
         except:
             return self.__aecErrorCheck.errorMessage \
-            (self.__class__.__name__, traceback)
-         
+            (self.__class__.__name__, traceback)        
+    
     def getTransparency(self):
         """
         float getTransparency()
@@ -266,10 +473,25 @@ class aecSpace:
         Returns the volume.
         """
         try:           
-            return float(self.__perimeter.area * self.__height)
+            return float(self.__boundary.area * self.__height)
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
+            
+    def setBoundary(self, points):
+        """
+        bool setPerimeter([2 numbers],...)
+        Creates a new Perimeter from the delivered 2D points.
+        Returns True if successful.
+        TODO:
+        Add error checking here.
+        """
+        try:
+            self.__boundary = geometry.Polygon(*points)
+            return True
+        except:
+            return self.__aecErrorCheck.errorMessage \
+            (self.__class__.__name__, traceback)            
 
     def setColor(self, newColor = []):
         """
@@ -289,12 +511,9 @@ class aecSpace:
                 if newColor[2]:
                     self.__colorB = newColor[2]
             else:
-                newColor = \
-                [
-                    random.randint(0, 255), 
-                    random.randint(0, 255), 
-                    random.randint(0, 255)
-                ]
+                self.__colorR = random.randint(0, 255)
+                self.__colorG = random.randint(0, 255)
+                self.__colorB = random.randint(0, 255)
             return True
         except:
             return self.__aecErrorCheck.errorMessage \
@@ -338,21 +557,6 @@ class aecSpace:
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
-
-    def setPerimeter(self, points):
-        """
-        bool setPerimeter([2 numbers],...)
-        Creates a new Perimeter from the delivered 2D points.
-        Returns True if successful.
-        TODO:
-        Add error checking here.
-        """
-        try:
-            self.__perimeter = geometry.Polygon(*points)
-            return True
-        except:
-            return self.__aecErrorCheck.errorMessage \
-            (self.__class__.__name__, traceback)        
     
     def setTransparency(self, newTrans = 0):
         """
@@ -378,8 +582,8 @@ class aecSpace:
             point = self.__aecErrorCheck.isPoint(point)
             pointZ = point[2]
             point = geometry.Point2D(point[0], point[1])
-            enclosed = self.__perimeter.encloses_point(point)
-            if enclosed and pointZ > self.__level and pointZ < self.__height:
+            enclosed = self.__boundary.encloses_point(point)
+            if enclosed and pointZ > self.getLevel() and pointZ < self.getHeight():
                 return True
             else:
                 return False
@@ -395,9 +599,9 @@ class aecSpace:
         Returns True if successful.
         """
         try:
-            origin = self.__aecErrorCheck.isPoint(origin, True)
-            vector = self.__aecErrorCheck.isPoint(vector, True)
-            self.setPerimeter(
+            origin = self.__aecErrorCheck.isPoint(origin)
+            vector = self.__aecErrorCheck.isPoint(vector)
+            self.setBoundary(
                 [
                     [origin[0], origin[1]],
                     [vector[0], origin[1]],
@@ -410,6 +614,28 @@ class aecSpace:
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
+            
+    # TODO: def makePolygon(self, )        
+            
+    def mirror(self, mirrorLine = None):
+        """
+        bool mirror([[float, float], [float, float]])
+        Changes the perimeter of the aecSpace to correspond to a mirror
+        image of the original perimeter about a line defined by the 
+        delivered list of two 2D points, or by default around the 
+        major axis of the aecSpace.
+        Returns True if successful.
+        """
+        try:
+           # if not mirrorLine:
+            mirrorLine = self.getAxisMajor2D()
+            mirrorLine = geometry.Line(
+                geometry.Point2D(mirrorLine[0]), 
+                geometry.Point2D(mirrorLine[1]))
+            self.__boundary = self.__boundary.reflect(mirrorLine)
+        except:
+            return self.__aecErrorCheck.errorMessage \
+            (self.__class__.__name__, traceback)         
 
     def move (self, moveBy = [0, 0, 0]):  
         """
@@ -420,12 +646,14 @@ class aecSpace:
         """
         try:
             moveBy = self.__aecErrorCheck.isPoint(moveBy)
-            self.__perimeter = self.__perimeter.translate(float(moveBy[0]), float(moveBy[1]))
-            self.__level += float(moveBy[2])
+            self.__boundary = self.__boundary.translate(float(moveBy[0]), float(moveBy[1]))
+            newLevel = self.getLevel() + float(moveBy[2])
+            self.setLevel(newLevel)
             return True
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
+    
     
     def rotate(self, rotation = math.pi, pivot = None):
         """
@@ -442,7 +670,7 @@ class aecSpace:
             else:
                 pivot = self.getCentroid2D()
             pivot = geometry.Point2D(pivot[0], pivot[1])
-            self.__perimeter = self.__perimeter.rotate(rotation, pivot)
+            self.__boundary = self.__boundary.rotate(rotation, pivot)
             return True
         except:
             return self.__aecErrorCheck.errorMessage \
@@ -465,7 +693,7 @@ class aecSpace:
                     scaleBy.append(1)
                 if not scalePoint:
                     scalePoint = self.getCentroid2D()
-                self.__perimeter = self.__perimeter.scale(scaleBy[0], scaleBy[1], scalePoint)
+                self.__boundary = self.__boundary.scale(scaleBy[0], scaleBy[1], scalePoint)
                 self.__height *= scaleBy[2]
             return True
         except:
@@ -481,7 +709,7 @@ class aecSpace:
         try:
             self.__height = float(1)
             self.__level = float(0)
-            self.__perimeter = geometry.Polygon([0, 0], [1, 0], [1, 1], [0, 1])
+            self.__boundary = geometry.Polygon([0, 0], [1, 0], [1, 1], [0, 1])
             return True
         except:
             return self.__aecErrorCheck.errorMessage \

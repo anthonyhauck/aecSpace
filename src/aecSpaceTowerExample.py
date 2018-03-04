@@ -19,7 +19,8 @@ conda install -c conda-forge -c dlr-sc -c pythonocc -c oce pythonocc-core==0.18.
 
 After this you theoretically have everything you need to run this example.
 Make sure your IDE can find the folder where you've stored these *.py files.
-All the code outside of this example file has been encapsulated as discrete objects.
+All the code outside of any *Example.py file has been encapsulated as discrete
+objects.
 
 Please leave questions and comments at the github repo where you found this.
 
@@ -61,7 +62,7 @@ towerCoord = [[0, 0], [20, 0], [30, 30], [20, 50], [0, 50]]
 # the tower centroid. We'll base the offset core's position on the 
 # discovered coordinate.
 
-space.setPerimeter(towerCoord)
+space.setBoundary(towerCoord)
 spaceCentroid = space.getCentroid2D()
 
 # Offset the core footprint corner origin from the tower centroid.
@@ -74,7 +75,7 @@ originY = spaceCentroid[1] - 10
 # TODO: make this variable without editing code.
 
 core = aecSpace()
-core.setPerimeter(
+core.setBoundary(
     [
          [originX, originY], 
          [originX + 20, originY], 
@@ -86,7 +87,7 @@ core.setPerimeter(
 # TODO: make this variable without editing code.
 
 site = aecSpace()
-site.setPerimeter(siteCoord)
+site.setBoundary(siteCoord)
 
 # Set heights of everything we've created so far.
 # TODO: make this variable without editing code.
@@ -95,7 +96,7 @@ space.setHeight(7)
 core.setHeight(7.75 * 21)
 site.setHeight(0.01)
 
-# Create copies of the initial aecSpace and stack them vertcally.
+# Create copies of the initial aecSpace and stack them vertically.
 # The first numeric argument is the quantity of copies to stack
 # sequentially above the delivered aecSpace.
 # The second numeric argument indicates the amoount of offset to
@@ -116,7 +117,7 @@ spaces = spacer.stack(space, 19, 1)
 plinth = spaces[0 : 2]
 
 for floor in plinth:
-    floor.setPerimeter(plinthCoord)
+    floor.setBoundary(plinthCoord)
     floor.setColor(colors.green)
     floor.setTransparency(0.5)
     
@@ -185,7 +186,7 @@ towerShell = spacer.copy(tower[0])
 
 # Set the new aecSpace perimeter to the calculated outermost points
 
-towerShell.setPerimeter(towerPoints)
+towerShell.setBoundary(towerPoints)
 
 # Scale the new aecSpace slightly outward and upward
 # to fully enclose the tower floors.

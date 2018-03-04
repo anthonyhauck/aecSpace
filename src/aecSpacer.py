@@ -20,49 +20,98 @@ class aecSpacer:
         Creates a new aecErrorCheck object.
         """
         self.__aecErrorCheck = aecErrorCheck()
+        
+    def column(self, space, places = 1, gap = 0, plus = True):
+        """
+        [aecSpace,...] column(aecSpace, int, float, bool)
+        Creates and returns a list of aecSpaces placed along the Y-axis 
+        from the delivered aecSpace by the bounding box depth plus the
+        distance added by the gap parameter. Defaults to placement along
+        the positive axis from the position of the delivered aecSpace,
+        or negative if the plus boolean is False.
+        """
+        try:
+            posBy = space.getBoxYsize() + gap
+            if not plus:
+                posBy = posBy - (posBy * 2)
+            moveBy = [0, posBy, 0]
+            return self.place(space, places, moveBy)           
+        except:
+            return self.__aecErrorCheck.errorMessage \
+            (self.__class__.__name__, traceback)
 
-    def copy(self, space):
+    def copy(self, space, moveBy = [0, 0, 0]):
         """
         aecSpace copy(aecSpace)
-        Returns a new aecSpace that is a copy of the delivered aecSpace.
-        
+        Returns a new aecSpace that is a copy of the delivered aecSpace.     
         """
-        newSpace = None
         try:
             newSpace = aecSpace()
             newSpace.setColor(space.getColor256())
             newSpace.setHeight(space.getHeight())
             newSpace.setLevel(space.getLevel())
-            newSpace.setPerimeter(space.getPoints2D())
+            newSpace.setBoundary(space.getPoints2D())
             newSpace.setTransparency(space.getTransparency())
+            newSpace.move(moveBy)
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)            
         return newSpace
-
-    def stacker(self, space, levels = 1, plenum = 0):
+       
+    def place(self, space, places = 1, moveBy = [0, 0, 0]):
         """
-        [aecSpaces] stacker(aecSpace, int, float)
-        Creates and returns a list of int Spaces stacked upward from the 
-        delivered aecSpace by the height of the Space plus additional
-        elevation added by the plenum parameter.
+        [aecSpace,...] placer(aecSpace, int, [float, float, float])
+        Creates and returns a list of Spaces placed along a vector 
+        from the delivered aecSpace by.
         """
         spaces = [space]
         try:
-            moveUp = space.getLevel() + space.getHeight() + plenum
             x = 0
-            while x < levels:
-                newSpace = self.copy(space)
-                newSpace.move([0, 0, moveUp])
+            while x < places:
+                newSpace = self.copy(space, moveBy)
                 spaces.append(newSpace)
                 space = newSpace
-                x += 1
+                x += 1            
+        except:
+            return self.__aecErrorCheck.errorMessage \
+            (self.__class__.__name__, traceback)                  
+        return spaces            
+
+    def row(self, space, places = 1, gap = 0, plus = True):
+        """
+        [aecSpace,...] row(aecSpace, int, float, bool)
+        Creates and returns a list of aecSpaces placed along the X-axis 
+        from the delivered aecSpace by the bounding box width plus the
+        distance added by the gap parameter. Defaults to placement along
+        the positive axis from the position of the delivered aecSpace,
+        or negative if plusX boolean is False.
+        """
+        try:
+            posBy = space.getBoxXsize() + gap
+            if not plus:
+                posBy = posBy - (posBy * 2)
+            moveBy = [posBy, 0, 0]
+            return self.place(space, places, moveBy)           
+        except:
+            return self.__aecErrorCheck.errorMessage \
+            (self.__class__.__name__, traceback)
+    
+    def stack(self, space, levels = 1, plenum = 0):
+        """
+        [aecSpace,...] stacker(aecSpace, int, float)
+        Creates and returns a list of aecSpaces stacked upward from the 
+        delivered aecSpace by the height of the Space plus additional
+        elevation added by the plenum parameter.
+        """
+        try:
+            stackBy = space.getLevel() + space.getHeight() + plenum
+            spaces = self.place(space, levels, [0, 0, stackBy])
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)                  
         return spaces
     
-    def wrapper(self, points):
+    def wrap(self, points):
         """
         [[float, float],...] wrapper([[float, float],...])
         Computes the convex hull of a set of 2D points returning the list
