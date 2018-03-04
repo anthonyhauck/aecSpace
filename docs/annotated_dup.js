@@ -4,7 +4,9 @@ var annotated_dup =
     [ "aecErrorCheck", null, [
       [ "aecErrorCheck", "classaec_error_check_1_1aec_error_check.html", "classaec_error_check_1_1aec_error_check" ]
     ] ],
-    [ "aecSpace", "namespaceaec_space.html", "namespaceaec_space" ],
+    [ "aecSpace", null, [
+      [ "aecSpace", "classaec_space_1_1aec_space.html", "classaec_space_1_1aec_space" ]
+    ] ],
     [ "aecSpaceDrawOCC", null, [
       [ "aecSpaceDrawOCC", "classaec_space_draw_o_c_c_1_1aec_space_draw_o_c_c.html", "classaec_space_draw_o_c_c_1_1aec_space_draw_o_c_c" ]
     ] ],
