@@ -60,7 +60,7 @@ class aecSpacer:
        
     def place(self, space, places = 1, moveBy = [0, 0, 0]):
         """
-        [aecSpace,...] placer(aecSpace, int, [float, float, float])
+        [aecSpace,...] place(aecSpace, int, [float, float, float])
         Creates and returns a list of Spaces placed along a vector 
         from the delivered aecSpace by.
         """
@@ -84,7 +84,7 @@ class aecSpacer:
         from the delivered aecSpace by the bounding box width plus the
         distance added by the gap parameter. Defaults to placement along
         the positive axis from the position of the delivered aecSpace,
-        or negative if plusX boolean is False.
+        or negative if plus boolean is False.
         """
         try:
             posBy = space.getBoxXsize() + gap

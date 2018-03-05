@@ -82,16 +82,33 @@ class aecSpace:
         of the bounding box, X-Axis followed by Y-Axis.
         """
         try:
-            boundingBoxX = self.getBoundingBox2D()
-            boundingBoxY = self.getBoundingBox2D()
-            xAxis = [boundingBoxX[0], boundingBoxX[1]]
-            yAxis = [boundingBoxY[0], boundingBoxY[3]]          
-            xDisplace = (abs(xAxis[1][0] - xAxis[0][0])) / 2
-            yDisplace = (abs(yAxis[1][1] - yAxis[0][1])) / 2
-            xAxis[0][1] = yDisplace
-            xAxis[1][1] = yDisplace
-            yAxis[0][0] = xDisplace
-            yAxis[1][0] = xDisplace
+            boundingBox = self.getBoundingBox2D()
+            xSegment1 = \
+                    geometry.Segment2D(
+                    geometry.Point(boundingBox[0]), 
+                    geometry.Point(boundingBox[3])) 
+            xSegment2 = \
+                    geometry.Segment2D(
+                    geometry.Point(boundingBox[1]), 
+                    geometry.Point(boundingBox[2]))
+            ySegment1 = \
+            geometry.Segment2D(
+                    geometry.Point(boundingBox[0]), 
+                    geometry.Point(boundingBox[1]))
+            ySegment2 = \
+            geometry.Segment2D(
+                    geometry.Point(boundingBox[2]), 
+                    geometry.Point(boundingBox[3]))
+            xAxis1 = [float(xSegment1.midpoint.x.evalf()), 
+                      float(xSegment1.midpoint.y.evalf())]
+            xAxis2 = [float(xSegment2.midpoint.x.evalf()), 
+                      float(xSegment2.midpoint.y.evalf())]
+            yAxis1 = [float(ySegment1.midpoint.x.evalf()), 
+                      float(ySegment1.midpoint.y.evalf())]
+            yAxis2 = [float(ySegment2.midpoint.x.evalf()), 
+                      float(ySegment2.midpoint.y.evalf())]           
+            xAxis  = [xAxis1, xAxis2]
+            yAxis  = [yAxis1, yAxis2]
             return [xAxis, yAxis]
         except:
             return self.__aecErrorCheck.errorMessage \
@@ -123,9 +140,7 @@ class aecSpace:
         """
         try:
             axes = self.getAxes2D()
-            xLength = abs(axes[0][1][0] - axes[0][0][0])
-            yLength = abs(axes[1][1][1] - axes[1][0][1])
-            if xLength >= yLength:
+            if self.getBoxXsize() >= self.getBoxYsize():
                 return axes[0]
             else:
                 return axes[1]
@@ -158,9 +173,7 @@ class aecSpace:
         """
         try:
             axes = self.getAxes2D()
-            xLength = abs(axes[0][1][0] - axes[0][0][0])
-            yLength = abs(axes[1][1][1] - axes[1][0][1])
-            if xLength >= yLength:
+            if self.getBoxXsize() >= self.getBoxYsize():
                 return axes[1]
             else:
                 return axes[0]
@@ -198,40 +211,38 @@ class aecSpace:
 
     def getBoundingBox2D(self):
         """
-        [[2 floats], [2 floats], [2 floats], [2 floats]]  getBoundingBox()
+        [[2 floats], [2 floats], [2 floats], [2 floats]] getBoundingBox()
         Returns the bounding box as four 2D points in counter-clockwise
         order from the minimum vertex in the coordinate plane.
         """
         try:   
             bounds = list(map(float, list(self.__boundary.bounds)))
-            bounds = \
+            return \
                 [
                     [bounds[0], bounds[1]],
                     [bounds[2], bounds[1]],
                     [bounds[2], bounds[3]],
                     [bounds[0], bounds[3]]
                 ]
-            return bounds
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
 
     def getBoundingBox3D(self):
         """
-        [[3 floats], [3 floats], [3 floats], [3 floats]]  getBoundingBox3D()
+        [[3 floats], [3 floats], [3 floats], [3 floats]] getBoundingBox3D()
         Returns the bounding box of as four 3D points.
         """
         try: 
             level = self.getLevel()
             bounds = list(map(float, list(self.__boundary.bounds)))
-            bounds = \
+            return \
                 [
                     [bounds[0], bounds[1], level],
                     [bounds[2], bounds[1], level],
                     [bounds[2], bounds[3], level],
                     [bounds[0], bounds[3], level]
                 ]
-            return bounds
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
@@ -273,7 +284,7 @@ class aecSpace:
             boundpoints = self.getBoundingBox2D()
             point1 = geometry.Point2D(boundpoints[0])
             point2 = geometry.Point2D(boundpoints[1])
-            return point1.distance(point2)
+            return float(point1.distance(point2))
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback) 
@@ -288,7 +299,7 @@ class aecSpace:
             boundpoints = self.getBoundingBox2D()
             point1 = geometry.Point2D(boundpoints[1])
             point2 = geometry.Point2D(boundpoints[2])
-            return point1.distance(point2)
+            return float(point1.distance(point2))
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback) 
@@ -342,9 +353,9 @@ class aecSpace:
         try:           
             return \
             [
-                self.__colorR, 
-                self.__colorG,
-                self.__colorB
+                int(self.__colorR), 
+                int(self.__colorG),
+                int(self.__colorB)
             ]
         except:
             return self.__aecErrorCheck.errorMessage \
@@ -617,7 +628,7 @@ class aecSpace:
             
     # TODO: def makePolygon(self, )        
             
-    def mirror(self, mirrorLine = None):
+    def mirror(self, points = None):
         """
         bool mirror([[float, float], [float, float]])
         Changes the perimeter of the aecSpace to correspond to a mirror
@@ -627,11 +638,11 @@ class aecSpace:
         Returns True if successful.
         """
         try:
-           # if not mirrorLine:
-            mirrorLine = self.getAxisMajor2D()
+            if not points:
+                points = self.getAxisMajor2D()
             mirrorLine = geometry.Line(
-                geometry.Point2D(mirrorLine[0]), 
-                geometry.Point2D(mirrorLine[1]))
+                geometry.Point2D(points[0]), 
+                geometry.Point2D(points[1]))
             self.__boundary = self.__boundary.reflect(mirrorLine)
         except:
             return self.__aecErrorCheck.errorMessage \
