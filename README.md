@@ -1,6 +1,21 @@
 # aecSpace 0.3 | 2018.03.20
 Python classes useful for creating and editing volumes indicating building spaces.
 
+# Version Notes
+
+* Added an aecShaper class to provide utilties for creating aecSpaces of various canaonical plan shapes
+* aecSpace.addBoundary(points) attempts to add an additional boundary as union to the existing boundary
+* aecSpace.Wrap(points) takes over from aecSpacer to wrap a boundary around a set of points
+* aecSpace.getPoints() functions changed to aecSpace.getPointsExterior..() to differentiate from future access to interior points
+* aecSpace.getPointsExterior3D() now returns two lists of all the bottom and top points, not just the bottom points.
+* aecSpace.getSides() returns all the rectangles making up the sides of the aecSpace as a list of 4-point sets.
+* aecSpace.getMesh3D() will theoretically return a correct [indices, points] construct. I have no idea yet if this is working
+properly. I extended the scipy.Delaunay method with a wrapper that culls out erroneous triangles added to concave
+shapes, and haven't visualized it yet to see if it works correctly. 
+* Several new examples added, all moved to the examples folder.
+
+
+# Setup
 These classes and examples were developed using the Anaconda development
 environment, relevant due to the need for the pythonOCC toolkit, a Python
 wrapper around the open source openCascade geometry kernel. The conda package
