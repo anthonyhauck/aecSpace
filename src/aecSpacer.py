@@ -3,9 +3,9 @@ from aecSpace import aecSpace
 from aecErrorCheck import aecErrorCheck
 
 """
-aecSpacer 
-Provides calculation, positioning, and deployment functions for multiple
-aecSpace objects.
+class aecSpacer 
+Provides calculation, positioning, and deployment 
+functions for multiple aecSpace objects.
 """
 class aecSpacer:
     
@@ -40,7 +40,7 @@ class aecSpacer:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
 
-    def copy(self, space, moveBy = [0, 0, 0]):
+    def copy(self, space, moveBy = (0, 0, 0)):
         """
         aecSpace copy(aecSpace)
         Returns a new aecSpace that is a copy of the delivered aecSpace.     
@@ -50,19 +50,19 @@ class aecSpacer:
             newSpace.setColor(space.getColor256())
             newSpace.setHeight(space.getHeight())
             newSpace.setLevel(space.getLevel())
-            newSpace.setBoundary(space.getPoints2D())
+            newSpace.setBoundary(space.getPointsExterior2D())
             newSpace.setTransparency(space.getTransparency())
             newSpace.move(moveBy)
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)            
-        return newSpace
-       
-    def place(self, space, places = 1, moveBy = [0, 0, 0]):
+        return newSpace   
+    
+    def place(self, space, places = 1, moveBy = (0, 0, 0)):
         """
-        [aecSpace,...] place(aecSpace, int, [float, float, float])
-        Creates and returns a list of Spaces placed along a vector 
-        from the delivered aecSpace by.
+        [aecSpace,...] place(aecSpace, int, (number, number, number))
+        Creates and returns a list of aecSpaces placed along a vector 
+        from the delivered aecSpace by the moveBy vector.
         """
         spaces = [space]
         try:
@@ -79,7 +79,7 @@ class aecSpacer:
 
     def row(self, space, places = 1, gap = 0, plus = True):
         """
-        [aecSpace,...] row(aecSpace, int, float, bool)
+        [aecSpace,...] row(aecSpace, number, number, bool)
         Creates and returns a list of aecSpaces placed along the X-axis 
         from the delivered aecSpace by the bounding box width plus the
         distance added by the gap parameter. Defaults to placement along
@@ -98,9 +98,9 @@ class aecSpacer:
     
     def stack(self, space, levels = 1, plenum = 0):
         """
-        [aecSpace,...] stacker(aecSpace, int, float)
+        [aecSpace,...] stacker(aecSpace, int, number)
         Creates and returns a list of aecSpaces stacked upward from the 
-        delivered aecSpace by the height of the Space plus additional
+        delivered aecSpace by the height of the aecSpace plus additional
         elevation added by the plenum parameter.
         """
         try:
@@ -110,48 +110,6 @@ class aecSpacer:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)                  
         return spaces
-    
-    def wrap(self, points):
-        """
-        [[float, float],...] wrapper([[float, float],...])
-        Computes the convex hull of a set of 2D points returning the list
-        of outermost points in counter-clockwise order, starting from the
-        vertex with the lexicographically smallest coordinates.
-        Implements Andrew's monotone chain algorithm. O(n log n) complexity.
-        """
-        points = list(map(tuple, points))
-        points = sorted(set(points))
-        if len(points) <= 1:
-            return points
-        
-        # float cross(float, float, float)
-        # Computes the 2D cross product of OA and OB vectors, i.e. z-component
-        # of their 3D cross product.
-        # Returns a positive value, if OAB makes a counter-clockwise turn, or a
-        # negative value for clockwise turn, or zero if the points are collinear.
-
-        def cross(o, a, b):
-            return (a[0] - o[0]) * (b[1] - o[1]) - (a[1] - o[1]) * (b[0] - o[0])
-    
-        # Build lower hull 
-        lower = []
-        for p in points:
-            while len(lower) >= 2 and cross(lower[-2], lower[-1], p) <= 0:
-                lower.pop()
-            lower.append(p)
-    
-        # Build upper hull
-        upper = []
-        for p in reversed(points):
-            while len(upper) >= 2 and cross(upper[-2], upper[-1], p) <= 0:
-                upper.pop()
-            upper.append(p)
-    
-        # Concatenation of the lower and upper hulls gives the convex hull.
-        # Last point of each list is omitted because it is repeated at the 
-        # beginning of the other list. 
-        
-        return lower[:-1] + upper[:-1]
 
 # end class
     

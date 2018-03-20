@@ -1,5 +1,5 @@
 """
-aecSpaceFloorExample
+aecSpaceExample-Mirror
 
 Assuming you've downloaded this source to your desktop, these instructions
 should work.
@@ -12,29 +12,31 @@ manager makes it easy to install pythonOCC.
 To install Anaconda, visit https://www.anaconda.com/download/
 
 To install pythonOCC, open the Anaconda prompt (not the OS command prompt!)
-that you should find installed as a separate aplication from Anaconda 
+that you should find installed as a separate application from Anaconda 
 Navigator, and paste in this line from http://www.pythonocc.org/download/
 
 conda install -c conda-forge -c dlr-sc -c pythonocc -c oce pythonocc-core==0.18.1
 
+aecSpace uses the shapely, sympy, numpy, and scipy libraries for geometric 
+operations, so you'll need those as well:
+    
+conda install -c conda-forge shapely
+conda install -c conda-forge sympy
+conda install -c conda-forge scipy
+
+numpy should already be installed with Anaconda.
+
 After this you theoretically have everything you need to run this example.
 Make sure your IDE can find the folder where you've stored these *.py files.
-All the code outside of any *Example.py file has been encapsulated as discrete
-objects.
+All the code outside of any aecSpaceExample-*.py file has been encapsulated 
+as discrete objects.
 
 Please leave questions and comments at the github repo where you found this.
 
 Have fun!
 Anthony Hauck | Black Arts Consulting
 anthony@blackarts.co
-
 """
-
-# aecSpaceDrawOCC imports all the rest of the pythonOCC components necessary.
-# Here we just import enough to initalize the display. All other classes are 
-# abstract geometry and have no dependency on the pythonOCC toolkit.
-
-from OCC.Display.SimpleGui import init_display
 
 # Import the classes we'll need.
 
@@ -58,15 +60,4 @@ newSpace = spacer.copy(space, [0, 0, 20])
 newSpace.mirror()
 spaces = [space, newSpace]
      
-# Initialize the pythonOCC display.
-
-display, start_display, add_menu, add_function_to_menu = init_display()
-
-# Call the instance of aecSpaceDrawOCC to draw 
-# the aecSpaces in the pythonOCC environment.
-
-spaceDrawer.Draw3D(display, spaces)
-
-# Start the pythonOCC display.
-
-start_display()
+spaceDrawer.Draw3D(spaces)
