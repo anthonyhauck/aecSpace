@@ -37,23 +37,19 @@ class aecErrorCheck:
         print(message)
         return False     
 
-    def inRange(self, ranger = [0, 1], numbers = [0]):
+    def makePercentage(self, number = 0):
         """
-        [number, number,...] inRange([number, number], [number, number,...])
-        Forces each of the delivered list of numbers into the range 
-        described by ranger by setting any numbers out of range to the nearest
-        value in range.
+        float 0 - 1 makePercentage(number)
+        Forces a number into the range of 0 to 1 by taking the absolute
+        value and dividing a larger number successively by 10.
         """
-        newNumbers = []
         try:         
-            for number in numbers:
-                number = float(number)
-                if number < ranger[0]:
-                    number = ranger[0]
-                elif number > ranger[1]:
-                    number = ranger[1]
-                newNumbers.append(number)
-            return newNumbers
+            number = abs(number)
+            if number >= 0 and number <= 1:
+                return number
+            while number > 1:
+                number *= 0.1
+            return number 
         except:
             return self.errorMessage(self.__class__.__name__, traceback)
     

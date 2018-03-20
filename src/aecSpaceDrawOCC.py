@@ -1,9 +1,12 @@
 import traceback
 
+from OCC.Display.SimpleGui import init_display
 import OCC.AIS
 import OCC.Quantity
 from OCC.gp import gp_Pnt
 from OCC.gp import gp_Vec
+
+#from OCC.Display import OCCViewer
 from OCC.BRepBuilderAPI import BRepBuilderAPI_MakeEdge
 from OCC.BRepBuilderAPI import BRepBuilderAPI_MakeWire
 from OCC.BRepBuilderAPI import BRepBuilderAPI_MakeFace
@@ -72,7 +75,7 @@ class aecSpaceDrawOCC:
         derived from the delivered aecSpace object.
         """
         try:
-            return list(map (lambda pnt: gp_Pnt(pnt[0], pnt[1], pnt[2]), space.getPoints3D()))
+            return list(map (lambda pnt: gp_Pnt(pnt[0], pnt[1], pnt[2]), space.getPointsExterior3D()[0]))
         except:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
@@ -93,13 +96,14 @@ class aecSpaceDrawOCC:
             return self.__aecErrorCheck.errorMessage \
             (self.__class__.__name__, traceback)
     
-    def Draw3D(self, display, spaces):
+    def Draw3D(self, spaces):
         """
         spaceDraw3D(pythonOCC display, [aecSpace,...])
         Accepts a list of aecSpaces and renders them to the pythonOCC display.
         """
-        try:           
-            for space in spaces:         
+        try:
+            display, start_display, add_menu, add_function_to_menu = init_display()
+            for space in spaces:
                 points = self.makePoints(space)
                 pointPairs = self.makePointPairs(points)
                 edges = self.makeEdges(pointPairs)
@@ -112,13 +116,13 @@ class aecSpaceDrawOCC:
                     displayColor[0],
                     displayColor[1],
                     displayColor[2])
-                aisSpace = display.DisplayShape(
-                    spaceVolume,
-                    color = spaceColor,
-                    update = True)
-                display.Context.SetTransparency(
-                    aisSpace, 
-                    space.getTransparency())
+                display.DisplayShape(
+                        spaceVolume, 
+                        color = spaceColor,
+                        transparency = space.getTransparency(),
+                        update = False)
+            display.FitAll()
+            start_display()
             return True
         except:
             return self.__aecErrorCheck.errorMessage \
