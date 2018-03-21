@@ -389,41 +389,35 @@ class aecSpace:
         indices and a list of points.
         """
         try:
-            points = self.getPointsExterior3D()
-            bottom = points[0]
-            top = points[1]     
-            analytic = Polygon(*list(map(Point, bottom)))
-            if analytic.is_convex:
-                mesh = Delaunay(numpy.array(bottom + top))
-                indices = list(map(lambda x: tuple([x[0], x[1], x[2]]), mesh.convex_hull))
-                points = list(map(lambda x: tuple([x[0], x[1], x[2]]), mesh.points))        
+            points = self.getPointsExterior2D()
+            mesh = Delaunay(numpy.array(points))
+            triangles = mesh.simplices
+            points = list(map(lambda x: tuple([x[0], x[1]]), mesh.points))
+            analytic = Polygon(*list(map(Point, points)))
+            if analytic.is_convex():
+                indices = list(map(tuple, triangles))
             else:
+                shape = geometry.Polygon(points)
                 indices = []
-                mesh = Delaunay(numpy.array(bottom))
-                check = list(map(lambda x: tuple([x[0], x[1], x[2]]), mesh.convex_hull))
-                bPoints = list(map(lambda x: tuple([x[0], x[1], x[2]]), mesh.points))  
-                for triangle in check:
-                    test = geometry.Polygon(bPoints[triangle[0]], 
-                                            bPoints[triangle[1]],
-                                            bPoints[triangle[2]])
+                for triangle in triangles:
+                    test = geometry.Polygon([points[triangle[0]], 
+                                             points[triangle[1]],
+                                             points[triangle[2]]])
                     point = test.representative_point()
-                    if point.within(test):
-                        indices.append[triangle]
-                mesh = Delaunay(numpy.array(top))
-                check = list(map(lambda x: tuple([x[0], x[1], x[2]]), mesh.convex_hull))
-                tPoints = list(map(lambda x: tuple([x[0], x[1], x[2]]), mesh.points))  
-                for triangle in check:
-                    test = geometry.Polygon(tPoints[triangle[0]], 
-                                            tPoints[triangle[1]],
-                                            tPoints[triangle[2]])
-                    point = test.representative_point()
-                    if point.within(test):
-                        indices.append[triangle]            
-                points = bPoints + tPoints
-                sides = self.getSides()
-                for side in sides:
-                    mesh = Delaunay(numpy.array(side))
-                    indices = indices + mesh.convex_hull
+                    if shape.contains(point):
+                        indices.append(list(triangle))
+            level = self.getLevel()
+            height = level + self.getHeight()
+            offset = len(points)
+            offidx = list(map(lambda x: (x[0] + offset, x[1] + offset, x[2] + offset), indices))
+            botPoints = list(map(lambda x: (x[0], x[1], level), points))
+            topPoints = list(map(lambda x: (x[0], x[1], height), points))
+            indices = indices + offidx
+            points = botPoints + topPoints
+            sides = self.getSides()
+            for side in sides:
+                indices.append((points.index(side[0]), points.index(side[1]), points.index(side[2])))
+                indices.append((points.index(side[0]), points.index(side[2]), points.index(side[3])))
             return [indices, points]
         except:
             return self.__aecErrorCheck.errorMessage \
@@ -527,12 +521,15 @@ class aecSpace:
             points = self.getPointsExterior3D()
             bottom = points[0]
             top = points[1]
+            sides = []
             index = 0
             sideQuantity = len(bottom)
-            sides = []
             while index < sideQuantity:
-                side = [bottom[index], bottom[index + 1], top[index + 1], top[index]]
-                sides.append[side]            
+                if index < (sideQuantity - 1):
+                    side = [bottom[index], bottom[index + 1], top[index + 1], top[index]]
+                else:
+                    side = [bottom[index], bottom[0], top[0], top[index]]
+                sides.append(side)          
                 index += 1
             return sides
         except:
