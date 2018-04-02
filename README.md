@@ -18,6 +18,7 @@ interactions across multiple functions, updating documentation, and cleaning up 
 * New aecGeomCalc function rmvColinear() removes redundant colinear points from the delivered point list.
 * New aecErrorCheck function makePercentage() converts numeric arguments to percentages between 0 and 1.
 * Exception error reporting made simpler and reliable.
+* Renamed example files for easier sorting out from source files in a single folder.
 
 # Setup
 These classes and examples were developed using the Anaconda development
