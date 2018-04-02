@@ -764,7 +764,7 @@ class aecSpace:
         except:
             traceback.print_exc()
 
-    def getPointsSides(self, points2D=False):
+    def getPointsSides(self, points2D = False):
         """
         [(3D point,...)] getPointsSides()
         By default returns a list of lists of 3D points describing the side perimeters.
@@ -804,7 +804,7 @@ class aecSpace:
 
     def getVerticesCeiling(self):
         """
-        [aecVertex,...] getVerticesCeiling()
+        [aecVertex,] getVerticesCeiling()
         Returns the list of aecVertex instances describing the ceiling perimeter.
         """
         try:
