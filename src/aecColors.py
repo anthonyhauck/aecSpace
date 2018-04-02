@@ -1,5 +1,5 @@
 """
-aecColors instatiates a set of color constants in the form of RGB tuples.
+aecColors instantiates a set of color constants in the form of RGB tuples.
 """
 
 class aecColors:
@@ -15,10 +15,10 @@ class aecColors:
     
     def __init__(self):
         """
-        aecColors Constructor.
-        Does nothing. Placeholder.
+        aecColors Constructor
+        Passes for now, no setup required.
         """
         pass
     
-# end classs
+# end class
     

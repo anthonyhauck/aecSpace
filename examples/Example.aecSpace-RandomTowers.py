@@ -77,7 +77,7 @@ def aecSpaceRandomTowers():
                                           (random.randint(65, 100), 
                                            random.randint(65, 100), 0))
                     tempFloor.rotate(random.randint(0, 360))
-                    floor.addBoundary(tempFloor.getPointsExterior2D())
+                    floor.addBoundary(tempFloor.getPointsFloor(points2D = True))
                     x += 1
             if floorType == 2:
                 floor.makeCircle((point[0] + (floorSizeX * 0.5),
@@ -121,7 +121,7 @@ def aecSpaceRandomTowers():
             plinth = aecSpace()
             plinthLevels = random.randint(1, 3)
             plinthHeight = height * plinthLevels
-            plinth.wrap(floor.getPointsExterior2D())
+            plinth.wrap(floor.getPointsFloor(points2D = True))
             plinth.setHeight(plinthHeight)        
             pScale = random.randint(20, 25) * 0.1
             plinth.scale((pScale, pScale, 1))
@@ -168,7 +168,7 @@ def aecSpaceRandomTowers():
   
 spaces = aecSpaceRandomTowers()
 spaceDrawer = aecSpaceDrawOCC()
-spaceDrawer.Draw3D(spaces)
+spaceDrawer.draw3D(spaces)
 
 
 

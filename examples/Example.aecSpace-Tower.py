@@ -66,7 +66,7 @@ def makeTower():
     # discovered coordinate.
     
     space.setBoundary(towerCoord)
-    spaceCentroid = space.getCentroid2D()
+    spaceCentroid = space.getCentroid()
     
     # Offset the core footprint corner origin from the tower centroid.
     # TODO: make this variable without editing code.
@@ -80,10 +80,10 @@ def makeTower():
     core = aecSpace()
     core.setBoundary(
         [
-             [originX, originY], 
-             [originX + 20, originY], 
-             [originX + 20, originY + 10], 
-             [originX, originY + 10]
+             (originX, originY), 
+             (originX + 20, originY), 
+             (originX + 20, originY + 10), 
+             (originX, originY + 10)
         ])
     
     # Create the site as an aecSpace and set its perimeter
@@ -177,7 +177,7 @@ def makeTower():
     
     floorPoints = []
     for floor in tower:
-        floorPoints += floor.getPointsExterior2D()
+        floorPoints += floor.getPointsFloor(points2D = True)
         
    
     # Construct the tower shell by setting the boundary to an outermost
@@ -226,4 +226,4 @@ def makeTower():
 
 spaces = makeTower()
 spaceDrawer = aecSpaceDrawOCC()
-spaceDrawer.Draw3D(spaces)
+spaceDrawer.draw3D(spaces)

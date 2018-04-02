@@ -59,12 +59,13 @@ def aecSpaceRandomTower():
             floorSizeY = random.randint(60, 100)
             floorHeight = random.randint(8, 10)
             floorType = random.randint(1, 11)
-            width = random.randint(33, 45) * 0.01
-            depth = random.randint(33, 45) * 0.01
-            xOffset = random.randint(10, 90) * 0.01
-            yOffset = random.randint(10, 90) * 0.01
+            width = random.randint(33, 45)
+            depth = random.randint(33, 45)
+            xOffset = random.randint(10, 90)
+            yOffset = random.randint(10, 90)
             if floorType == 1:
                 floor.makeBox(point, (floorSizeX, floorSizeY, 0))
+    
                 floor.rotate(random.randint(0, 360))
                 x = 0
                 boundaries = random.randint(1, 5)
@@ -74,7 +75,7 @@ def aecSpaceRandomTower():
                                           (random.randint(65, 100), 
                                            random.randint(65, 100), 0))
                     tempFloor.rotate(random.randint(0, 360))
-                    floor.addBoundary(tempFloor.getPointsExterior2D())
+                    floor.addBoundary(tempFloor.getPointsFloor(points2D = True))
                     x += 1
             if floorType == 2:
                 floor.makeCircle((point[0] + (floorSizeX * 0.5),
@@ -102,8 +103,7 @@ def aecSpaceRandomTower():
             return floor
         except:
             return False
-        
-    
+          
     def makeTower(point):
         spacer = aecSpacer()
         levels = random.randint(5, 50)
@@ -118,7 +118,7 @@ def aecSpaceRandomTower():
             plinth = aecSpace()
             plinthLevels = random.randint(1, 3)
             plinthHeight = height * plinthLevels
-            plinth.wrap(floor.getPointsExterior2D())
+            plinth.wrap(floor.getPointsFloor(points2D = True))
             plinth.setHeight(plinthHeight)        
             pScale = random.randint(20, 25) * 0.1
             plinth.scale((pScale, pScale, 1))
@@ -147,7 +147,7 @@ def aecSpaceRandomTower():
   
 spaces = aecSpaceRandomTower()
 spaceDrawer = aecSpaceDrawOCC()
-spaceDrawer.Draw3D(spaces)
+spaceDrawer.draw3D(spaces)
 
 
 

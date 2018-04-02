@@ -1,4 +1,6 @@
 import traceback
+
+from aecGeomCalc import aecGeomCalc
 from aecSpace import aecSpace
 from aecErrorCheck import aecErrorCheck
 
@@ -16,6 +18,7 @@ class aecShaper:
     __aecErrorCheck is an instance of aecErrorCheck.
     """
     __aecErrorCheck = None
+    __aecGeomCalc = None
        
     def __init__(self):
         """
@@ -23,6 +26,7 @@ class aecShaper:
         Creates a new aecErrorCheck object.
         """
         self.__aecErrorCheck = aecErrorCheck()
+        self.__aecGeomCalc = aecGeomCalc()
         
     def makeCross(self, origin = (0, 0, 0), vector = (1, 1, 1), 
                         xWidth = 0.33333333, yDepth = 0.33333333,
@@ -44,14 +48,13 @@ class aecShaper:
             xPoint = (origin[0] + (yAxis - (xWidth * 0.5)), origin[1], origin[2])
             yPoint = (origin[0], origin[1] + (xAxis - (yDepth * 0.5)), origin[2])
             space = aecSpace()
-            points = space.makeBoxPoints(xPoint, (xWidth, vector[1], 0))
+            points = self.__aecGeomCalc.getBoxPoints2D(xPoint, (xWidth, vector[1], 0))
             space.addBoundary(points, True)
-            points = space.makeBoxPoints(yPoint, (vector[0], yDepth, 0))
+            points = self.__aecGeomCalc.getBoxPoints2D(yPoint, (vector[0], yDepth, 0))
             space.addBoundary(points)
             return space
         except:
-            return self.__aecErrorCheck.errorMessage \
-            (self.__class__.__name__, traceback)
+            traceback.print_exc() 
             
     def makeH(self, origin = (0, 0, 0), vector = (1, 1, 1), 
                     xWidth1 = 0.33333333, xWidth2= 0.33333333, yDepth = 0.33333333):
@@ -65,12 +68,11 @@ class aecShaper:
         try:
             space = self.makeCross(origin, vector, xWidth1, yDepth, yAxis = (xWidth1 * 0.5))
             xPoint = (origin[0] + (vector[0] - xWidth2), origin[1], origin[2])
-            points = space.makeBoxPoints(xPoint, (xWidth2 * vector[0], vector[1], origin[2]))
+            points = points = self.__aecGeomCalc.getBoxPoints2D(xPoint, (xWidth2 * vector[0], vector[1], origin[2]))
             space.addBoundary(points)
             return space
         except:
-            return self.__aecErrorCheck.errorMessage \
-            (self.__class__.__name__, traceback)
+            traceback.print_exc() 
     
     def makeL(self, origin = (0, 0, 0), vector = (1, 1, 1), 
                     xWidth = 0.33333333, yDepth = 0.33333333):         
@@ -84,8 +86,7 @@ class aecShaper:
         try:
             return self.makeCross(origin, vector, xWidth, yDepth, xWidth * 0.5, yDepth * 0.5)
         except:
-            return self.__aecErrorCheck.errorMessage \
-            (self.__class__.__name__, traceback)
+            traceback.print_exc() 
             
     def makeT(self, origin = (0, 0, 0), vector = (1, 1, 1), 
                     xWidth = 0.33333333, yDepth = 0.33333333):         
@@ -99,8 +100,7 @@ class aecShaper:
         try:
             return self.makeCross(origin, vector, xWidth, yDepth, xAxis = (1 - (yDepth * 0.5)))
         except:
-            return self.__aecErrorCheck.errorMessage \
-            (self.__class__.__name__, traceback)
+            traceback.print_exc() 
             
     def makeU(self, origin = (0, 0, 0), vector = (1, 1, 1), 
                     xWidth1 = 0.33333333, xWidth2= 0.33333333, yDepth = 0.33333333):         
@@ -115,11 +115,10 @@ class aecShaper:
             space = self.makeL(origin, vector, xWidth1, yDepth)
             xWidth = xWidth2 * vector[0]
             xPoint = (origin[0] + (vector[0] - xWidth), origin[1], origin[2])
-            points = space.makeBoxPoints(xPoint, (xWidth, vector[1], origin[2]))
+            points = points = self.__aecGeomCalc.getBoxPoints2D(xPoint, (xWidth, vector[1], origin[2]))
             space.addBoundary(points)
             return space
         except:
-            return self.__aecErrorCheck.errorMessage \
-            (self.__class__.__name__, traceback)
+            traceback.print_exc() 
     
 # end class

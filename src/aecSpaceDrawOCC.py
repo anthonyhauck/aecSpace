@@ -20,11 +20,6 @@ aecSpaceDraw accepts lists of aecSpaces to render in pythonOCC.
 
 class aecSpaceDrawOCC:
     
-    """
-    __aecErrorCheck is an instance of class aecErrorCheck.
-    """
-    __aecErrorCheck = None
-    
     def __init__(self):
         """
         aecSpaceDrawOCC Constructor
@@ -34,8 +29,7 @@ class aecSpaceDrawOCC:
 
     def makeEdges(self, pointPairs):
         """
-        [Topo_DS_Edge, Topo_DS_Edge,...] 
-        makeEdges([[[gp_Pnt, gp_Pnt], [gp_Pnt, gp_Pnt]],...])
+        [Topo_DS_Edge,] makeEdges([[[gp_Pnt, gp_Pnt], [gp_Pnt, gp_Pnt]],...])
         Returns a list of Topo_DS_Edges derived from a list of gp_Pnt pairs.
         """
         try:
@@ -45,8 +39,7 @@ class aecSpaceDrawOCC:
                 edges.append(newEdge.Edge())
             return edges
         except:
-            return self.__aecErrorCheck.aecErrorCheck.errorMessage \
-            (self.__class__.__name__, traceback)
+            traceback.print_exc()
     
     def makePointPairs(self, points):
         """
@@ -65,20 +58,18 @@ class aecSpaceDrawOCC:
                 x += 1
             return pointPairs
         except:
-            return self.__aecErrorCheck.errorMessage \
-            (self.__class__.__name__, traceback)
+            traceback.print_exc()
     
     def makePoints(self, space):
         """
-        [gp_Pnt,...] makePoints(aecSpace)
+        [gp_Pnt,] makePoints(aecSpace)
         Returns a list of gp_Pnts compatible with pythonOCC
         derived from the delivered aecSpace object.
         """
         try:
-            return list(map (lambda pnt: gp_Pnt(pnt[0], pnt[1], pnt[2]), space.getPointsExterior3D()[0]))
+            return list(map (lambda pnt: gp_Pnt(pnt[0], pnt[1], pnt[2]), space.getPointsFloor()))
         except:
-            return self.__aecErrorCheck.errorMessage \
-            (self.__class__.__name__, traceback)
+            traceback.print_exc()
     
     def makeWire(self, edges):
         """
@@ -93,12 +84,11 @@ class aecSpaceDrawOCC:
                 wire.Add(edge)
             return wire
         except:
-            return self.__aecErrorCheck.errorMessage \
-            (self.__class__.__name__, traceback)
+            traceback.print_exc()
     
-    def Draw3D(self, spaces):
+    def draw3D(self, spaces):
         """
-        spaceDraw3D(pythonOCC display, [aecSpace,...])
+        draw3D(pythonOCC display, [aecSpace,])
         Accepts a list of aecSpaces and renders them to the pythonOCC display.
         """
         try:
@@ -125,8 +115,7 @@ class aecSpaceDrawOCC:
             start_display()
             return True
         except:
-            return self.__aecErrorCheck.errorMessage \
-            (self.__class__.__name__, traceback)
+            traceback.print_exc()
 
 # end class
 

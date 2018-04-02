@@ -88,7 +88,7 @@ def aecSpaceRandomTowers():
         half1 = aecSpace()  
         half1.makeBox(point, (xWidth, depth, zHeight))
         halfSpaces = spacer.column(half1)
-        halfSpaces[1].scale([1, scale, 1], halfSpaces[1].getOrigin3D())
+        halfSpaces[1].scale([1, scale, 1], halfSpaces[1].getOrigin())
         setColors(halfSpaces)
         return halfSpaces
     
@@ -102,7 +102,7 @@ def aecSpaceRandomTowers():
         half1 = aecSpace()  
         half1.makeBox(point, (width, yDepth, zHeight))
         halfSpaces = spacer.row(half1)
-        halfSpaces[1].scale([scale, 1, 1], halfSpaces[1].getOrigin3D())
+        halfSpaces[1].scale([scale, 1, 1], halfSpaces[1].getOrigin())
         setColors(halfSpaces)
         return halfSpaces
     
@@ -148,7 +148,7 @@ def aecSpaceRandomTowers():
         plinth.makeBox(point, (xWidth, yDepth, zHeight))
         plinthScaleX = 1.5 # (random.randint(10, 25)) * 0.1
         plinthScaleY = 1.5 # (random.randint(10, 25)) * 0.1
-        plinth.scale([plinthScaleX, plinthScaleY, 2], plinth.getCentroid3D())
+        plinth.scale([plinthScaleX, plinthScaleY, 2], plinth.getCentroid())
         plinth.setColor(colors.green)
         floors.append(plinth)
         floors = floors + makeCore(point, xWidth, yDepth, zHeight * (levels + 3))
@@ -185,6 +185,6 @@ def aecSpaceRandomTowers():
   
 spaces = aecSpaceRandomTowers()
 spaceDrawer = aecSpaceDrawOCC()
-spaceDrawer.Draw3D(spaces)
+spaceDrawer.draw3D(spaces)
 
 

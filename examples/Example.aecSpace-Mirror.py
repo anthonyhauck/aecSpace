@@ -52,12 +52,12 @@ space = aecSpace()
 spacer = aecSpacer()
 spaceDrawer = aecSpaceDrawOCC()
 
-# Create a rectangular aecSpace at the origin.
+# Create a five-sided aecSpace at the origin.
 
-space.makeBox([0, 0, 0], [20, 30, 20])
-space.setBoundary([[0, 0], [20, 0], [60, 40], [30, 70], [10, 70]])
-newSpace = spacer.copy(space, [0, 0, 20])
+space.setBoundary([(0, 0), (20, 0), (60, 40), (30, 70), (10, 70)])
+space.setHeight(15)
+newSpace = spacer.copy(space, (0, 0, 20))
 newSpace.mirror()
 spaces = [space, newSpace]
      
-spaceDrawer.Draw3D(spaces)
+spaceDrawer.draw3D(spaces)

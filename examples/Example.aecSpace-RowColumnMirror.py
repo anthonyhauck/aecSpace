@@ -1,5 +1,5 @@
 """
-aecSpaceExample-Floor
+aecSpaceExample-RowColumnMirror
 
 Assuming you've downloaded this source to your desktop, these instructions
 should work.
@@ -52,31 +52,38 @@ from aecSpaceDrawOCC import aecSpaceDrawOCC
 colors = aecColors()
 space = aecSpace()
 spacer = aecSpacer()
-spaceDrawer = aecSpaceDrawOCC()
 
-# Create a rectangular aecSpace at the origin.
 
-space.makeBox([0, 0, 0], [20, 30, 5])
-space.setBoundary([[0, 0], [20, 0], [30, 30], [20, 50], [0, 50]])
+# Create an aecSpace at the origin.
+
+space.setBoundary([(0, 0), (20, 0), (30, 30), (20, 50), (0, 50)])
+space.setHeight(10)
 
 # Create copies of the initial aecSpace and arrange them in a row.
 
-spaces = spacer.row(space, 10, 3)
+firstTower = spacer.stack(space, 12, 1)
+rowTowers = []
+for floor in firstTower:
+    rowTowers += spacer.row(floor, 5, 70)
 
-# Set all the aecSpaces to the same transparency and a color.
-# TODO: make this variable without editing code.
-
-for room in spaces:   
-    spaces = spaces + spacer.column(room, 5, 3)
+columnTowers = []
+for floor in rowTowers:
+    columnTowers += spacer.column(floor, 5, 70)
     
-for room in spaces:
-    spaces = spaces + spacer.stack(room, 5, 0)
+spaces = firstTower + rowTowers + columnTowers
     
-for room in spaces:
-    room.setColor([random.randint(0, 255), random.randint(0, 255),random.randint(0, 255)])
-    
-for room in spaces:
-    if room.getColor256()[0] > 100:
-        room.mirror()
+for floor in spaces:
+    floor.setColor(
+        [random.randint(0, 255), 
+         random.randint(0, 255),
+         random.randint(0, 255)])
+    if floor.getColor256()[0] > 100:
+        if floor.getColor256()[1] < 100:
+            floor.mirror()
+            floor.rotate(random.randint(0, 90))
+        else:
+            floor.mirror()
+            floor.rotate(random.randint(90, 270))
      
-spaceDrawer.Draw3D(spaces)
+spaceDrawer = aecSpaceDrawOCC()
+spaceDrawer.draw3D(spaces)

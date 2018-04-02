@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['encloses',['encloses',['../classaec_space_1_1aec_space.html#aa42f67d9e95c834637e7da3d0fdbb340',1,'aecSpace::aecSpace']]],
-  ['errormessage',['errorMessage',['../classaec_error_check_1_1aec_error_check.html#a40c5f9a3833b8b76534228bab613190b',1,'aecErrorCheck::aecErrorCheck']]]
+  ['encloses',['encloses',['../classaec_space_1_1aec_space.html#abe39c063db4e605e81ed0d826cab6b9e',1,'aecSpace::aecSpace']]],
+  ['example',['Example',['../namespace_example.html',1,'']]]
 ];
