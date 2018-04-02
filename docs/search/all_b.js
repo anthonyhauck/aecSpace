@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wrapper',['wrapper',['../classaec_spacer_1_1aec_spacer.html#a8b7ba8433d8f59e833bdd7545a18737f',1,'aecSpacer::aecSpacer']]]
+  ['wrap',['wrap',['../classaec_space_1_1aec_space.html#a2c451d782c68b00e0019a5632662db90',1,'aecSpace::aecSpace']]]
 ];
