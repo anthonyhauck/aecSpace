@@ -1,9 +1,20 @@
 var searchData=
 [
-  ['makebox',['makeBox',['../classaec_space_1_1aec_space.html#ab72650fbad6f75921f3a1d5616f6da8f',1,'aecSpace::aecSpace']]],
+  ['makebox',['makeBox',['../classaec_space_1_1aec_space.html#ae580aa3302368c41efb30547f74fbdad',1,'aecSpace::aecSpace']]],
+  ['makeboxes',['makeBoxes',['../classaec_space_1_1aec_space.html#a7079d686abaa8fc04e9e2e936ea6f508',1,'aecSpace::aecSpace']]],
+  ['makecircle',['makeCircle',['../classaec_space_1_1aec_space.html#a1887c77eeea6d56e52bd0d7fe9fe5441',1,'aecSpace::aecSpace']]],
+  ['makecross',['makeCross',['../classaec_shaper_1_1aec_shaper.html#a45dfa7059aa6607cac3ae140413098fe',1,'aecShaper::aecShaper']]],
   ['makeedges',['makeEdges',['../classaec_space_draw_o_c_c_1_1aec_space_draw_o_c_c.html#a23d3c664cdf60951ec7e4d778e485d3e',1,'aecSpaceDrawOCC::aecSpaceDrawOCC']]],
+  ['makeh',['makeH',['../classaec_shaper_1_1aec_shaper.html#af1a2227779699240a29fafa0ffd648fb',1,'aecShaper::aecShaper']]],
+  ['makel',['makeL',['../classaec_shaper_1_1aec_shaper.html#ac6cf4a7892ab9cde72033154888c47f3',1,'aecShaper::aecShaper']]],
+  ['makepercentage',['makePercentage',['../classaec_error_check_1_1aec_error_check.html#a7b46b8e3e2851ed0fcfd222d845a1d2a',1,'aecErrorCheck::aecErrorCheck']]],
   ['makepointpairs',['makePointPairs',['../classaec_space_draw_o_c_c_1_1aec_space_draw_o_c_c.html#a17e8cfc1bc4824c89914cb2bd9d125e0',1,'aecSpaceDrawOCC::aecSpaceDrawOCC']]],
   ['makepoints',['makePoints',['../classaec_space_draw_o_c_c_1_1aec_space_draw_o_c_c.html#a9ee08d43b820c3ab000dafcd973a5b49',1,'aecSpaceDrawOCC::aecSpaceDrawOCC']]],
+  ['makepolygon',['makePolygon',['../classaec_space_1_1aec_space.html#afdf38ab6d55fbc0dc007e59b0676a7a4',1,'aecSpace::aecSpace']]],
+  ['maket',['makeT',['../classaec_shaper_1_1aec_shaper.html#a7bcf69d0be945e1a5d6ab72c427b8a89',1,'aecShaper::aecShaper']]],
+  ['makeu',['makeU',['../classaec_shaper_1_1aec_shaper.html#a070425d9264b6d2b86732c0b86d22cbb',1,'aecShaper::aecShaper']]],
   ['makewire',['makeWire',['../classaec_space_draw_o_c_c_1_1aec_space_draw_o_c_c.html#abee308169cbc9f3ac589507a0cc3bc3c',1,'aecSpaceDrawOCC::aecSpaceDrawOCC']]],
-  ['move',['move',['../classaec_space_1_1aec_space.html#a44155dec9c9d02c3a3f853b1560bd697',1,'aecSpace::aecSpace']]]
+  ['mirror',['mirror',['../classaec_space_1_1aec_space.html#ac9ab1d475b23196692ad350b2d01ec61',1,'aecSpace::aecSpace']]],
+  ['mirrorpoints2d',['mirrorPoints2D',['../classaec_geom_calc_1_1aec_geom_calc.html#a4f0a8904ead6450f116a50cb039fee17',1,'aecGeomCalc::aecGeomCalc']]],
+  ['move',['move',['../classaec_space_1_1aec_space.html#ac36d8b5742424a73435a0cd0688cface',1,'aecSpace::aecSpace']]]
 ];
