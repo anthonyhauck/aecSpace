@@ -1,17 +1,23 @@
-# aecSpace 0.31 | 2018.03.21
+# aecSpace 0.4 | 2018.04.02
 Python classes useful for creating and editing volumes indicating building spaces.
 
 # Version Notes
 
-* Added an aecShaper class to provide utilties for creating aecSpaces of various canaonical plan shapes
-* aecSpace.addBoundary(points) attempts to add an additional boundary as union to the existing boundary
-* aecSpace.Wrap(points) takes over from aecSpacer to wrap a boundary around a set of points
-* aecSpace.getPoints() functions changed to aecSpace.getPointsExterior..() to differentiate from future access to interior points
-* aecSpace.getPointsExterior3D() now returns two lists of all the bottom and top points, not just the bottom points.
-* aecSpace.getSides() returns all the rectangles making up the sides of the aecSpace as a list of 4-point sets.
-* aecSpace.getMesh3D() returns an [indices, points] construct. Now tested, fixed, and appears to be working
-* Several new examples added, all moved to the examples folder.
+This version is a wide-ranging overhaul of the aecSpace object, adding numeric mesh representations, normalizing
+interactions across multiple functions, updating documentation, and cleaning up shared data issues.
 
+* Redundant colinear points are now removed from point supplied to aecSpace.setBoundary().
+* New getMesh* functions return various mesh representations of aecSpace surfaces and the volume.
+* New getNorml* functions return point and surface normals.
+* New getAngles() function returns internal and external angles of perimeter vertices.
+* Internal data handling updated for ease of initialization and future serialization.
+* Most point arguments and returns are 3D by default.
+* Distinct "2D" point functions collapsed into single functions with an argument to return 2D points if desired.
+* New aecVertex object describes point, angles, and point normals.
+* New aecGeomCalc function areColinear() tests whether points are colinear.
+* New aecGeomCalc function rmvColinear() removes redundant colinear points from the delivered point list.
+* New aecErrorCheck function makePercentage() converts numeric arguments to percentages between 0 and 1.
+* Exception error reporting made simpler and reliable.
 
 # Setup
 These classes and examples were developed using the Anaconda development
