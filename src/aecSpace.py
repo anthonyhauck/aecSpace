@@ -934,7 +934,10 @@ class aecSpace:
             if len(points) < 3:
                 return False
             self.__initialize()
-            self.__properties['boundaryShape'] = shape.polygon.orient(shape.Polygon(points))           
+            boundary = shape.polygon.orient(shape.Polygon(points))
+            if(type(boundary) == 'MultiPolygon'):
+                boundary = shapeOps.unary_union(boundary)
+            self.__properties['boundaryShape'] = boundary       
             return True
         except:
             traceback.print_exc()
