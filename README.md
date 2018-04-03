@@ -1,4 +1,4 @@
-# aecSpace 0.41 | 2018.04.02
+# aecSpace 0.41 | 2018.04.03
 Python classes useful for creating and editing volumes indicating building spaces.
 
 # Version Notes
