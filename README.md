@@ -1,4 +1,4 @@
-# aecSpace 0.4 | 2018.04.02
+# aecSpace 0.41 | 2018.04.02
 Python classes useful for creating and editing volumes indicating building spaces.
 
 # Version Notes
@@ -19,6 +19,7 @@ interactions across multiple functions, updating documentation, and cleaning up 
 * New aecErrorCheck function makePercentage() converts numeric arguments to percentages between 0 and 1.
 * Exception error reporting made simpler and reliable.
 * Renamed example files for easier sorting out from source files in a single folder.
+* 0.41: Fixed a bug that allowed MultiPolygons as the boundary definition by merging multipolygons.
 
 # Setup
 These classes and examples were developed using the Anaconda development
