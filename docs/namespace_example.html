@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">aecSpace
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.5</span>
    </div>
    <div id="projectbrief">Classes to create and manage representations of architectural space</div>
   </td>
@@ -116,12 +116,15 @@ Variables</h2></td></tr>
 <tr class="memitem:a7ec1de00f2fdb038c0b2762c9dabd2da"><td class="memItemLeft" align="right" valign="top"><a id="a7ec1de00f2fdb038c0b2762c9dabd2da"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>spacer</b> = <a class="el" href="classaec_spacer_1_1aec_spacer.html">aecSpacer</a>()</td></tr>
 <tr class="separator:a7ec1de00f2fdb038c0b2762c9dabd2da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9aff730339d954dffb32863a76542d34"><td class="memItemLeft" align="right" valign="top"><a id="a9aff730339d954dffb32863a76542d34"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>spaces</b> = <a class="el" href="classaec_space_group_1_1aec_space_group.html">aecSpaceGroup</a>()</td></tr>
+<tr class="separator:a9aff730339d954dffb32863a76542d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a564051078b9ad6a30b533978ea867dbf"><td class="memItemLeft" align="right" valign="top"><a id="a564051078b9ad6a30b533978ea867dbf"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>spaceDrawer</b> = <a class="el" href="classaec_space_draw_o_c_c_1_1aec_space_draw_o_c_c.html">aecSpaceDrawOCC</a>()</td></tr>
 <tr class="separator:a564051078b9ad6a30b533978ea867dbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9aff730339d954dffb32863a76542d34"><td class="memItemLeft" align="right" valign="top"><a id="a9aff730339d954dffb32863a76542d34"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>spaces</b> = spacer.row(space, 3, 3)</td></tr>
-<tr class="separator:a9aff730339d954dffb32863a76542d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa1b42bd521ba111d9ea7fa7e3bc36b17"><td class="memItemLeft" align="right" valign="top"><a id="aa1b42bd521ba111d9ea7fa7e3bc36b17"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>floors</b> = spacer.row(space, 3, 3)</td></tr>
+<tr class="separator:aa1b42bd521ba111d9ea7fa7e3bc36b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9b1a70c7a798d6a05a3f4c687b6c945"><td class="memItemLeft" align="right" valign="top"><a id="ae9b1a70c7a798d6a05a3f4c687b6c945"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>newSpace</b> = spacer.copy(space, (0, 0, 20))</td></tr>
 <tr class="separator:ae9b1a70c7a798d6a05a3f4c687b6c945"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -134,6 +137,9 @@ list&#160;</td><td class="memItemRight" valign="bottom"><b>rowTowers</b> = []</t
 <tr class="memitem:aa249826c6e6e282674c7c3c4b6f9f841"><td class="memItemLeft" align="right" valign="top"><a id="aa249826c6e6e282674c7c3c4b6f9f841"></a>
 list&#160;</td><td class="memItemRight" valign="bottom"><b>columnTowers</b> = []</td></tr>
 <tr class="separator:aa249826c6e6e282674c7c3c4b6f9f841"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35ee6ffe36f6d6f1958816d3827eae5e"><td class="memItemLeft" align="right" valign="top"><a id="a35ee6ffe36f6d6f1958816d3827eae5e"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>xAxis</b></td></tr>
+<tr class="separator:a35ee6ffe36f6d6f1958816d3827eae5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">aecSpaceExample-Floor
@@ -193,7 +199,7 @@ conda install -c conda-forge -c dlr-sc -c pythonocc -c oce pythonocc-core==0.18.
 
 aecSpace uses the shapely, sympy, numpy, and scipy libraries for geometric 
 operations, so you'll need those as well:
-    
+
 conda install -c conda-forge shapely
 conda install -c conda-forge sympy
 conda install -c conda-forge scipy
@@ -242,7 +248,7 @@ Make sure your IDE can find the folder where you've stored these *.py files.
 All the code outside of any aecSpaceExample-*.py file has been encapsulated 
 as discrete objects.
 
-Please leave questions and comments at the github repo where you found this.
+Please leave questions and comments at the github repo where you found this example.
 
 Have fun!
 Anthony Hauck | Black Arts Consulting
