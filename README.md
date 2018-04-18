@@ -1,7 +1,9 @@
-# aecSpace 0.41 | 2018.04.03
+# aecSpace 0.5 | 2018.04.18
 Python classes useful for creating and editing volumes indicating building spaces.
 
-# Version Notes
+# 0.5 Version Notes 
+
+# 0.41 Version Notes 
 
 This version is a wide-ranging overhaul of the aecSpace object, adding numeric mesh representations, normalizing
 interactions across multiple functions, updating documentation, and cleaning up shared data issues.
