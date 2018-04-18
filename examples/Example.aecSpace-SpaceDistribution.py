@@ -66,7 +66,7 @@ def aecSpaceRandomTowers():
         depth = yDepth * 0.5
         half1 = aecSpace()  
         half1.makeBox(point, (xWidth, depth, zHeight))
-        halfSpaces = spacer.column(half1)
+        halfSpaces = [half1] + spacer.row(half1, xAxis = False)
         setColors(halfSpaces)
         return halfSpaces
     
@@ -74,7 +74,7 @@ def aecSpaceRandomTowers():
         width = xWidth * 0.5
         half1 = aecSpace()  
         half1.makeBox(point, (width, yDepth, zHeight))
-        halfSpaces = spacer.row(half1)
+        halfSpaces = [half1] + spacer.row(half1)
         setColors(halfSpaces)
         return halfSpaces
     
@@ -87,7 +87,7 @@ def aecSpaceRandomTowers():
             scale = 0.333333333       
         half1 = aecSpace()  
         half1.makeBox(point, (xWidth, depth, zHeight))
-        halfSpaces = spacer.column(half1)
+        halfSpaces = [half1] + spacer.row(half1, xAxis = False)
         halfSpaces[1].scale([1, scale, 1], halfSpaces[1].getOrigin())
         setColors(halfSpaces)
         return halfSpaces
@@ -101,8 +101,8 @@ def aecSpaceRandomTowers():
             scale = 0.333333333       
         half1 = aecSpace()  
         half1.makeBox(point, (width, yDepth, zHeight))
-        halfSpaces = spacer.row(half1)
-        halfSpaces[1].scale([scale, 1, 1], halfSpaces[1].getOrigin())
+        halfSpaces = [half1] + spacer.row(half1)
+        halfSpaces[1].scale((scale, 1, 1), halfSpaces[1].getOrigin())
         setColors(halfSpaces)
         return halfSpaces
     
@@ -110,23 +110,17 @@ def aecSpaceRandomTowers():
         colors = [aecColors.blue, aecColors.orange, aecColors.purple, aecColors.yellow]
         colorPick = random.randint(0, 3)
         halfSpaces[0].setColor(colors[colorPick])
-        if len(halfSpaces) == 1:
-            return
+        if len(halfSpaces) == 1: return
         colors.reverse()
         halfSpaces[1].setColor(colors[colorPick])
     
     def makeFloor(point, xWidth, yDepth, zHeight):
         floorType = random.randint(0, 4)
-        if floorType == 0:
-            floorSpaces = full(point, xWidth, yDepth, zHeight)
-        if floorType == 1:
-            floorSpaces = halfDepth(point, xWidth, yDepth, zHeight)
-        if floorType == 2:
-            floorSpaces = halfWidth(point, xWidth, yDepth, zHeight)
-        if floorType == 3:
-            floorSpaces = quarterDepth(point, xWidth, yDepth, zHeight)
-        if floorType == 4:
-            floorSpaces = quarterWidth(point, xWidth, yDepth, zHeight)
+        if floorType == 0: floorSpaces = full(point, xWidth, yDepth, zHeight)
+        if floorType == 1: floorSpaces = halfDepth(point, xWidth, yDepth, zHeight)
+        if floorType == 2: floorSpaces = halfWidth(point, xWidth, yDepth, zHeight)
+        if floorType == 3: floorSpaces = quarterDepth(point, xWidth, yDepth, zHeight)
+        if floorType == 4: floorSpaces = quarterWidth(point, xWidth, yDepth, zHeight)
         return floorSpaces
     
     def makeCore(point, xWidth, yDepth, zHeight): 
@@ -140,14 +134,14 @@ def aecSpaceRandomTowers():
     
     def makeTower(point):
         floors = []
-        xWidth = 40 # random.randint(20, 60)
-        yDepth = 40 # random.randint(20, 60)
-        levels = 20 # random.randint(5, 50)
-        zHeight = 10 # random.randint(3, 6)
+        xWidth = random.randint(20, 60)
+        yDepth = random.randint(20, 60)
+        levels = random.randint(5, 50)
+        zHeight = random.randint(3, 6)
         plinth = aecSpace()
         plinth.makeBox(point, (xWidth, yDepth, zHeight))
-        plinthScaleX = 1.5 # (random.randint(10, 25)) * 0.1
-        plinthScaleY = 1.5 # (random.randint(10, 25)) * 0.1
+        plinthScaleX = (random.randint(10, 25)) * 0.1
+        plinthScaleY = (random.randint(10, 25)) * 0.1
         plinth.scale([plinthScaleX, plinthScaleY, 2], plinth.getCentroid())
         plinth.setColor(colors.green)
         floors.append(plinth)

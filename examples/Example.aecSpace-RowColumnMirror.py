@@ -68,7 +68,7 @@ for floor in firstTower:
 
 columnTowers = []
 for floor in rowTowers:
-    columnTowers += spacer.column(floor, 5, 70)
+    columnTowers += spacer.row(floor, 5, 70, xAxis = False)
     
 spaces = firstTower + rowTowers + columnTowers
     

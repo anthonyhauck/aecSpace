@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">aecSpace
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.5</span>
    </div>
    <div id="projectbrief">Classes to create and manage representations of architectural space</div>
   </td>
@@ -99,10 +99,12 @@ $(document).ready(function(){initNavTree('classaec_error_check_1_1aec_error_chec
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a41aedfd8dd0fd6d2a108c9df6c14d05e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_error_check_1_1aec_error_check.html#a41aedfd8dd0fd6d2a108c9df6c14d05e">__init__</a> (self)</td></tr>
 <tr class="separator:a41aedfd8dd0fd6d2a108c9df6c14d05e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1561f20ceb1bac1acc6e560d91d176c0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_error_check_1_1aec_error_check.html#a1561f20ceb1bac1acc6e560d91d176c0">checkPoint</a> (self, testPoint, point3D=True)</td></tr>
-<tr class="separator:a1561f20ceb1bac1acc6e560d91d176c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b46b8e3e2851ed0fcfd222d845a1d2a"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_error_check_1_1aec_error_check.html#a7b46b8e3e2851ed0fcfd222d845a1d2a">makePercentage</a> (self, number=0)</td></tr>
-<tr class="separator:a7b46b8e3e2851ed0fcfd222d845a1d2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf5a7c52fd54e666fd9f760c4d5bc971"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_error_check_1_1aec_error_check.html#acf5a7c52fd54e666fd9f760c4d5bc971">checkIndices</a> (self, indices=None, limit=None)</td></tr>
+<tr class="separator:acf5a7c52fd54e666fd9f760c4d5bc971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b21cb02eb03df641679fa97dfd7de5e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_error_check_1_1aec_error_check.html#a3b21cb02eb03df641679fa97dfd7de5e">checkPercentage</a> (self, number=0)</td></tr>
+<tr class="separator:a3b21cb02eb03df641679fa97dfd7de5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f17810ca818c05aea79553319fb13d3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_error_check_1_1aec_error_check.html#a4f17810ca818c05aea79553319fb13d3">checkPoint</a> (self, testPoint, point2D=False)</td></tr>
+<tr class="separator:a4f17810ca818c05aea79553319fb13d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><pre class="fragment">aecErrorCheck contains data validating functions.
@@ -123,19 +125,18 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <pre class="fragment">aecErrorCheck Constructor
-Passes for now, no setup required.
 </pre> 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a1561f20ceb1bac1acc6e560d91d176c0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1561f20ceb1bac1acc6e560d91d176c0">&#9670;&nbsp;</a></span>checkPoint()</h2>
+<a id="acf5a7c52fd54e666fd9f760c4d5bc971"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf5a7c52fd54e666fd9f760c4d5bc971">&#9670;&nbsp;</a></span>checkIndices()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def aecErrorCheck.aecErrorCheck.checkPoint </td>
+          <td class="memname">def aecErrorCheck.aecErrorCheck.checkIndices </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -144,13 +145,13 @@ Passes for now, no setup required.
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>testPoint</em>, </td>
+          <td class="paramname"><em>indices</em> = <code>None</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>point3D</em> = <code>True</code>&#160;</td>
+          <td class="paramname"><em>limit</em> = <code>None</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -159,20 +160,22 @@ Passes for now, no setup required.
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">checkPoint confirms that the delivered variable is a valid 
-2D or 3D point, and attempts to convert alternate types to
-create a well-formed point.
+<pre class="fragment">[int,] checkIndices([number,])
+Attempts to return a list of well-formed integer indices.
+If no indices are delivered, returns a range of integers from zero to limit.
+Absent any arguments, returns [0]
+Returns None on failure.
 </pre> 
 </div>
 </div>
-<a id="a7b46b8e3e2851ed0fcfd222d845a1d2a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b46b8e3e2851ed0fcfd222d845a1d2a">&#9670;&nbsp;</a></span>makePercentage()</h2>
+<a id="a3b21cb02eb03df641679fa97dfd7de5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b21cb02eb03df641679fa97dfd7de5e">&#9670;&nbsp;</a></span>checkPercentage()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">def aecErrorCheck.aecErrorCheck.makePercentage </td>
+          <td class="memname">def aecErrorCheck.aecErrorCheck.checkPercentage </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname"><em>self</em>, </td>
@@ -193,6 +196,44 @@ create a well-formed point.
 <pre class="fragment">float 0 - 1 makePercentage(number)
 Forces a number into the range of 0 to 1 by taking the absolute
 value and dividing a larger number successively by 10.
+Returns None on failure.
+</pre> 
+</div>
+</div>
+<a id="a4f17810ca818c05aea79553319fb13d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f17810ca818c05aea79553319fb13d3">&#9670;&nbsp;</a></span>checkPoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def aecErrorCheck.aecErrorCheck.checkPoint </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>testPoint</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>point2D</em> = <code>False</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">(2D or 3D point) checkPoint((2D or 3D point), bool)
+Returns a well-formed 2D or 3D point from the delivered argument if possible.
+Returns None if unable to form a point as specified.
 </pre> 
 </div>
 </div>
