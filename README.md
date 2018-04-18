@@ -1,7 +1,29 @@
-# aecSpace 0.41 | 2018.04.03
+# aecSpace 0.5 | 2018.04.18
 Python classes useful for creating and editing volumes indicating building spaces.
 
-# Version Notes
+# 0.5 Version Notes
+
+* New aecSpaceGroup object provides multiple functions for querying and changing multiple aecSpace instances at once.
+* aecSpaceDrawOcc.draw3D() now accepts either a list of aecSpaces as before or a single aecSpaceGroup instance.
+* aecShaper object functionality combined into aecSpace object; aecShaper object eliminated.
+* aecSpace.makeCylinder() replaces aecShaper.makeCircle and provides a parameter to set the aecSpace height.
+* aecSpace.makePolygon() now provides a parameter to set the aecSpace height.
+* aecSpace.wrap() function now refactored into separate function convexHull() in aecGeomCalc object.
+* aecSpacer.column() function now refactored into single aecSpacer.row() function with an axis argument.
+* New function aecSpacer.stackToArea() stacks aecSpaces until the aggregate area meets or exceeds the area argument.
+* aecSpacer object functions no longer return the delivered aecSpace in the list of copied spaces.
+* aecSpace and aecSpaceGroup function getProperties() returns a distionary of internal instance parameters.
+* aecSpace.getProperty() retrieves internal properties by name.
+* aecSpace.setProperty() directly sets instance properties, bypassing error checking (dangerous!).
+* aecErrorCheck and aecGeomCalc objects are now shared as single instances between multiple instances of other objects.
+* new aecErrorCheck.checkIndices() function aids in constructing acceptable list of integeer indices.
+* Function parameter error checking extensively enhanced -- they're not bulletproof, but they're less fragile.
+* Functions in source now entirely in alphabetical order by function name, rather than the former idiosyncratic organization.
+* Function and object documentation heavily corrected, revised, and enhanced.
+* Fixed a bug in aecSpacer.stack() that inaccurately placed aecSpaces when starting higher than level 0.
+* Eliminated redundant code in aecSpace.mirror() function in favor of code in aecGeomCalc.mirrorPoints2D()
+
+# 0.41 Version Notes 
 
 This version is a wide-ranging overhaul of the aecSpace object, adding numeric mesh representations, normalizing
 interactions across multiple functions, updating documentation, and cleaning up shared data issues.

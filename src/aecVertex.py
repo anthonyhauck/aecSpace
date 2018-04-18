@@ -16,6 +16,11 @@ class aecVertex:
     The XY plane is considered horizontal, the Z dimension vertical.
     """
     
+    # utility objects and data shared by all instances.
+
+    __aecErrorCheck = aecErrorCheck() # An instance of aecErrorCheck
+    __aecGeomCalc = aecGeomCalc()
+    
     def __init__(self, points, index, nrmPoint):
         """
         aecPoint Constructor
@@ -24,17 +29,11 @@ class aecVertex:
         if point coordinates are delivered, checks and uses them,
         otherwise sets the coordinates to the origin.
         """
-        self.__identifier = uuid.uuid4()
-        self.__aecErrorCheck = aecErrorCheck()
-        self.__aecGeomCalc = aecGeomCalc()
-        # __angleExterior is the angle in radians of the horizontal vectors 
-        # at the exterior point of the polygon from which the vertex is derived.
-        self.__angleExterior = None  
-        # __angleInterior is the angle in radians of the horizontal vectors 
-        # at the interior point of the polygon from which the vertex is derived.
-        self.__angleInterior = None
-        self.__normal = None # __normal is the normal vector of the vertex 
-        self.__point = None # __point contains the x,y,z coordinates as a 3 digit tuple
+        self.__ID = uuid.uuid4()                # A unique identifier        
+        self.__angleExterior = None             # Angle in radians at the exterior of the vertex 
+        self.__angleInterior = None             # Angle in radians at the interior of the vertex      
+        self.__normal = None                    # The normal vector of the vertex 
+        self.__point = None                     # The x,y,z coordinates as a 3 digit tuple
         self.setVertex(points, index, nrmPoint)
                  
     def getAngle(self, exterior = False, degrees = False):
@@ -42,6 +41,7 @@ class aecVertex:
         float getAngleInterior(bool, bool)
         Returns the value of the polygon's interior or exterior angle 
         at the vertex in radians by default or degrees if degrees = True.
+        Returns None on failure.
         """
         try:
             if exterior:
@@ -52,37 +52,44 @@ class aecVertex:
                 return angle * (180 / math.pi)
             return angle
         except:
-            traceback.print_exc() 
+            traceback.print_exc()
+            return None
     
     def getID(self):
         """
         string getID()
         Returns the UUID.
+        Returns None on failure.
         """
         try:           
             return str(self.__id)
         except:
             traceback.print_exc() 
+            return None
             
     def getNormal(self):
         """
         (3D vector) getNormal()
         Returns the point normal of the vertex.
+        Returns None on failure.        
         """
         try:           
             return self.__normal
         except:
-            traceback.print_exc()       
+            traceback.print_exc()
+            return None
     
     def getPoint(self):
         """
         (3D point) getCoordinates()
         Returns the coordinates of the vertex as a 3D point.
+        Returns None on failure.        
         """
         try:
             return self.__point
         except:
-            traceback.print_exc()        
+            traceback.print_exc()
+            return None
                
     def __setNormal(self, point, prvPoint, nxtPoint, nrmPoint):
         """
@@ -90,6 +97,8 @@ class aecVertex:
         bool __setNormal((3D point), (3D point), (3D point), (3D point))
         Sets a point normal calculated from the delivered list
         of points asserted to be adjacent on a 3D polyhedron.
+        Returns True on success.
+        Returns False on failure.        
         """
         try:
             point = numpy.array(point)
@@ -106,12 +115,15 @@ class aecVertex:
             self.__normal = tuple([1 if n > 0 else -1 if n < 0 else 0 for n in normal])
             return True
         except:
-            traceback.print_exc()    
+            traceback.print_exc() 
+            return False
  
     def setVertex(self, points, index, nrmPoint):
         """
         bool setVertex((3D point),], int, (3D point))
         Sets the vertex 3D point, angle, and point normal.
+        Returns True on success.
+        Returns False on failure.
         """
         try:
             points = list(map(self.__aecErrorCheck.checkPoint, points))
@@ -130,5 +142,6 @@ class aecVertex:
             return True
         except:
             traceback.print_exc() 
+            return False
 
 # end class

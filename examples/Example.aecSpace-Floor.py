@@ -45,6 +45,7 @@ import random
 from aecColors import aecColors
 from aecSpace import aecSpace
 from aecSpacer import aecSpacer
+from aecSpaceGroup import aecSpaceGroup
 from aecSpaceDrawOCC import aecSpaceDrawOCC
 
 # Create class instances.
@@ -52,6 +53,7 @@ from aecSpaceDrawOCC import aecSpaceDrawOCC
 colors = aecColors()
 space = aecSpace()
 spacer = aecSpacer()
+spaces = aecSpaceGroup()
 spaceDrawer = aecSpaceDrawOCC()
 
 # Create a rectangular aecSpace at the origin.
@@ -61,21 +63,18 @@ space.setHeight(5)
 
 # Create copies of the initial aecSpace and arrange them in a row.
 
-spaces = spacer.row(space, 3, 3)
+floors = spacer.row(space, 3, 3)
 
-# Set all the aecSpaces to the same transparency and a color.
-# TODO: make this variable without editing code.
+for room in floors:
+    floors = floors + spacer.stack(room, 5, 0)
+    
+for room in floors:
+    floors = floors + spacer.row(room, 3, 3, False)
 
-for room in spaces:   
-    spaces = spaces + spacer.column(room, 3, 3)
-    
-for room in spaces:
-    spaces = spaces + spacer.stack(room, 5, 0)
-    
-for room in spaces:
+for room in floors:
     room.setColor([random.randint(0, 255), random.randint(0, 255),random.randint(0, 255)])
+    if room.getColor01()[0] > 0.5:
+        room.mirror()
     
-for room in spaces:
-    room.mirror()
-     
+spaces.addSpaces(floors)   
 spaceDrawer.draw3D(spaces)

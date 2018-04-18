@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">aecSpace
-   &#160;<span id="projectnumber">0.4</span>
+   &#160;<span id="projectnumber">0.5</span>
    </div>
    <div id="projectbrief">Classes to create and manage representations of architectural space</div>
   </td>
@@ -107,8 +107,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9ee08d43b820c3ab000dafcd973a5b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abee308169cbc9f3ac589507a0cc3bc3c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_draw_o_c_c_1_1aec_space_draw_o_c_c.html#abee308169cbc9f3ac589507a0cc3bc3c">makeWire</a> (self, edges)</td></tr>
 <tr class="separator:abee308169cbc9f3ac589507a0cc3bc3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afda8f5a5cce29612784f04cda79da7d8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_draw_o_c_c_1_1aec_space_draw_o_c_c.html#afda8f5a5cce29612784f04cda79da7d8">draw3D</a> (self, spaces)</td></tr>
-<tr class="separator:afda8f5a5cce29612784f04cda79da7d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ec0f57486fca69ea2f4ca39bd7a708e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_draw_o_c_c_1_1aec_space_draw_o_c_c.html#a4ec0f57486fca69ea2f4ca39bd7a708e">draw3D</a> (self, spaces, update=False)</td></tr>
+<tr class="separator:a4ec0f57486fca69ea2f4ca39bd7a708e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac217c51bd4658d43a843fd46a8972482"></a>
@@ -132,8 +132,8 @@ Creates a new aecErrorCheck object.
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="afda8f5a5cce29612784f04cda79da7d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afda8f5a5cce29612784f04cda79da7d8">&#9670;&nbsp;</a></span>draw3D()</h2>
+<a id="a4ec0f57486fca69ea2f4ca39bd7a708e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ec0f57486fca69ea2f4ca39bd7a708e">&#9670;&nbsp;</a></span>draw3D()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -148,7 +148,13 @@ Creates a new aecErrorCheck object.
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>spaces</em>&#160;</td>
+          <td class="paramname"><em>spaces</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>update</em> = <code>False</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -157,8 +163,10 @@ Creates a new aecErrorCheck object.
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">draw3D(pythonOCC display, [aecSpace,])
-Accepts a list of aecSpaces and renders them to the pythonOCC display.
+<pre class="fragment">draw3D(aecSpaceGroup)
+Accepts an aecSpaceGroup object and renders its list of aecSpaces to the pythonOCC display.
+Returns True on success failure.
+Returns False on failure.
 </pre> 
 </div>
 </div>
@@ -187,8 +195,9 @@ Accepts a list of aecSpaces and renders them to the pythonOCC display.
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">[Topo_DS_Edge,] makeEdges([[[gp_Pnt, gp_Pnt], [gp_Pnt, gp_Pnt]],...])
+<pre class="fragment">[Topo_DS_Edge,] makeEdges([[gp_Pnt, gp_Pnt],])
 Returns a list of Topo_DS_Edges derived from a list of gp_Pnt pairs.
+Returns None on failure.
 </pre> 
 </div>
 </div>
@@ -217,8 +226,9 @@ Returns a list of Topo_DS_Edges derived from a list of gp_Pnt pairs.
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">[[[gp_Pnt, gp_Pnt], [gp_Pnt, gp_Pnt]],...] makePointPairs([gp_Pnt, gp_Pnt...])
+<pre class="fragment">[[gp_Pnt, gp_Pnt],] makePointPairs([gp_Pnt,])
 Returns a list of point pairs derived from a list of gp_Pnt points.
+Returns None on failure.
 </pre> 
 </div>
 </div>
@@ -250,6 +260,7 @@ Returns a list of point pairs derived from a list of gp_Pnt points.
 <pre class="fragment">[gp_Pnt,] makePoints(aecSpace)
 Returns a list of gp_Pnts compatible with pythonOCC
 derived from the delivered aecSpace object.
+Returns None on failure.
 </pre> 
 </div>
 </div>
@@ -281,6 +292,7 @@ derived from the delivered aecSpace object.
 <pre class="fragment">Topo_DS_Wire makeWire([Topo_DS_Edge, Topo_DS_Edge,...])
 Returns a pythonOCC Wire object constructed
 from the delivered list of Topo_DS_Edges.
+Returns None on failure.
 </pre> 
 </div>
 </div>
