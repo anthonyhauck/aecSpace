@@ -31,7 +31,7 @@ Make sure your IDE can find the folder where you've stored these *.py files.
 All the code outside of any aecSpaceExample-*.py file has been encapsulated 
 as discrete objects.
 
-Please leave questions and comments at the github repo where you found this.
+Please leave questions and comments at the github repo where you found this example.
 
 Have fun!
 Anthony Hauck | Black Arts Consulting
@@ -43,7 +43,7 @@ import random
 from aecColors import aecColors
 from aecSpace import aecSpace
 from aecSpacer import aecSpacer
-from aecShaper import aecShaper
+from aecSpaceGroup import aecSpaceGroup
 from aecSpaceDrawOCC import aecSpaceDrawOCC
 
 def aecSpaceRandomTower():
@@ -54,7 +54,6 @@ def aecSpaceRandomTower():
     def randomFloor(point):
         try:
             floor = aecSpace()
-            shaper = aecShaper()
             floorSizeX = random.randint(60, 100)
             floorSizeY = random.randint(60, 100)
             floorHeight = random.randint(8, 10)
@@ -65,7 +64,6 @@ def aecSpaceRandomTower():
             yOffset = random.randint(10, 90)
             if floorType == 1:
                 floor.makeBox(point, (floorSizeX, floorSizeY, 0))
-    
                 floor.rotate(random.randint(0, 360))
                 x = 0
                 boundaries = random.randint(1, 5)
@@ -86,17 +84,15 @@ def aecSpaceRandomTower():
                                    point[1] + (floorSizeY * 0.5), 0),
                                    (floorSizeX * 0.5), floorType)
             if floorType == 9:
-                floor = shaper.makeCross(point, (floorSizeX, floorSizeY, floorHeight),
-                                                 xWidth = width, yDepth = depth,
-                                                 xAxis = xOffset, yAxis = yOffset)                                             
+                floor.makeCross(point, (floorSizeX, floorSizeY, floorHeight),
+                                        xWidth = width, yDepth = depth,
+                                        xAxis = xOffset, yAxis = yOffset)                                             
             if floorType == 10:
-                floor = shaper.makeH(point, (floorSizeX, floorSizeY, floorHeight),
-                                             xWidth1 = width, xWidth2 = depth, 
-                                             yDepth = depth)
+                floor.makeH(point, (floorSizeX, floorSizeY, floorHeight),
+                                    xWidth1 = width, xWidth2 = depth, yDepth = depth)
             if floorType == 11:
-                floor = shaper.makeU(point, (floorSizeX, floorSizeY, floorHeight),
-                                             xWidth1 = width, xWidth2 = depth, 
-                                             yDepth = depth)
+                floor.makeU(point, (floorSizeX, floorSizeY, floorHeight),
+                                    xWidth1 = width, xWidth2 = depth, yDepth = depth)
                 
             floor.rotate(random.randint(0, 360))
             floor.setHeight(floorHeight)
@@ -106,12 +102,12 @@ def aecSpaceRandomTower():
           
     def makeTower(point):
         spacer = aecSpacer()
-        levels = random.randint(5, 50)
+        levels = random.randint(5, 70)
         floor = randomFloor(point)
-        if floor == False:
+        if not floor:
             return
         height = floor.getHeight()
-        tower = spacer.stack(floor, levels)
+        floors = [floor] + spacer.stack(floor, levels - 1)
         hasPlinth = random.randint(1, 3)
         if hasPlinth == 1:
             hasPlinth = True
@@ -122,22 +118,18 @@ def aecSpaceRandomTower():
             plinth.setHeight(plinthHeight)        
             pScale = random.randint(20, 25) * 0.1
             plinth.scale((pScale, pScale, 1))
-            tower = tower[plinthLevels:]
-            tower = [plinth] + tower  
-        colors = [aecColors.blue, aecColors.green]
-        function = random.randint(0, 1)
-        for floor in tower:
-            floor.setColor(colors[function])        
-        rotation = random.randint(0, 360)
-        for floor in tower:
-            floor.rotate(rotation)
+            floors = floors[plinthLevels:]
+            floors = [plinth] + floors
+        colors = [aecColors.blue, aecColors.green, aecColors.purple]
+        function = random.randint(0, 2)
+        tower = aecSpaceGroup()
+        tower.addSpaces(floors)
+        tower.setColor(colors[function])
+        tower.rotate(random.randint(0, 360))
         if levels >= 10:
-           rotation = random.randint(0, 20)
-           for floor in tower[10:]:
-               floor.scale((0.8, 0.8, 1))
+            tower.scale((0.8, 0.8, 1), indices = list(range(10, levels)))
         if levels >= 30:
-           for floor in tower[30:]:
-               floor.scale((0.8, 0.8, 1))
+           tower.scale((0.8, 0.8, 1), indices = list(range(30, levels)))
         return tower
         
     return makeTower((0, 0, 0))
