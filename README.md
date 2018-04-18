@@ -98,7 +98,7 @@ anthony@blackarts.co
 
 # Performance Limitations
 
-Some of the examples might require up to 3 seconds to run.
+Some of the examples might require up to a minute to run.
 
 # Contact
 
