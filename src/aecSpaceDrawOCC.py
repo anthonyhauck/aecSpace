@@ -15,22 +15,28 @@ from OCC.BRepPrimAPI import BRepPrimAPI_MakePrism
 from aecErrorCheck import aecErrorCheck
 
 """
-aecSpaceDraw accepts lists of aecSpaces to render in pythonOCC.
+aecSpaceDraw accepts lists of aecSpaces or an
+aecSpaceGroup instance to render in pythonOCC.
 """
 
 class aecSpaceDrawOCC:
+ 
+    # utility objects and data shared by all instances of aecSpaceDrawOCC   
+    
+    __aecErrorCheck = aecErrorCheck()   # An instance of aecErrorCheck.
     
     def __init__(self):
         """
         aecSpaceDrawOCC Constructor
         Creates a new aecErrorCheck object.
         """
-        self.__aecErrorCheck = aecErrorCheck()
+        pass
 
     def makeEdges(self, pointPairs):
         """
-        [Topo_DS_Edge,] makeEdges([[[gp_Pnt, gp_Pnt], [gp_Pnt, gp_Pnt]],...])
+        [Topo_DS_Edge,] makeEdges([[gp_Pnt, gp_Pnt],])
         Returns a list of Topo_DS_Edges derived from a list of gp_Pnt pairs.
+        Returns None on failure.
         """
         try:
             edges = []
@@ -38,13 +44,15 @@ class aecSpaceDrawOCC:
                 newEdge = BRepBuilderAPI_MakeEdge(pair[0], pair[1])
                 edges.append(newEdge.Edge())
             return edges
-        except:
+        except Exception:
             traceback.print_exc()
+            return None
     
     def makePointPairs(self, points):
         """
-        [[[gp_Pnt, gp_Pnt], [gp_Pnt, gp_Pnt]],...] makePointPairs([gp_Pnt, gp_Pnt...])
+        [[gp_Pnt, gp_Pnt],] makePointPairs([gp_Pnt,])
         Returns a list of point pairs derived from a list of gp_Pnt points.
+        Returns None on failure.
         """
         try:
             listLength = len(points)
@@ -57,25 +65,33 @@ class aecSpaceDrawOCC:
                     pointPairs.append([points[x], points[0]])
                 x += 1
             return pointPairs
-        except:
+        except Exception:
             traceback.print_exc()
+            return None
     
     def makePoints(self, space):
         """
         [gp_Pnt,] makePoints(aecSpace)
         Returns a list of gp_Pnts compatible with pythonOCC
         derived from the delivered aecSpace object.
+        Returns None on failure.
         """
         try:
-            return list(map (lambda pnt: gp_Pnt(pnt[0], pnt[1], pnt[2]), space.getPointsFloor()))
-        except:
+            if space.getType() != 'aecSpace': return None
+            points = space.getPointsFloor()
+            if not points:
+                return None
+            return list(map (lambda pnt: gp_Pnt(pnt[0], pnt[1], pnt[2]), points))
+        except Exception:
             traceback.print_exc()
+            return None
     
     def makeWire(self, edges):
         """
         Topo_DS_Wire makeWire([Topo_DS_Edge, Topo_DS_Edge,...])
         Returns a pythonOCC Wire object constructed
         from the delivered list of Topo_DS_Edges.
+        Returns None on failure.
         """
         try:
             wire = BRepBuilderAPI_MakeWire(edges[0])
@@ -83,39 +99,54 @@ class aecSpaceDrawOCC:
             for edge in edges:
                 wire.Add(edge)
             return wire
-        except:
+        except Exception:
             traceback.print_exc()
+            return None
     
-    def draw3D(self, spaces):
+    def draw3D(self, spaces, update = False):
         """
-        draw3D(pythonOCC display, [aecSpace,])
-        Accepts a list of aecSpaces and renders them to the pythonOCC display.
+        draw3D(aecSpaceGroup)
+        Accepts an aecSpaceGroup object and renders its list of aecSpaces to the pythonOCC display.
+        Returns True on success failure.
+        Returns False on failure.
         """
         try:
-            display, start_display, add_menu, add_function_to_menu = init_display()
+            if type(spaces) != list:
+                spaces = spaces.getSpaces()
+            if not spaces: return False
+            __display, __start_display, __add_menu, __add_function_to_menu = init_display()            
             for space in spaces:
+                if space.getType() != 'aecSpace': continue
                 points = self.makePoints(space)
+                if not points: continue
                 pointPairs = self.makePointPairs(points)
+                if not pointPairs: continue
                 edges = self.makeEdges(pointPairs)
+                if not edges: continue
                 wire = self.makeWire(edges)
+                if not wire: continue
                 face = BRepBuilderAPI_MakeFace(wire.Wire())
+                if not face: continue
                 vector = gp_Vec(0, 0, space.getHeight())
                 spaceVolume = BRepPrimAPI_MakePrism(face.Face(), vector).Shape()
+                if not spaceVolume: continue
                 displayColor = space.getColor01()
                 spaceColor = OCC.Quantity.Quantity_Color_Name(
                     displayColor[0],
                     displayColor[1],
                     displayColor[2])
-                display.DisplayShape(
+                __display.DisplayShape(
                         spaceVolume, 
                         color = spaceColor,
                         transparency = space.getTransparency(),
-                        update = False)
-            display.FitAll()
-            start_display()
+                        update = update)
+            __display.FitAll()
+            __start_display()
+            __display = None
             return True
-        except:
+        except Exception:
             traceback.print_exc()
+            return False
 
 # end class
 
