@@ -158,7 +158,7 @@ def aecSpaceRandomTowers():
             point = (point[0], point[1] + displacement, point[2])
             x += 1
         return towerRows      
-    return makeTowerRows(origin, displace, 7, 7)
+    return makeTowerRows(origin, displace, 5, 5)
 
 # end aecSpaceERandomTowers
 

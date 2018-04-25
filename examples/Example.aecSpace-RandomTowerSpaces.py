@@ -65,7 +65,7 @@ def aecSpaceRandomTowers():
         depth = yDepth * 0.5
         half1 = aecSpace()  
         half1.makeBox(point, (xWidth, depth, zHeight))
-        halfSpaces = spacer.column(half1)
+        halfSpaces = [half1] + spacer.row(half1, xAxis = False)
         setColors(halfSpaces)
         return halfSpaces
     
@@ -73,7 +73,7 @@ def aecSpaceRandomTowers():
         width = xWidth * 0.5
         half1 = aecSpace()  
         half1.makeBox(point, (width, yDepth, zHeight))
-        halfSpaces = spacer.row(half1)
+        halfSpaces = [half1] + spacer.row(half1)
         setColors(halfSpaces)
         return halfSpaces
     
@@ -86,7 +86,7 @@ def aecSpaceRandomTowers():
             scale = 0.333333333       
         half1 = aecSpace()  
         half1.makeBox(point, (xWidth, depth, zHeight))
-        halfSpaces = spacer.column(half1)
+        halfSpaces = [half1] + spacer.row(half1, xAxis = False)
         halfSpaces[1].scale([1, scale, 1], halfSpaces[1].getOrigin())
         setColors(halfSpaces)
         return halfSpaces
@@ -100,7 +100,7 @@ def aecSpaceRandomTowers():
             scale = 0.333333333       
         half1 = aecSpace()  
         half1.makeBox(point, (width, yDepth, zHeight))
-        halfSpaces = spacer.row(half1)
+        halfSpaces = [half1] + spacer.row(half1)
         halfSpaces[1].scale([scale, 1, 1], halfSpaces[1].getOrigin())
         setColors(halfSpaces)
         return halfSpaces
