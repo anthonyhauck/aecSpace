@@ -3,14 +3,20 @@ Python classes useful for creating and editing volumes indicating building space
 
 # 0.51 Version Notes
 
-* New aecSpaceGrid object provides some functionality for creating and manipulating voxel grids. Functions as is, but is incomplete.
+* New aecSpaceGrid object provides some functionality for creating and manipulating voxel grids. More functionality in progress.
+* Added Example.aecSpace-SpaceGrid to demonstrate some of the current functionality.
+* New function aecErrorCheck.checkAddress() for checking the formation of voxel addresses.
+* New function aecSpaceGroup.getIndices() returns a list of valid indices into the group.
+* Added further error checking against aecSpace.move() inputs.
+* Added getType() function to objects to return a constant string identifying the object type.
+* Added Example.aecSpace-RandomLandDevelopment.py to demonstrate new aecSpaceGroup functionality in version 0.5   
 * Fixed a bug in aecSpace and aecSpacer objects that prevented re-initialization of some instance variables.
-* Added Example.aecSpace-RandomLandDevelopment to demonstrate new functionality added in version 0.5
+* Corrected a number of documentation errors.
 
 # 0.5 Version Notes
 
 * New aecSpaceGroup object provides multiple functions for querying and changing multiple aecSpace instances at once.
-* New fucnction aecSpace.fitWithin() trims aecSpace boundary to the limits of another larger boundary.
+* New function aecSpace.fitWithin() trims aecSpace boundary to the limits of another larger boundary.
 * New function aecErrorCheck.checkIndices() aids in constructing acceptable list of integeer indices.
 * New function aecSpacer.stackToArea() stacks aecSpaces until the aggregate area meets or exceeds the area argument.
 * New function aecGeomCalc.containsPoint() returns boolean test result of a point within a boundary.
