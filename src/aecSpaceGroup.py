@@ -20,20 +20,21 @@ class aecSpaceGroup:
         'spaces'
     )
     
-    # utility objects shared by all instances of aecSpaceGroup
+    # utility objects shared by all instances.
     
     __aecErrorCheck = aecErrorCheck()   # An instance of aecErrorCheck.
-    __aecGeomCalc = aecGeomCalc()       # An instance of aecGeometryCalc    
+    __aecGeomCalc = aecGeomCalc()       # An instance of aecGeometryCalc
+    __type = 'aecSpaceGroup'            # Type identifier of object instances    
    
     def __init__(self):
         """
         INTERNAL
-        aecSpaceGroup Constructor
+        Constructor
         Creates the dictionary of all internal keys and values.
         Sets the ID to a new UUID.
         """
         
-        # __properties is a dictionary of all aecSpaceGroup variables
+        # __properties is a dictionary of all internal variables
         
         self.__properties = \
         {
@@ -42,9 +43,10 @@ class aecSpaceGroup:
 
             'ID' : None,      # A UUID
             'name' : "",      # A custom string designation.
+            'grid' : [],
             'spaces' : [],    # List of the aecSpace instances managed by this instance.            
 
-            # The following properties are reset by __invalidate()
+            # The following properties are reset by __invitialize()
 
             'area' : None,    # Aggregate area of all aecSpaces
             'volume' : None,  # Aggregate volume of all aecSpaces
@@ -60,7 +62,7 @@ class aecSpaceGroup:
         Resets specific internal variables to NONE
         to ensure on-demand recompute.
         """
-        for key in self.__properties:
+        for key in self.__properties.keys():
             if not key in self.__retain:
                 self.__properties[key] = None
     
@@ -167,6 +169,18 @@ class aecSpaceGroup:
             traceback.print_exc()
             return None        
     
+    def getIndices(self):
+        """
+        (int,) getIndices()
+        Returns a list of all indices.
+        Returns None on failure.
+        """
+        try:
+            return list(range(0, len(self.getSpaces())))
+        except Exception:
+            traceback.print_exc()
+            return None              
+
     def getProperties(self):
         """
         dictionary getProperties()
@@ -194,6 +208,18 @@ class aecSpaceGroup:
             traceback.print_exc()
             return None 
 
+    def getType(self):
+        """
+        string getType()
+        Returns the constant 'aecSpace' to identify the object type.
+        Returns None on failure.
+        """
+        try:
+            return self.__type
+        except Exception:
+            traceback.print_exc()
+            return None
+
     def getVolume(self):
         """
         float getVolume()
@@ -213,22 +239,26 @@ class aecSpaceGroup:
 
     def move(self, moveBy = (1, 1, 1), indices = None):
         """
-        bool scale (3D vector), (int,])
+        (int,) scale ((3D vector), (int,))
         Moves each aecSpace listed by index in indices by the delivered vector.
         Affects all aecSpaces if no indices are delivered.
-        Returns True on success.
-        Returns False if the spaces list is empty or on other failure.
+        Returns a list of indices of all spaces successfully moved.
         """
         try:
+            moveBy = self.__aecErrorCheck.checkPoint(moveBy)
+            if not moveBy: return False
+            if not indices: indices = self.getIndices()
+            if not indices: return False
             spaces = self.getSpaces()
             if len(spaces) == 0: return False
             indices = self.__aecErrorCheck.checkIndices(indices, len(spaces))
-            for index in indices:
-                spaces[index].move(moveBy)
-            return True
+            results = []
+            for index in indices: 
+                if spaces[index].move(moveBy): results.append(index)
+            return results
         except Exception:
             traceback.print_exc()
-            return False
+            return results
 
     def rotate(self, angle = 180, pivot = None, indices = None):
         """
@@ -241,6 +271,7 @@ class aecSpaceGroup:
         Returns True on success.
         Returns False if the spaces list is empty or on other failure.
         """
+        # TODO: harden like move
         try:
             spaces = self.getSpaces()
             if len(spaces) == 0: return False
@@ -263,6 +294,7 @@ class aecSpaceGroup:
         Returns False if the spaces list is empty or on other failure.
         """
         try:
+            # TODO: harden like move
             spaces = self.getSpaces()
             if len(spaces) == 0: return False
             indices = self.__aecErrorCheck.checkIndices(indices, len(spaces))
@@ -275,7 +307,7 @@ class aecSpaceGroup:
     
     def setColor(self, newColor = None, indices = None):
         """
-        bool setColor (int range 0 - 255, int range 0 - 255, int range 0 - 255)
+        bool setColor ((int range 0 - 255, int range 0 - 255, int range 0 - 255), (int,))
         Sets the color[R G B] values of each aecSpace listed by index in indices
         or without argument randomizes the color.
         Affects all aecSpaces if no indices are delivered.        
@@ -283,6 +315,7 @@ class aecSpaceGroup:
         Returns False if the spaces list is empty or on other failure.
         """
         try:
+            # TODO: harden like move
             spaces = self.getSpaces()
             if len(spaces) == 0: return False
             indices = self.__aecErrorCheck.checkIndices(indices, len(spaces))
@@ -302,6 +335,7 @@ class aecSpaceGroup:
         Returns False if the spaces list is empty or on other failure.
         """
         try:
+            # TODO: harden like move           
             spaces = self.getSpaces()
             if len(spaces) == 0: return False
             indices = self.__aecErrorCheck.checkIndices(indices, len(spaces))
@@ -321,6 +355,7 @@ class aecSpaceGroup:
         Returns False if the spaces list is empty or on other failure.       
         """
         try:
+            # TODO: harden like move
             spaces = self.getSpaces()
             if len(spaces) == 0: return False            
             indices = self.__aecErrorCheck.checkIndices(indices, len(spaces))
@@ -354,6 +389,7 @@ class aecSpaceGroup:
         Returns False if the spaces list is empty or on other failure.        
         """
         try:
+            # TODO: harden like move
             spaces = self.getSpaces()
             if len(spaces) == 0: return False
             indices = self.__aecErrorCheck.checkIndices(indices, len(spaces))
@@ -375,6 +411,7 @@ class aecSpaceGroup:
         Returns False if the spaces list is empty or on other failure.       
         """
         try:
+            # TODO: harden like move            
             spaces = self.getSpaces()
             if len(spaces) == 0: return False
             indices = self.__aecErrorCheck.checkIndices(indices, len(spaces))

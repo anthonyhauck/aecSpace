@@ -1,3 +1,5 @@
+import traceback
+
 """
 aecColors instantiates a set of color constants in the form of RGB tuples.
 """
@@ -17,12 +19,27 @@ class aecColors:
     white = (255, 255, 255)
     yellow = (255, 239, 17)
     
+    __type = 'aecColors' # Type identifier of object instances
+    
     def __init__(self):
         """
         aecColors Constructor
         Passes for now, no setup required.
         """
         pass
+
+    def getType(self):
+        """
+        string getType()
+        Returns the constant 'aecSpace' to identify the object type.
+        Returns None on failure.
+        """
+        try:
+            return self.__type
+        except Exception:
+            traceback.print_exc()
+            return None    
+    
     
 # end class
     

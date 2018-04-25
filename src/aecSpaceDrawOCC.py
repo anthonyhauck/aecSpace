@@ -24,6 +24,7 @@ class aecSpaceDrawOCC:
     # utility objects and data shared by all instances of aecSpaceDrawOCC   
     
     __aecErrorCheck = aecErrorCheck()   # An instance of aecErrorCheck.
+    __type = 'aecSpaceDrawOCC'          # Type identifier of object instances    
     
     def __init__(self):
         """
@@ -31,6 +32,18 @@ class aecSpaceDrawOCC:
         Creates a new aecErrorCheck object.
         """
         pass
+
+    def getType(self):
+        """
+        string getType()
+        Returns the constant 'aecSpace' to identify the object type.
+        Returns None on failure.
+        """
+        try:
+            return self.__type
+        except Exception:
+            traceback.print_exc()
+            return None
 
     def makeEdges(self, pointPairs):
         """
@@ -103,7 +116,7 @@ class aecSpaceDrawOCC:
             traceback.print_exc()
             return None
     
-    def draw3D(self, spaces, update = False):
+    def draw3D(self, spaces, displaySize = (1024, 768), update = False):
         """
         draw3D(aecSpaceGroup)
         Accepts an aecSpaceGroup object and renders its list of aecSpaces to the pythonOCC display.
@@ -114,7 +127,7 @@ class aecSpaceDrawOCC:
             if type(spaces) != list:
                 spaces = spaces.getSpaces()
             if not spaces: return False
-            __display, __start_display, __add_menu, __add_function_to_menu = init_display()            
+            __display, __start_display, __add_menu, __add_function_to_menu = init_display(size = displaySize)            
             for space in spaces:
                 if space.getType() != 'aecSpace': continue
                 points = self.makePoints(space)

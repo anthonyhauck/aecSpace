@@ -49,6 +49,7 @@ class aecSpace:
 
     __retain = \
     (
+        'address',   
         'colorR',
         'colorG',
         'colorB',
@@ -59,7 +60,7 @@ class aecSpace:
         'transparency'
     )
     
-    # utility objects and data shared by all instances of aecSpace
+    # utility objects and data shared by all instances.
     
     __aecErrorCheck = aecErrorCheck()   # An instance of aecErrorCheck.
     __aecGeomCalc = aecGeomCalc()       # An instance of aecGeometryCalc
@@ -82,16 +83,17 @@ class aecSpace:
         {
             # The following property values are preserved through a call to __initialize
 
+            'address' : None,          # An arbitrary designation for the space location
             'colorR' : 0,              # Red component of the RGB color
             'colorG' : 0,              # Green component of the RGB color
             'colorB' : 0,              # Blue component of the RGB color
             'height' : 0,              # Height of the ceiling above the floor at level.
             'ID' : None,               # A UUID
             'level' : 0,               # The position of the floor above the zero plane.
-            'name' : "",             # A custom string designation.
+            'name' : "",               # A custom string designation.
             'transparency' : 0,        # Percentage of transparency for rendering from 0 to 1
 
-            # The following properties are reset by __invalidate()
+            # The following properties are reset by __initialize()
 
             'area' : None,             # Floor area
             'boundaryShape' : None,    # A 2D Shapely polygon of the floor
@@ -140,7 +142,7 @@ class aecSpace:
         Resets specific internal variables to NONE to ensure
         on-demand recompute if the space boundary changes.
         """
-        for key in self.__properties:
+        for key in self.__properties.keys():
             if not key in self.__retain:
                 self.__properties[key] = None
 
@@ -244,6 +246,18 @@ class aecSpace:
             traceback.print_exc()
             return None            
     
+    def getAddress(self):
+        """
+        value getAddress()
+        Returns the custom address designation.
+        Returns None on failure.
+        """
+        try:
+            return self.__properties['address']
+        except Exception:
+            traceback.print_exc()
+            return None
+
     def getAngles(self, degrees = False):
         """
         [[(3D point), interior angle float, exterior angle float],] getAngles(bool)
@@ -979,7 +993,7 @@ class aecSpace:
     def getProperties(self):
         """
         dictionary getProperties()
-        Retrieves the properties dictionary of all internal values of the space.
+        Retrieves the properties dictionary of all internal values.
         Intended for use by other components of the aecSpace toolkit.
         Returns None on failure.
         """
@@ -1450,6 +1464,20 @@ class aecSpace:
             if type(boundary) != shapely.polygon.Polygon: return False
             if not self.setBoundary(list(boundary.exterior.coords[:-1])): return False
             self.__properties['height'] *= scaleBy[2]
+            return True
+        except Exception:
+            traceback.print_exc()
+            return False
+
+    def setAddress(self, address = ""):
+        """
+        bool setAddress(string)
+        Sets the address value.
+        Returns True if successful.
+        Returns False on failure.
+        """
+        try:
+            self.__properties['address'] = address
             return True
         except Exception:
             traceback.print_exc()
