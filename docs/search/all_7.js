@@ -2,6 +2,7 @@ var searchData=
 [
   ['makebox',['makeBox',['../classaec_space_1_1aec_space.html#ae580aa3302368c41efb30547f74fbdad',1,'aecSpace::aecSpace']]],
   ['makeboxes',['makeBoxes',['../classaec_space_1_1aec_space.html#a7079d686abaa8fc04e9e2e936ea6f508',1,'aecSpace::aecSpace']]],
+  ['makecells',['makeCells',['../classaec_space_grid_1_1aec_space_grid.html#a3211028f43a2e9b5fe3ff9f4d48d5bca',1,'aecSpaceGrid::aecSpaceGrid']]],
   ['makecross',['makeCross',['../classaec_space_1_1aec_space.html#a86f4846f339e6ebed70b1c876bf018ac',1,'aecSpace::aecSpace']]],
   ['makecylinder',['makeCylinder',['../classaec_space_1_1aec_space.html#a0907b58474e672b7cb94d7906daf5472',1,'aecSpace::aecSpace']]],
   ['makeedges',['makeEdges',['../classaec_space_draw_o_c_c_1_1aec_space_draw_o_c_c.html#a23d3c664cdf60951ec7e4d778e485d3e',1,'aecSpaceDrawOCC::aecSpaceDrawOCC']]],

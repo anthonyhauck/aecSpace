@@ -2,7 +2,7 @@ var indexSectionsWithContent =
 {
   0: "_acdefgmprsw",
   1: "a",
-  2: "ae",
+  2: "e",
   3: "_acdefgmprsw"
 };
 
