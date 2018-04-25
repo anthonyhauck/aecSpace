@@ -1,6 +1,11 @@
 # aecSpace 0.5 | 2018.04.18
 Python classes useful for creating and editing volumes indicating building spaces.
 
+# 0.51 Version Notes
+
+* New aecSpaceGrid object provides some functionality for creating and manipulating voxel grids. Functions as is, but is incomplete.
+* Fixed a bug in aecSpace and aecSpacer objects that prevented re-initialization of some instance variables.
+
 # 0.5 Version Notes
 
 * New aecSpaceGroup object provides multiple functions for querying and changing multiple aecSpace instances at once.
