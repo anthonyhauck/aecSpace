@@ -5,6 +5,7 @@ Python classes useful for creating and editing volumes indicating building space
 
 * New aecSpaceGrid object provides some functionality for creating and manipulating voxel grids. Functions as is, but is incomplete.
 * Fixed a bug in aecSpace and aecSpacer objects that prevented re-initialization of some instance variables.
+* Added Example.aecSpace-RandomLandDevelopment to demonstrate new functionality added in version 0.5
 
 # 0.5 Version Notes
 
