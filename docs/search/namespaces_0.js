@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['aeccolors',['aecColors',['../namespaceaec_colors.html',1,'']]]
+  ['example',['Example',['../namespace_example.html',1,'']]]
 ];

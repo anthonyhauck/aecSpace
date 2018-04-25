@@ -19,8 +19,9 @@ class aecVertex:
     # utility objects and data shared by all instances.
 
     __aecErrorCheck = aecErrorCheck() # An instance of aecErrorCheck
-    __aecGeomCalc = aecGeomCalc()
-    
+    __aecGeomCalc = aecGeomCalc()     # An instance of aecGeomCalc
+    __type = 'aecVertex'              # Type identifier of object instances
+        
     def __init__(self, points, index, nrmPoint):
         """
         aecPoint Constructor
@@ -88,6 +89,18 @@ class aecVertex:
         try:
             return self.__point
         except:
+            traceback.print_exc()
+            return None
+
+    def getType(self):
+        """
+        string getType()
+        Returns a string constant to identify the object type.
+        Returns None on failure.
+        """
+        try:
+            return self.__type
+        except Exception:
             traceback.print_exc()
             return None
                

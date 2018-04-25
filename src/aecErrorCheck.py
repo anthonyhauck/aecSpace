@@ -6,12 +6,40 @@ class aecErrorCheck:
     aecErrorCheck contains data validating functions.
     """
     
+    __type = 'aecErrorCheck' # Type identifier of object instances
+    
     def __init__(self):
         """
         aecErrorCheck Constructor
         """
         pass
 
+    def checkAddress(self, address = (0, 0, 0), bounds = None):
+        """
+        (int, int, int) checkAddress((int, int, int), (int, int, int))
+        Attempts to return a plausible 3 digit address for an item
+        with a 3-dimensional matrix. 
+        If bounds are supplied as a tuple or list of 3 integers comparisons
+        to the corresponding address coordinate are made to ensure the
+        address is within or equal to the asserted bounds.
+        Returns None on failure.
+        """
+        try:
+            if type(address) != list and type(address) != tuple: return None
+            if len(address) < 3: return None 
+            address = ([abs(int(x)) for x in list(address)[:3]])
+            if not bounds: return tuple(address)
+            if type(bounds) != list and type(bounds) != tuple: return None
+            if len(bounds) < 3: return None 
+            bounds = ([abs(int(x)) for x in list(bounds)[:3]])
+            if address[0] > bounds[0]: address[0] = bounds[0]
+            if address[1] > bounds[1]: address[1] = bounds[1]
+            if address[2] > bounds[2]: address[2] = bounds[2]
+            return tuple(address)
+        except:
+            traceback.print_exc()
+            return None        
+    
     def checkIndices(self, indices = None, limit = None):
         """
         [int,] checkIndices([number,])
@@ -21,12 +49,9 @@ class aecErrorCheck:
         Returns None on failure.
         """
         try:
-            if not indices and not limit:
-                return []
-            if not indices and limit:
-                return list(range(0, limit))
-            if type(indices) != list:
-                indices = [indices]
+            if not indices and not limit: return []
+            if not indices and limit: return list(range(0, limit))
+            if type(indices) != list: indices = [indices]
             if len(indices) == 0: return None
             indices = [int(index) for index in indices]
             indices.sort()          
@@ -77,5 +102,17 @@ class aecErrorCheck:
         except:
             traceback.print_exc()
             return None
+
+    def getType(self):
+        """
+        string getType()
+        Returns a string constant to identify the object type.
+        Returns None on failure.
+        """
+        try:
+            return self.__type
+        except Exception:
+            traceback.print_exc()
+            return None           
     
 # end class    

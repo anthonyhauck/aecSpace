@@ -226,4 +226,4 @@ def makeTower():
 
 spaces = makeTower()
 spaceDrawer = aecSpaceDrawOCC()
-spaceDrawer.draw3D(spaces)
+spaceDrawer.draw3D(spaces, displaySize = (1900, 975))

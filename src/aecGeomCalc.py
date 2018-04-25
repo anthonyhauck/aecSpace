@@ -10,13 +10,12 @@ from sympy import Point, Polygon
 
 from aecErrorCheck import aecErrorCheck
 
-
-
 class aecGeomCalc:
     
-    # utility objects and data shared by all instances of aecGeomCalc
+    # utility objects and data shared by all instances.
 
-    __aecErrorCheck = aecErrorCheck() # An instance of aecErrorCheck    
+    __aecErrorCheck = aecErrorCheck() # An instance of aecErrorCheck  
+    __type = 'aecGeomCalc'            # Type identifier of object instances    
     
     def __init__(self):
         """
@@ -278,7 +277,19 @@ class aecGeomCalc:
         except Exception:
             traceback.print_exc()
             return None
-    
+
+    def getType(self):
+        """
+        string getType()
+        Returns a string constant to identify the object type.
+        Returns None on failure.
+        """
+        try:
+            return self.__type
+        except Exception:
+            traceback.print_exc()
+            return None
+   
     def mirrorPoints2D (self, points, mPoints = [(0, 0), (0, 1)]):
         """
         [(2D point),] mirrorPoints2D([(2D point),], [(2D point), (2D point)])

@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">aecSpace
-   &#160;<span id="projectnumber">0.5</span>
+   &#160;<span id="projectnumber">0.51</span>
    </div>
    <div id="projectbrief">Classes to create and manage representations of architectural space</div>
   </td>
@@ -99,6 +99,8 @@ $(document).ready(function(){initNavTree('classaec_space_draw_o_c_c_1_1aec_space
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac217c51bd4658d43a843fd46a8972482"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_draw_o_c_c_1_1aec_space_draw_o_c_c.html#ac217c51bd4658d43a843fd46a8972482">__init__</a> (self)</td></tr>
 <tr class="separator:ac217c51bd4658d43a843fd46a8972482"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdbff09338ff36d7b025052554a71072"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_draw_o_c_c_1_1aec_space_draw_o_c_c.html#acdbff09338ff36d7b025052554a71072">getType</a> (self)</td></tr>
+<tr class="separator:acdbff09338ff36d7b025052554a71072"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23d3c664cdf60951ec7e4d778e485d3e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_draw_o_c_c_1_1aec_space_draw_o_c_c.html#a23d3c664cdf60951ec7e4d778e485d3e">makeEdges</a> (self, pointPairs)</td></tr>
 <tr class="separator:a23d3c664cdf60951ec7e4d778e485d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a17e8cfc1bc4824c89914cb2bd9d125e0"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_draw_o_c_c_1_1aec_space_draw_o_c_c.html#a17e8cfc1bc4824c89914cb2bd9d125e0">makePointPairs</a> (self, points)</td></tr>
@@ -107,8 +109,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9ee08d43b820c3ab000dafcd973a5b49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abee308169cbc9f3ac589507a0cc3bc3c"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_draw_o_c_c_1_1aec_space_draw_o_c_c.html#abee308169cbc9f3ac589507a0cc3bc3c">makeWire</a> (self, edges)</td></tr>
 <tr class="separator:abee308169cbc9f3ac589507a0cc3bc3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ec0f57486fca69ea2f4ca39bd7a708e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_draw_o_c_c_1_1aec_space_draw_o_c_c.html#a4ec0f57486fca69ea2f4ca39bd7a708e">draw3D</a> (self, spaces, update=False)</td></tr>
-<tr class="separator:a4ec0f57486fca69ea2f4ca39bd7a708e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a7aed21ae9a88cafaaaac002fa92e3d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_draw_o_c_c_1_1aec_space_draw_o_c_c.html#a4a7aed21ae9a88cafaaaac002fa92e3d">draw3D</a> (self, spaces, displaySize=(1024, 768), update=False)</td></tr>
+<tr class="separator:a4a7aed21ae9a88cafaaaac002fa92e3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ac217c51bd4658d43a843fd46a8972482"></a>
@@ -132,8 +134,8 @@ Creates a new aecErrorCheck object.
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4ec0f57486fca69ea2f4ca39bd7a708e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ec0f57486fca69ea2f4ca39bd7a708e">&#9670;&nbsp;</a></span>draw3D()</h2>
+<a id="a4a7aed21ae9a88cafaaaac002fa92e3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a7aed21ae9a88cafaaaac002fa92e3d">&#9670;&nbsp;</a></span>draw3D()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -154,6 +156,12 @@ Creates a new aecErrorCheck object.
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>displaySize</em> = <code>(1024,&#160;768)</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
           <td class="paramname"><em>update</em> = <code>False</code>&#160;</td>
         </tr>
         <tr>
@@ -167,6 +175,27 @@ Creates a new aecErrorCheck object.
 Accepts an aecSpaceGroup object and renders its list of aecSpaces to the pythonOCC display.
 Returns True on success failure.
 Returns False on failure.
+</pre> 
+</div>
+</div>
+<a id="acdbff09338ff36d7b025052554a71072"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdbff09338ff36d7b025052554a71072">&#9670;&nbsp;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def aecSpaceDrawOCC.aecSpaceDrawOCC.getType </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">string getType()
+Returns a string constant to identify the object type.
+Returns None on failure.
 </pre> 
 </div>
 </div>

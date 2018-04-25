@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">aecSpace
-   &#160;<span id="projectnumber">0.5</span>
+   &#160;<span id="projectnumber">0.51</span>
    </div>
    <div id="projectbrief">Classes to create and manage representations of architectural space</div>
   </td>
@@ -109,10 +109,14 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afe1cf74879c02d8f3edf4ccd7dc30118"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abefcb08abe1cda289b6a5fe56bb759be"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_group_1_1aec_space_group.html#abefcb08abe1cda289b6a5fe56bb759be">getCount</a> (self)</td></tr>
 <tr class="separator:abefcb08abe1cda289b6a5fe56bb759be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46b118863269748006659617e386403b"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_group_1_1aec_space_group.html#a46b118863269748006659617e386403b">getIndices</a> (self)</td></tr>
+<tr class="separator:a46b118863269748006659617e386403b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae2c90d9d27fc19610a7a3ffa4c0d07c4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_group_1_1aec_space_group.html#ae2c90d9d27fc19610a7a3ffa4c0d07c4">getProperties</a> (self)</td></tr>
 <tr class="separator:ae2c90d9d27fc19610a7a3ffa4c0d07c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e4b33309ff476bf46818f332c6c1aca"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_group_1_1aec_space_group.html#a0e4b33309ff476bf46818f332c6c1aca">getSpaces</a> (self)</td></tr>
 <tr class="separator:a0e4b33309ff476bf46818f332c6c1aca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ebf2d6f072fb629b965fa3060fae7c4"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_group_1_1aec_space_group.html#a1ebf2d6f072fb629b965fa3060fae7c4">getType</a> (self)</td></tr>
+<tr class="separator:a1ebf2d6f072fb629b965fa3060fae7c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9c1278b4077d00180fb24a864c4c82e"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_group_1_1aec_space_group.html#ad9c1278b4077d00180fb24a864c4c82e">getVolume</a> (self)</td></tr>
 <tr class="separator:ad9c1278b4077d00180fb24a864c4c82e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61f5ef6db71cb1dbb010906308fc95bd"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_group_1_1aec_space_group.html#a61f5ef6db71cb1dbb010906308fc95bd">move</a> (self, moveBy=(1, 1, 1), indices=None)</td></tr>
@@ -157,7 +161,7 @@ enabling collective editing and reporting.
       </table>
 </div><div class="memdoc">
 <pre class="fragment">INTERNAL
-aecSpaceGroup Constructor
+Constructor
 Creates the dictionary of all internal keys and values.
 Sets the ID to a new UUID.
 </pre> 
@@ -292,6 +296,27 @@ Returns None on failure.
 </pre> 
 </div>
 </div>
+<a id="a46b118863269748006659617e386403b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46b118863269748006659617e386403b">&#9670;&nbsp;</a></span>getIndices()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def aecSpaceGroup.aecSpaceGroup.getIndices </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">(int,) getIndices()
+Returns a list of all indices.
+Returns None on failure.
+</pre> 
+</div>
+</div>
 <a id="ae2c90d9d27fc19610a7a3ffa4c0d07c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae2c90d9d27fc19610a7a3ffa4c0d07c4">&#9670;&nbsp;</a></span>getProperties()</h2>
 
@@ -331,6 +356,27 @@ Returns None on failure.
 </div><div class="memdoc">
 <pre class="fragment">[aecSpace,] getSpaces()
 Returns the list of aecSpaces.
+Returns None on failure.
+</pre> 
+</div>
+</div>
+<a id="a1ebf2d6f072fb629b965fa3060fae7c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ebf2d6f072fb629b965fa3060fae7c4">&#9670;&nbsp;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def aecSpaceGroup.aecSpaceGroup.getType </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">string getType()
+Returns a string constant to identify the object type.
 Returns None on failure.
 </pre> 
 </div>
@@ -387,11 +433,10 @@ Returns None on failure.
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">bool scale (3D vector), (int,])
+<pre class="fragment">(int,) scale ((3D vector), (int,))
 Moves each aecSpace listed by index in indices by the delivered vector.
 Affects all aecSpaces if no indices are delivered.
-Returns True on success.
-Returns False if the spaces list is empty or on other failure.
+Returns a list of indices of all spaces successfully moved.
 </pre> 
 </div>
 </div>
@@ -521,7 +566,7 @@ Returns False if the spaces list is empty or on other failure.
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">bool setColor (int range 0 - 255, int range 0 - 255, int range 0 - 255)
+<pre class="fragment">bool setColor ((int range 0 - 255, int range 0 - 255, int range 0 - 255), (int,))
 Sets the color[R G B] values of each aecSpace listed by index in indices
 or without argument randomizes the color.
 Affects all aecSpaces if no indices are delivered.        

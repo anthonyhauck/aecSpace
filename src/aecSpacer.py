@@ -1,4 +1,5 @@
 import traceback
+
 from aecSpace import aecSpace
 from aecErrorCheck import aecErrorCheck
 
@@ -12,6 +13,7 @@ class aecSpacer:
     # utility objects and data shared by all instances.
 
     __aecErrorCheck = aecErrorCheck() # An instance of aecErrorCheck
+    __type = 'aecSpacer'              # Type identifier of object instances
        
     def __init__(self):
         """
@@ -37,6 +39,18 @@ class aecSpacer:
             return newSpace
         except Exception:
             traceback.print_exc() 
+            return None
+
+    def getType(self):
+        """
+        string getType()
+        Returns a string constant to identify the object type.
+        Returns None on failure.
+        """
+        try:
+            return self.__type
+        except Exception:
+            traceback.print_exc()
             return None
     
     def place(self, space, copies = 1, moveBy = (0, 0, 0)):
