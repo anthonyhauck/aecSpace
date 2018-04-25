@@ -1031,7 +1031,7 @@ class aecSpace:
     def getType(self):
         """
         string getType()
-        Returns the constant 'aecSpace' to identify the object type.
+        Returns a string constant to identify the object type.
         Returns None on failure.
         """
         try:
