@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">aecSpace
-   &#160;<span id="projectnumber">0.5</span>
+   &#160;<span id="projectnumber">0.51</span>
    </div>
    <div id="projectbrief">Classes to create and manage representations of architectural space</div>
   </td>
@@ -101,6 +101,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a7e6ab0667eb88bc1c992a57671fe685f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2bfc9a72d587940830ec82d0b126ce70"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_spacer_1_1aec_spacer.html#a2bfc9a72d587940830ec82d0b126ce70">copy</a> (self, space, moveBy=(0, 0, 0))</td></tr>
 <tr class="separator:a2bfc9a72d587940830ec82d0b126ce70"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac6b99c39fe37efbb91ef672ffc1a218f"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_spacer_1_1aec_spacer.html#ac6b99c39fe37efbb91ef672ffc1a218f">getType</a> (self)</td></tr>
+<tr class="separator:ac6b99c39fe37efbb91ef672ffc1a218f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a90265318ead95404a604723d7dc17575"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_spacer_1_1aec_spacer.html#a90265318ead95404a604723d7dc17575">place</a> (self, space, copies=1, moveBy=(0, 0, 0))</td></tr>
 <tr class="separator:a90265318ead95404a604723d7dc17575"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dba2e51add1aab8db26241a3ccf3783"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_spacer_1_1aec_spacer.html#a3dba2e51add1aab8db26241a3ccf3783">row</a> (self, space, copies=1, gap=0, xAxis=True)</td></tr>
@@ -165,6 +167,27 @@ Public Member Functions</h2></td></tr>
 <pre class="fragment">aecSpace copy(aecSpace, (3D vector))
 Returns a new aecSpace that is a copy of the delivered aecSpace.
 The copy will be moved by the delivered vector.
+Returns None on failure.
+</pre> 
+</div>
+</div>
+<a id="ac6b99c39fe37efbb91ef672ffc1a218f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6b99c39fe37efbb91ef672ffc1a218f">&#9670;&nbsp;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def aecSpacer.aecSpacer.getType </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">string getType()
+Returns the constant 'aecSpace' to identify the object type.
 Returns None on failure.
 </pre> 
 </div>

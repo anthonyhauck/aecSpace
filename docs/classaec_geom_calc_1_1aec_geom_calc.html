@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">aecSpace
-   &#160;<span id="projectnumber">0.5</span>
+   &#160;<span id="projectnumber">0.51</span>
    </div>
    <div id="projectbrief">Classes to create and manage representations of architectural space</div>
   </td>
@@ -119,6 +119,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a14ce224c9f46f780c4789977a30582ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a150e06f11ce159ec01dd1c1dd57c3b29"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_geom_calc_1_1aec_geom_calc.html#a150e06f11ce159ec01dd1c1dd57c3b29">getMesh2D</a> (self, points)</td></tr>
 <tr class="separator:a150e06f11ce159ec01dd1c1dd57c3b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73e844f78e95fa0f572c81a8140c7e25"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_geom_calc_1_1aec_geom_calc.html#a73e844f78e95fa0f572c81a8140c7e25">getType</a> (self)</td></tr>
+<tr class="separator:a73e844f78e95fa0f572c81a8140c7e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4f0a8904ead6450f116a50cb039fee17"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_geom_calc_1_1aec_geom_calc.html#a4f0a8904ead6450f116a50cb039fee17">mirrorPoints2D</a> (self, points, mPoints=[(0, 0))</td></tr>
 <tr class="separator:a4f0a8904ead6450f116a50cb039fee17"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c681276e38b85df686253f52d8414d8"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_geom_calc_1_1aec_geom_calc.html#a4c681276e38b85df686253f52d8414d8">rmvColinear</a> (self, points)</td></tr>
@@ -491,6 +493,27 @@ Returns None if unable to determine a single intersection perimeter.
 <pre class="fragment">[[(3 indices),][(3D point),],] getMesh2D()
 Constructs a compact 2D mesh representation of a horizontal 
 surface as a list of unique points and triangle indices.
+Returns None on failure.
+</pre> 
+</div>
+</div>
+<a id="a73e844f78e95fa0f572c81a8140c7e25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73e844f78e95fa0f572c81a8140c7e25">&#9670;&nbsp;</a></span>getType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def aecGeomCalc.aecGeomCalc.getType </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">string getType()
+Returns the constant 'aecSpace' to identify the object type.
 Returns None on failure.
 </pre> 
 </div>

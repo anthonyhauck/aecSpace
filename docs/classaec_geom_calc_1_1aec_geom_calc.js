@@ -11,6 +11,7 @@ var classaec_geom_calc_1_1aec_geom_calc =
     [ "getDifference", "classaec_geom_calc_1_1aec_geom_calc.html#a24123d95f9bc9317ffe87201d43dde62", null ],
     [ "getIntersection", "classaec_geom_calc_1_1aec_geom_calc.html#a14ce224c9f46f780c4789977a30582ff", null ],
     [ "getMesh2D", "classaec_geom_calc_1_1aec_geom_calc.html#a150e06f11ce159ec01dd1c1dd57c3b29", null ],
+    [ "getType", "classaec_geom_calc_1_1aec_geom_calc.html#a73e844f78e95fa0f572c81a8140c7e25", null ],
     [ "mirrorPoints2D", "classaec_geom_calc_1_1aec_geom_calc.html#a4f0a8904ead6450f116a50cb039fee17", null ],
     [ "rmvColinear", "classaec_geom_calc_1_1aec_geom_calc.html#a4c681276e38b85df686253f52d8414d8", null ]
 ];

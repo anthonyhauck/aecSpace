@@ -30,7 +30,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">aecSpace
-   &#160;<span id="projectnumber">0.5</span>
+   &#160;<span id="projectnumber">0.51</span>
    </div>
    <div id="projectbrief">Classes to create and manage representations of architectural space</div>
   </td>
@@ -105,6 +105,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a1cb70c774be129f7bc6e9f73484c9047"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c621c108398c6ce6976d33881121674"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_1_1aec_space.html#a7c621c108398c6ce6976d33881121674">fitWithin</a> (self, boundary)</td></tr>
 <tr class="separator:a7c621c108398c6ce6976d33881121674"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01da1b87d427047db95dbf38041a02d6"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_1_1aec_space.html#a01da1b87d427047db95dbf38041a02d6">getAddress</a> (self)</td></tr>
+<tr class="separator:a01da1b87d427047db95dbf38041a02d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d6867ab378c43437ee6fee5aa8375ac"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_1_1aec_space.html#a3d6867ab378c43437ee6fee5aa8375ac">getAngles</a> (self, degrees=False)</td></tr>
 <tr class="separator:a3d6867ab378c43437ee6fee5aa8375ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a437f18c80fe8d65ee94965c8105de534"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_1_1aec_space.html#a437f18c80fe8d65ee94965c8105de534">getArea</a> (self)</td></tr>
@@ -219,6 +221,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad56b2b9e36e137a0a23f1d00ee4f402f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6f20d879106d8d4010e712055ba3fd7d"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_1_1aec_space.html#a6f20d879106d8d4010e712055ba3fd7d">scale</a> (self, scaleBy=(1, 1, 1), scalePoint=None)</td></tr>
 <tr class="separator:a6f20d879106d8d4010e712055ba3fd7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f728895e1730fb74ee1c7e6c31250b3"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_1_1aec_space.html#a8f728895e1730fb74ee1c7e6c31250b3">setAddress</a> (self, address=&quot;&quot;)</td></tr>
+<tr class="separator:a8f728895e1730fb74ee1c7e6c31250b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57e94c3fb91279f3b6e1e843cbb444b7"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_1_1aec_space.html#a57e94c3fb91279f3b6e1e843cbb444b7">setBoundary</a> (self, points=[(0, 0))</td></tr>
 <tr class="separator:a57e94c3fb91279f3b6e1e843cbb444b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1fe313b7681270c6ef44de9a0b552f99"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classaec_space_1_1aec_space.html#a1fe313b7681270c6ef44de9a0b552f99">setColor</a> (self, newColor=None)</td></tr>
@@ -384,6 +388,27 @@ If the aecSpace boundary is not wholly within the delivered perimeter as
 described in a list of points, the aecSpace will reconfigure its perimeter
 to fit within the delivered perimeter.
 Returns True if successful, otherwise returning None.
+</pre> 
+</div>
+</div>
+<a id="a01da1b87d427047db95dbf38041a02d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01da1b87d427047db95dbf38041a02d6">&#9670;&nbsp;</a></span>getAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def aecSpace.aecSpace.getAddress </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">value getAddress()
+Returns the custom address designation.
+Returns None on failure.
 </pre> 
 </div>
 </div>
@@ -1212,7 +1237,7 @@ Returns None if there is no current boundary or on other failure.
       </table>
 </div><div class="memdoc">
 <pre class="fragment">dictionary getProperties()
-Retrieves the properties dictionary of all internal values of the space.
+Retrieves the properties dictionary of all internal values.
 Intended for use by other components of the aecSpace toolkit.
 Returns None on failure.
 </pre> 
@@ -2033,6 +2058,38 @@ Returns False on failure.
 Scales the space by a vector from the delivered point.
 If no point is provided, the space will scale from its centroid.
 Returns True on success.
+Returns False on failure.
+</pre> 
+</div>
+</div>
+<a id="a8f728895e1730fb74ee1c7e6c31250b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f728895e1730fb74ee1c7e6c31250b3">&#9670;&nbsp;</a></span>setAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def aecSpace.aecSpace.setAddress </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>address</em> = <code>&quot;&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<pre class="fragment">bool setAddress(string)
+Sets the address value.
+Returns True if successful.
 Returns False on failure.
 </pre> 
 </div>
