@@ -1,68 +1,98 @@
-# aecSpace 0.51 | 2018.04.25
-Python classes useful for creating and editing volumes indicating building spaces.
+# aecSpace 0.6 | 2018.05.17
+Python classes useful for creating and editing volumes indicating building spaces and other objects.
 
-# 0.51 Version Notes
+# 0.6 Version Notes | 2018.05.17
 
-* New aecSpaceGrid object provides some functionality for creating and manipulating voxel grids. More functionality in progress.
-* Added Example.aecSpace-SpaceGrid to demonstrate some of the current functionality.
-* New function aecErrorCheck.checkAddress() for checking the formation of voxel addresses.
-* New function aecSpaceGroup.getIndices() returns a list of valid indices into the group.
+New Class aecCompassPoints defines constants referring to local cardinal directions.
+
+aecSpace Class Changes
+* New method aecSpace.getCompassPoint returns the boundary intersection of a vector from the centroid to a bounding box point.
+* New method aecSpace.getCompassPointBox returns the bounding box intersection of a vector to a division of the bounding box.
+* New method aecSpace.moveTo moves the aecSpace relatively from a specified point to a specified point.
+* Bug fix: fixed a caching bug that allowed the boundary point list to desynchronize with changes to level and height values.
+
+aecSpacer Class Changes
+* New method aecSpacer.placeWithin attempts to place an aecSpace wholly within another aecSpace without altering either.
+* New method aecSpacer.placeWithinLine attempts to plavce an aecSpace wholly within another aecSpace without altering either along a specified vector.
+
+aecErrorCheck Changes
+* New method aecErrorCheck.checkAngle attempts to correct an angle to fall within a 0 to 360 range.
+* New method aecErrorCheck.checkColor attempts to correct a tuple to become a valid color with three values from 0 to 255.
+
+aecGeomCalc Changes
+* New method checkBoundingBox attempts to construct valid corner points for a delivered bounding box.
+
+aecColor Class Changes
+
+* Added a Red color constant
+
+Examples Changes
+* Added code to set pythonOCC display size.
+* Added toggle for displaying animated contruction of a scene.
+* Some examples show fewer iterations to speed up time to full display.
+
+# 0.51 Version Notes | 2018.04.25
+
+* New aecSpaceGrid object provides some methodality for creating and manipulating voxel grids. More methodality in progress.
+* Added Example.aecSpace-SpaceGrid to demonstrate some of the current methodality.
+* New method aecErrorCheck.checkAddress() for checking the formation of voxel addresses.
+* New method aecSpaceGroup.getIndices() returns a list of valid indices into the group.
 * Added further error checking against aecSpace.move() inputs.
-* Added getType() function to objects to return a constant string identifying the object type.
-* Added Example.aecSpace-RandomLandDevelopment.py to demonstrate new aecSpaceGroup functionality in version 0.5   
+* Added getType() method to objects to return a constant string identifying the object type.
+* Added Example.aecSpace-RandomLandDevelopment.py to demonstrate new aecSpaceGroup methodality in version 0.5   
 * Fixed a bug in aecSpace and aecSpacer objects that prevented re-initialization of some instance variables.
 * Corrected a number of documentation errors.
 
 # 0.5 Version Notes
 
-* New aecSpaceGroup object provides multiple functions for querying and changing multiple aecSpace instances at once.
-* New function aecSpace.fitWithin() trims aecSpace boundary to the limits of another larger boundary.
-* New function aecErrorCheck.checkIndices() aids in constructing acceptable list of integeer indices.
-* New function aecSpacer.stackToArea() stacks aecSpaces until the aggregate area meets or exceeds the area argument.
-* New function aecGeomCalc.containsPoint() returns boolean test result of a point within a boundary.
-* New function aecGeomCalc.containsShape() returns boolean test result of a boundary within a boundary.
-* New function aecGeomCalc.findpoint() returns a random point inside a boundary.
-* New function aecGeomCalc.getDifference() returns point lists of boundaries unshared between two intersecting boundaries.
-* New function aecGeomCalc.getIntersection() returns a point list of the boundary shared between two intersecting boundaries.
+* New aecSpaceGroup object provides multiple methods for querying and changing multiple aecSpace instances at once.
+* New method aecSpace.fitWithin() trims aecSpace boundary to the limits of another larger boundary.
+* New method aecErrorCheck.checkIndices() aids in constructing acceptable list of integeer indices.
+* New method aecSpacer.stackToArea() stacks aecSpaces until the aggregate area meets or exceeds the area argument.
+* New method aecGeomCalc.containsPoint() returns boolean test result of a point within a boundary.
+* New method aecGeomCalc.containsShape() returns boolean test result of a boundary within a boundary.
+* New method aecGeomCalc.findpoint() returns a random point inside a boundary.
+* New method aecGeomCalc.getDifference() returns point lists of boundaries unshared between two intersecting boundaries.
+* New method aecGeomCalc.getIntersection() returns a point list of the boundary shared between two intersecting boundaries.
 
-* aecShaper object functionality combined into aecSpace object; aecShaper object eliminated.
+* aecShaper object methodality combined into aecSpace object; aecShaper object eliminated.
 
 * aecSpace.makeCylinder() replaces aecShaper.makeCircle and provides a parameter to set the aecSpace height.
 * aecSpace.makePolygon() now provides a parameter to set the aecSpace height.
-* aecSpace.wrap() function now refactored into separate function convexHull() in aecGeomCalc object.
+* aecSpace.wrap() method now refactored into separate method convexHull() in aecGeomCalc object.
 
-* aecSpacer.column() function now refactored into single aecSpacer.row() function with an axis argument.
-* aecSpace and aecSpaceGroup function getProperties() returns a dictionary of internal instance parameters.
+* aecSpacer.column() method now refactored into single aecSpacer.row() method with an axis argument.
+* aecSpace and aecSpaceGroup method getProperties() returns a dictionary of internal instance parameters.
 * aecSpace.getProperty() retrieves internal properties by name.
 * aecSpace.setProperty() directly sets instance properties, bypassing error checking (dangerous!).
-* aecSpacer object functions no longer return the delivered aecSpace in the list of copied spaces.
+* aecSpacer object methods no longer return the delivered aecSpace in the list of copied spaces.
 
 * aecSpaceDrawOcc.draw3D() now accepts either a list of aecSpaces as before or a single aecSpaceGroup instance.
 
 * aecErrorCheck and aecGeomCalc objects are now shared as single instances between multiple instances of other objects.
 
-* Function parameter error checking extensively enhanced -- they're not bulletproof, but they're less fragile.
-* Functions in source now entirely in alphabetical order by function name, rather than the former idiosyncratic organization.
-* Function and object documentation heavily corrected, revised, and enhanced.
+* method parameter error checking extensively enhanced -- they're not bulletproof, but they're less fragile.
+* methods in source now entirely in alphabetical order by method name, rather than the former idiosyncratic organization.
+* method and object documentation heavily corrected, revised, and enhanced.
 * Fixed a bug in aecSpacer.stack() that inaccurately placed aecSpaces when starting higher than level 0.
-* Eliminated redundant code in aecSpace.mirror() function in favor of code in aecGeomCalc.mirrorPoints2D()
+* Eliminated redundant code in aecSpace.mirror() method in favor of code in aecGeomCalc.mirrorPoints2D()
 
 # 0.41 Version Notes 
 
 This version is a wide-ranging overhaul of the aecSpace object, adding numeric mesh representations, normalizing
-interactions across multiple functions, updating documentation, and cleaning up shared data issues.
+interactions across multiple methods, updating documentation, and cleaning up shared data issues.
 
 * Redundant colinear points are now removed from point supplied to aecSpace.setBoundary().
-* New getMesh* functions return various mesh representations of aecSpace surfaces and the volume.
-* New getNorml* functions return point and surface normals.
-* New getAngles() function returns internal and external angles of perimeter vertices.
+* New getMesh* methods return various mesh representations of aecSpace surfaces and the volume.
+* New getNorml* methods return point and surface normals.
+* New getAngles() method returns internal and external angles of perimeter vertices.
 * Internal data handling updated for ease of initialization and future serialization.
 * Most point arguments and returns are 3D by default.
-* Distinct "2D" point functions collapsed into single functions with an argument to return 2D points if desired.
+* Distinct "2D" point methods collapsed into single methods with an argument to return 2D points if desired.
 * New aecVertex object describes point, angles, and point normals.
-* New aecGeomCalc function areColinear() tests whether points are colinear.
-* New aecGeomCalc function rmvColinear() removes redundant colinear points from the delivered point list.
-* New aecErrorCheck function makePercentage() converts numeric arguments to percentages between 0 and 1.
+* New aecGeomCalc method areColinear() tests whether points are colinear.
+* New aecGeomCalc method rmvColinear() removes redundant colinear points from the delivered point list.
+* New aecErrorCheck method makePercentage() converts numeric arguments to percentages between 0 and 1.
 * Exception error reporting made simpler and reliable.
 * Renamed example files for easier sorting out from source files in a single folder.
 * 0.41: Fixed a bug that allowed MultiPolygons as the boundary definition by merging multipolygons.
