@@ -40,6 +40,37 @@ class aecErrorCheck:
             traceback.print_exc()
             return None        
     
+    def checkAngle(self, angle):
+        """
+        float checkAngle(number)
+        Attempts to return a well-formed float angle between 0 and 360.
+        Returns None on failure.
+        """
+        try:
+            if type(angle) != int and \
+               type(angle) != float and \
+               type(angle) != str: return None
+            if type(angle) == str: angle = float(angle)
+            return abs(angle % 360)
+        except:
+            traceback.print_exc()
+            return None
+    
+    def checkColor(self, color):
+        """
+        (int, int, int) checkColor(int, int, int)
+        Attempts to return a well-formed tuple of 3 ints representing RGB values from 0 to 255.
+        Returns None if unable to form a color as specified.
+        """
+        try:
+            if type(color) != list and type(color) != tuple: return None
+            if len(color) < 2: return None
+            color = [int(x % 255) for x in list(color)]
+            return color
+        except:
+            traceback.print_exc()
+            return None
+
     def checkIndices(self, indices = None, limit = None):
         """
         [int,] checkIndices([number,])
@@ -102,7 +133,7 @@ class aecErrorCheck:
         except:
             traceback.print_exc()
             return None
-
+        
     def getType(self):
         """
         string getType()

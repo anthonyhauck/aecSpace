@@ -139,7 +139,8 @@ def aecSpaceRandomTower():
   
 spaces = aecSpaceRandomTower()
 spaceDrawer = aecSpaceDrawOCC()
-spaceDrawer.draw3D(spaces)
-
+spaceDrawer.draw3D(spaces, displaySize = (1600, 900), update = True)
+# update = True animates the example by updating the display after every space placement.
+# About 60x slower to completion, but more interesting to watch.
 
 

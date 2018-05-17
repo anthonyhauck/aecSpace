@@ -60,4 +60,4 @@ newSpace = spacer.copy(space, (0, 0, 20))
 newSpace.mirror()
 spaces = [space, newSpace]
      
-spaceDrawer.draw3D(spaces)
+spaceDrawer.draw3D(spaces, displaySize = (1600, 900), update = True)

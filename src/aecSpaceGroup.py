@@ -89,8 +89,7 @@ class aecSpaceGroup:
         Returns False on failure.
         """
         try:
-            if type(spaces) != list:
-                spaces = [spaces]
+            if type(spaces) != list: spaces = [spaces]
             for space in spaces:
                 if space.getType() != 'aecSpace': continue
                 self.__properties['spaces'].append(space)
@@ -111,6 +110,7 @@ class aecSpaceGroup:
         try:
             self.__properties['spaces'] = []
             self.__initialize()
+            return True
         except Exception:
             traceback.print_exc()
             return False
@@ -245,14 +245,14 @@ class aecSpaceGroup:
         Returns a list of indices of all spaces successfully moved.
         """
         try:
-            moveBy = self.__aecErrorCheck.checkPoint(moveBy)
-            if not moveBy: return False
-            if not indices: indices = self.getIndices()
-            if not indices: return False
-            spaces = self.getSpaces()
-            if len(spaces) == 0: return False
-            indices = self.__aecErrorCheck.checkIndices(indices, len(spaces))
             results = []
+            moveBy = self.__aecErrorCheck.checkPoint(moveBy)
+            if not moveBy: return results
+            if not indices: indices = self.getIndices()
+            if not indices: return results
+            spaces = self.getSpaces()
+            if len(spaces) == 0: return results
+            indices = self.__aecErrorCheck.checkIndices(indices, len(spaces))
             for index in indices: 
                 if spaces[index].move(moveBy): results.append(index)
             return results
@@ -268,20 +268,21 @@ class aecSpaceGroup:
         Affects all aecSpaces if no indices are delivered.
         If no pivot point is provided, each indicated 
         aecSpace will be rotated around its centroid.
-        Returns True on success.
-        Returns False if the spaces list is empty or on other failure.
+        Returns a list of indices of all spaces successfully rotated.
         """
-        # TODO: harden like move
         try:
+            results = []
+            angle = self.__aecErrorCheck.checkAngle(angle)
+            if not angle: return results
             spaces = self.getSpaces()
-            if len(spaces) == 0: return False
+            if len(spaces) == 0: return results
             indices = self.__aecErrorCheck.checkIndices(indices, len(spaces))
             for index in indices:
-                spaces[index].rotate(angle, pivot)
-            return True
+                if spaces[index].rotate(angle, pivot): results.append(index)
+            return results
         except Exception:
             traceback.print_exc()
-            return False
+            return results
 
     def scale(self, scaleBy = (1, 1, 1), scalePoint = None, indices = None):
         """
@@ -290,20 +291,21 @@ class aecSpaceGroup:
         Affects all aecSpaces if no indices are delivered.
         If no pivot scale point is provided, each indicated  
         aecSpace will be scaled from its centroid.
-        Returns True on success.
-        Returns False if the spaces list is empty or on other failure.
+        Returns a list of indices of all spaces successfully scaled.
         """
         try:
-            # TODO: harden like move
+            results = []
+            scaleBy = self.__aecErrorCheck.checkPoint(scaleBy)
+            if not scaleBy: return results
             spaces = self.getSpaces()
-            if len(spaces) == 0: return False
+            if len(spaces) == 0: return results
             indices = self.__aecErrorCheck.checkIndices(indices, len(spaces))
             for index in indices:
-                spaces[index].scale(scaleBy, scalePoint)
-            return True
+                if spaces[index].scale(scaleBy, scalePoint): results.append(index)
+            return results
         except Exception:
             traceback.print_exc()
-            return False
+            return results
     
     def setColor(self, newColor = None, indices = None):
         """

@@ -8,6 +8,7 @@ from shapely import geometry as shapely
 from shapely import ops as shapeOps
 from sympy import Point, Polygon
 
+from aecCompass import aecCompass
 from aecErrorCheck import aecErrorCheck
 
 class aecGeomCalc:
@@ -40,6 +41,28 @@ class aecGeomCalc:
         except Exception:
             traceback.print_exc()
             return None
+
+    def checkBoundingBox(self, boundingbox, box2D = False):
+        """
+        [(3D point), (3D point), (3D point), (3D point),] checkBoundingBox([(3Dpoint),])
+        Attempts to return a list of 3D points describing a bounding box.
+        Returns None on failure.
+        """
+        try:
+            if type(boundingbox) != list: return None
+            if len(boundingbox) < 2: return None
+            if len(boundingbox) < 4:
+                point = self.__aecErrorCheck.checkPoint(boundingbox[0], box2D)
+                vector = self.__aecErrorCheck.checkPoint(boundingbox[1], box2D)
+                if not point or not vector: return None
+                return self.getBoxPoints(point, vector, box2D)
+            boundingbox = boundingbox[:4]
+            boundingbox = [self.__aecErrorCheck.checkPoint(x, box2D) for x in boundingbox]
+            if None in boundingbox: return None
+            return boundingbox
+        except Exception:
+            traceback.print_exc()
+            return None        
 
     def checkPolygon(self, points):
         """
@@ -179,28 +202,71 @@ class aecGeomCalc:
             traceback.print_exc()
             return None
         
-    def getBoxPoints2D(self, origin = (0, 0), vector = (1, 1)):
+    def getBoxPoints(self, origin = (0, 0, 0), vector = (1, 1, 1), box2D = False):
         """
-        [(2D point),] getBoxPoints2D((2D point), (2D vector))
-        Returns the 2D coordinates of a box based on the origin and vector.
+        [(3D point),] getBoxPoints((2D or 3D point), (2D or 3D vector), bool)
+        Returns the 2D or 3D coordinates of a box based on the origin and vector.
         Returns None on failure.
         """
         try:
-            origin = self.__aecErrorCheck.checkPoint(origin, point2D = True)
-            vector = self.__aecErrorCheck.checkPoint(vector, point2D = True)
+            origin = self.__aecErrorCheck.checkPoint(origin, box2D)
+            vector = self.__aecErrorCheck.checkPoint(vector, box2D)
             if not (origin and vector): return None
             xDelta = origin[0] + vector[0]
             yDelta = origin[1] + vector[1]
-            return \
+            boxPoints = \
             [
                 (origin[0], origin[1]),
                 (xDelta, origin[1]),
                 (xDelta, yDelta),
                 (origin[0], yDelta)
             ]  
+            if box2D: return boxPoints
+            return [(pnt[0], pnt[1], origin[2]) for pnt in boxPoints]
         except Exception:
             traceback.print_exc() 
             return None
+
+    def getCompassPointBox(self, boundingbox, box2D = False, orient = aecCompass.C):
+        """
+        (3D point) getCompassPoint([(3D point),] aecCompass.constant)
+        Returns a point on the delivered bounding box corresponding to the orientation of one 
+        of 17 compass directions defined by aecCompass, including the default C denoting the center.
+        For example, N (north) corresponds to the middle point of maximum y side of the bounding box,
+        with proportionate distances along the axis represented by NNE (3/4 length from minumum X),
+        and NE (bounding box maximum x, maximum y corner).
+        Returns None on failure.
+        """
+        try:
+            if type(orient) != int: return None
+            if orient < aecCompass.C or orient > aecCompass.NNW: return None
+            boundingbox = self.checkBoundingBox(boundingbox, box2D)
+            if not boundingbox: return None
+            north = self.getMidpoint(boundingbox[3], boundingbox[2])
+            west = self.getMidpoint(boundingbox[0], boundingbox[3])
+            south = self.getMidpoint(boundingbox[0], boundingbox[1])
+            east = self.getMidpoint(boundingbox[1], boundingbox[2])
+            if orient == aecCompass.C: return self.getMidpoint(boundingbox[0], boundingbox[2])
+            if orient == aecCompass.N: return north
+            if orient == aecCompass.W: return west
+            if orient == aecCompass.S: return south
+            if orient == aecCompass.E: return east
+            if orient == aecCompass.SW: return boundingbox[0]
+            if orient == aecCompass.SE: return boundingbox[1]
+            if orient == aecCompass.NE: return boundingbox[2]
+            if orient == aecCompass.NW: return boundingbox[3]
+            if orient == aecCompass.NNW: return self.getMidpoint(north, boundingbox[3])
+            if orient == aecCompass.WNW: return self.getMidpoint(west, boundingbox[3])
+            if orient == aecCompass.WSW: return self.getMidpoint(west, boundingbox[0])
+            if orient == aecCompass.SSW: return self.getMidpoint(boundingbox[0], south)
+            if orient == aecCompass.SSE: return self.getMidpoint(south, boundingbox[1])
+            if orient == aecCompass.ESE: return self.getMidpoint(east, boundingbox[1])
+            if orient == aecCompass.ENE: return self.getMidpoint(east, boundingbox[2])
+            if orient == aecCompass.NNE: return self.getMidpoint(north, boundingbox[2])
+            return None
+        except Exception:
+            traceback.print_exc()
+            return None   
 
     def getDifference(self, boundary, shape):
         """
@@ -278,6 +344,26 @@ class aecGeomCalc:
             traceback.print_exc()
             return None
 
+    def getMidpoint(self, point1, point2):
+        """
+        (2D or 3D point) getMidpoint((2D or 3D point), (2D or 3D point))
+        Returns the midpoint between two 3D points.
+        Returns None on failure
+        """
+        try:
+            point1 = self.__aecErrorCheck.checkPoint(point1)
+            point2 = self.__aecErrorCheck.checkPoint(point2)
+            if not point1 or not point2: return None
+            xCoord = (point1[0] + point2[0]) * 0.5
+            yCoord = (point1[1] + point2[1]) * 0.5
+            if len(point1) > 2 and len(point2) > 2:
+                zCoord = (point1[2] + point2[2]) * 0.5
+                return (xCoord, yCoord, zCoord)
+            return (xCoord, yCoord)
+        except Exception:
+            traceback.print_exc()
+            return None
+        
     def getType(self):
         """
         string getType()
@@ -289,7 +375,7 @@ class aecGeomCalc:
         except Exception:
             traceback.print_exc()
             return None
-   
+    
     def mirrorPoints2D (self, points, mPoints = [(0, 0), (0, 1)]):
         """
         [(2D point),] mirrorPoints2D([(2D point),], [(2D point), (2D point)])

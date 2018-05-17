@@ -34,7 +34,7 @@ as discrete objects.
 Please leave questions and comments at the github repo where you found this.
 
 Have fun!
-Anthony Hauck | Black Arts Consulting
+Anthony Hauck | Black Arts Consulting LLC
 anthony@blackarts.co
 """
 
@@ -53,4 +53,6 @@ spaceDrawer = aecSpaceDrawOCC()
 spaceGrid.makeCells((0, 0, 0), 2, (20, 3, 3))
 spaces = spaceGrid.getCells()
      
-spaceDrawer.draw3D(spaces)
+spaceDrawer.draw3D(spaces, displaySize = (1600, 900), update = False)
+# update = True will animate the example by updating the display after every space placement.
+# About 60x slower to completion, but more interesting to watch.
