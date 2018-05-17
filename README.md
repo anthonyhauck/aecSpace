@@ -1,7 +1,7 @@
 # aecSpace 0.6 | 2018.05.17
 Python classes useful for creating and editing volumes indicating building spaces and other objects.
 
-# 0.6 Version Notes | 2018.05.17
+# 0.6 Version Notes
 
 New Class aecCompassPoints defines constants referring to local cardinal directions.
 
