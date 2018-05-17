@@ -15,6 +15,7 @@ class aecColors:
     orange = (255, 115, 15) 
     purple = (191, 2, 255)
     pink = (255, 66, 138)
+    red = (255, 0, 0)
     sand = (255, 215, 96)
     white = (255, 255, 255)
     yellow = (255, 239, 17)

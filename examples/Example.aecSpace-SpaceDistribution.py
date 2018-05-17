@@ -52,7 +52,7 @@ def aecSpaceRandomTowers():
     """
 
     origin = (0, 0, 0)
-    displace = 300
+    displace = 200
     spacer = aecSpacer()
     colors = aecColors()
     
@@ -173,12 +173,14 @@ def aecSpaceRandomTowers():
             x += 1
         return towers
         
-    return makeTowerRows(origin, displace, 5, 5)
+    return makeTowerRows(origin, displace, 2, 3)
 
 # end aecSpaceDistributionExample
   
 spaces = aecSpaceRandomTowers()
 spaceDrawer = aecSpaceDrawOCC()
-spaceDrawer.draw3D(spaces)
+spaceDrawer.draw3D(spaces, displaySize = (1600, 900), update = False)
+# update = True animates the example by updating the display after every space placement.
+# About 60x slower to completion, but more interesting to watch.
 
 

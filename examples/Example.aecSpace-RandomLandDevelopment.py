@@ -10,7 +10,7 @@ from aecSpaceDrawOCC import aecSpaceDrawOCC
 
 
 
-gcSiteWest = \
+siteWest = \
 [
     (1335.5515, 2415.9574),
     (1263.2383, 2389.3717),
@@ -21,7 +21,7 @@ gcSiteWest = \
     (1900.2106, 2351.8979),
 ]
 
-gcSiteEast = \
+siteEast = \
 [
     (2000.1994, 2289.2733),
     (2700.4829, 2289.2733),
@@ -167,8 +167,8 @@ def develop():
     spacer = aecSpacer()        
     sitWest = aecSpace()
     sitEast = aecSpace()    
-    sitWest.setBoundary(gcSiteWest)
-    sitEast.setBoundary(gcSiteEast)
+    sitWest.setBoundary(siteWest)
+    sitEast.setBoundary(siteEast)
     sitWest.setColor(aecColors.sand)
     sitEast.setColor(aecColors.sand)
     spaces = [sitWest, sitEast]
@@ -225,7 +225,9 @@ while y < 5:
     x = 0
     y += 1     
 spaceDrawer = aecSpaceDrawOCC()
-spaceDrawer.draw3D(spaces, displaySize = (1900, 975), update = True)    
+spaceDrawer.draw3D(spaces, displaySize = (1600, 900), update = False)
+# update = True animates the example by updating the display after every space placement.
+# About 60x slower to completion, but more interesting to watch.
 
 
 

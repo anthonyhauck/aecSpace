@@ -57,9 +57,9 @@ def makeTower():
     # of the model: the site, core, plinth, and tower.
     # TODO: make this variable without editing code.
     
-    siteCoord = [(-30, -30), (50, -30), (60, 60), (50, 80), (-30, 80)]
-    plinthCoord = [(-20, -20), (40, -20), (50, 50), (40, 70), (-20, 70)]
-    towerCoord = [(0, 0), (20, 0), (30, 30), (20, 50), (0, 50)]
+    siteCoord = [(-30, -30, 0), (50, -30, 0), (60, 60, 0), (50, 80, 0), (-30, 80, 0)]
+    plinthCoord = [(-20, -20, 0), (40, -20, 0), (50, 50, 0), (40, 70, 0), (-20, 70, 0)]
+    towerCoord = [(0, 0, 0), (20, 0, 0), (30, 30, 0), (20, 50, 0), (0, 50, 0)]
     
     # Set the perimeter of the tower so we can use its polygon to find
     # the tower centroid. We'll base the offset core's position on the 
@@ -96,8 +96,9 @@ def makeTower():
     # TODO: make this variable without editing code.
     
     space.setHeight(7)
+    space.setLevel(0)
     core.setHeight(7.75 * 21)
-    site.setHeight(0.01)
+    site.setHeight(-0.01)
     
     # Create copies of the initial aecSpace and stack them vertically.
     # The first numeric argument is the quantity of copies to stack
@@ -107,7 +108,7 @@ def makeTower():
     # if greater than 0.
     # TODO: make these variable without editing code.
     
-    spaces = spacer.stack(space, 19, 1)
+    spaces = [space] + spacer.stack(space, 19, 1)
     
     # Since we stacked the aecSpaces upward, the first two aecSpaces
     # in the spaces list will be the first and second floors of our
@@ -189,7 +190,7 @@ def makeTower():
     # Scale the new aecSpace slightly outward and upward
     # to fully enclose the tower floors.
     
-    towerShell.scale([1.1, 1.1, 1.1])
+    towerShell.scale((1.1, 1.1, 1.1))
     
     # Set the shell level, height, color, and  higher transparency.
     
@@ -226,4 +227,6 @@ def makeTower():
 
 spaces = makeTower()
 spaceDrawer = aecSpaceDrawOCC()
-spaceDrawer.draw3D(spaces, displaySize = (1900, 975))
+spaceDrawer.draw3D(spaces, displaySize = (1600, 900), update = True)
+# update = True animates the example by updating the display after every space placement.
+# About 60x slower to completion, but more interesting to watch.

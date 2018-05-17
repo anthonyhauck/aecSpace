@@ -1,0 +1,4291 @@
+{\rtf1\ansi\ansicpg1252\uc1 \deff0\deflang1033\deflangfe1033
+{\fonttbl {\f0\froman\fcharset0\fprq2{\*\panose 02020603050405020304}Times New Roman;}
+{\f1\fswiss\fcharset0\fprq2{\*\panose 020b0604020202020204}Arial;}
+{\f2\fmodern\fcharset0\fprq1{\*\panose 02070309020205020404}Courier New;}
+{\f3\froman\fcharset2\fprq2{\*\panose 05050102010706020507}Symbol;}
+}
+{\colortbl;\red0\green0\blue0;\red0\green0\blue255;\red0\green255\blue255;\red0\green255\blue0;\red255\green0\blue255;\red255\green0\blue0;\red255\green255\blue0;\red255\green255\blue255;\red0\green0\blue128;\red0\green128\blue128;\red0\green128\blue0;\red128\green0\blue128;\red128\green0\blue0;\red128\green128\blue0;\red128\green128\blue128;\red192\green192\blue192;}
+{\stylesheet
+{\widctlpar\adjustright \fs20\cgrid \snext0 Normal;}
+{\paperw11900\paperh16840\margl1800\margr1800\margt1440\margb1440\gutter0\ltrsect}
+{\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid \sbasedon0 \snext0 heading 1;}
+{\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid \sbasedon0 \snext0 heading 2;}
+{\s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid \sbasedon0 \snext0 heading 3;}
+{\s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 4;}{\*\cs10 \additive Default Paragraph Font;}
+{\s5\sb90\sa30\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext0 heading 5;}{\*\cs10 \additive Default Paragraph Font;}
+{\s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid \sbasedon0 \snext15 Title;}
+{\s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid \sbasedon0 \snext16 Subtitle;}
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid \sbasedon0 \snext17 BodyText;}
+{\s18\widctlpar\fs22\cgrid \sbasedon0 \snext18 DenseText;}
+{\s28\widctlpar\tqc\tx4320\tqr\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext28 header;}
+{\s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid \sbasedon0 \snext29 footer;}
+{\s30\li360\sa60\sb120\keepn\widctlpar\adjustright \b\f1\fs20\cgrid \sbasedon0 \snext30 GroupHeader;}
+{\s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext41 Code Example 0;}
+{\s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext42 Code Example 1;}
+{\s42\li720\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext43 Code Example 2;}
+{\s43\li1080\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext44 Code Example 3;}
+{\s44\li1440\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext45 Code Example 4;}
+{\s45\li1800\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext46 Code Example 5;}
+{\s46\li2160\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext47 Code Example 6;}
+{\s47\li2520\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext48 Code Example 7;}
+{\s48\li2880\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext49 Code Example 8;}
+{\s49\li3240\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \sbasedon0 \snext49 Code Example 9;}
+{\s50\li0\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext51 List Continue 0;}
+{\s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext52 List Continue 1;}
+{\s52\li720\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext53 List Continue 2;}
+{\s53\li1080\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext54 List Continue 3;}
+{\s54\li1440\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext55 List Continue 4;}
+{\s55\li1800\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext56 List Continue 5;}
+{\s56\li2160\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext57 List Continue 6;}
+{\s57\li2520\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext58 List Continue 7;}
+{\s58\li2880\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext59 List Continue 8;}
+{\s59\li3240\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid \sbasedon0 \snext59 List Continue 9;}
+{\s60\li0\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext61 DescContinue 0;}
+{\s61\li360\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext62 DescContinue 1;}
+{\s62\li720\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext63 DescContinue 2;}
+{\s63\li1080\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext64 DescContinue 3;}
+{\s64\li1440\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext65 DescContinue 4;}
+{\s65\li1800\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext66 DescContinue 5;}
+{\s66\li2160\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext67 DescContinue 6;}
+{\s67\li2520\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext68 DescContinue 7;}
+{\s68\li2880\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext69 DescContinue 8;}
+{\s69\li3240\widctlpar\ql\adjustright \fs20\cgrid \sbasedon0 \snext69 DescContinue 9;}
+{\s70\li0\sa30\sb30\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext81 LatexTOC 0;}
+{\s71\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext82 LatexTOC 1;}
+{\s72\li720\sa24\sb24\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext83 LatexTOC 2;}
+{\s73\li1080\sa21\sb21\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext84 LatexTOC 3;}
+{\s74\li1440\sa18\sb18\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext85 LatexTOC 4;}
+{\s75\li1800\sa15\sb15\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext86 LatexTOC 5;}
+{\s76\li2160\sa12\sb12\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext87 LatexTOC 6;}
+{\s77\li2520\sa9\sb9\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext88 LatexTOC 7;}
+{\s78\li2880\sa6\sb6\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext89 LatexTOC 8;}
+{\s79\li3240\sa3\sb3\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid \sbasedon0 \snext89 LatexTOC 9;}
+{\s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid \sbasedon0 \snext81 \sautoupd List Bullet 0;}
+{\s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid \sbasedon0 \snext82 \sautoupd List Bullet 1;}
+{\s82\fi-360\li1080\widctlpar\jclisttab\tx1080{\*\pn \pnlvlbody\ilvl0\ls3\pnrnot0\pndec }\ls3\adjustright \fs20\cgrid \sbasedon0 \snext83 \sautoupd List Bullet 2;}
+{\s83\fi-360\li1440\widctlpar\jclisttab\tx1440{\*\pn \pnlvlbody\ilvl0\ls4\pnrnot0\pndec }\ls4\adjustright \fs20\cgrid \sbasedon0 \snext84 \sautoupd List Bullet 3;}
+{\s84\fi-360\li1800\widctlpar\jclisttab\tx1800{\*\pn \pnlvlbody\ilvl0\ls5\pnrnot0\pndec }\ls5\adjustright \fs20\cgrid \sbasedon0 \snext85 \sautoupd List Bullet 4;}
+{\s85\fi-360\li2160\widctlpar\jclisttab\tx2160{\*\pn \pnlvlbody\ilvl0\ls6\pnrnot0\pndec }\ls6\adjustright \fs20\cgrid \sbasedon0 \snext86 \sautoupd List Bullet 5;}
+{\s86\fi-360\li2520\widctlpar\jclisttab\tx2520{\*\pn \pnlvlbody\ilvl0\ls7\pnrnot0\pndec }\ls7\adjustright \fs20\cgrid \sbasedon0 \snext87 \sautoupd List Bullet 6;}
+{\s87\fi-360\li2880\widctlpar\jclisttab\tx2880{\*\pn \pnlvlbody\ilvl0\ls8\pnrnot0\pndec }\ls8\adjustright \fs20\cgrid \sbasedon0 \snext88 \sautoupd List Bullet 7;}
+{\s88\fi-360\li3240\widctlpar\jclisttab\tx3240{\*\pn \pnlvlbody\ilvl0\ls9\pnrnot0\pndec }\ls9\adjustright \fs20\cgrid \sbasedon0 \snext89 \sautoupd List Bullet 8;}
+{\s89\fi-360\li3600\widctlpar\jclisttab\tx3600{\*\pn \pnlvlbody\ilvl0\ls10\pnrnot0\pndec }\ls10\adjustright \fs20\cgrid \sbasedon0 \snext89 \sautoupd List Bullet 9;}
+{\s90\fi-360\li360\widctlpar\fs20\cgrid \sbasedon0 \snext91 \sautoupd List Enum 0;}
+{\s91\fi-360\li720\widctlpar\fs20\cgrid \sbasedon0 \snext92 \sautoupd List Enum 1;}
+{\s92\fi-360\li1080\widctlpar\fs20\cgrid \sbasedon0 \snext93 \sautoupd List Enum 2;}
+{\s93\fi-360\li1440\widctlpar\fs20\cgrid \sbasedon0 \snext94 \sautoupd List Enum 3;}
+{\s94\fi-360\li1800\widctlpar\fs20\cgrid \sbasedon0 \snext95 \sautoupd List Enum 4;}
+{\s95\fi-360\li2160\widctlpar\fs20\cgrid \sbasedon0 \snext96 \sautoupd List Enum 5;}
+{\s96\fi-360\li2520\widctlpar\fs20\cgrid \sbasedon0 \snext96 \sautoupd List Enum 5;}
+{\s97\fi-360\li2880\widctlpar\fs20\cgrid \sbasedon0 \snext98 \sautoupd List Enum 7;}
+{\s98\fi-360\li3240\widctlpar\fs20\cgrid \sbasedon0 \snext99 \sautoupd List Enum 8;}
+{\s99\fi-360\li3600\widctlpar\fs20\cgrid \sbasedon0 \snext99 \sautoupd List Enum 9;}
+}
+{\info 
+{\title {\comment aecSpace  {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+0.6 \par
+}}aecSpace}
+{\comment Generated byDoxgyen. }
+{\creatim \yr2018\mo5\dy17\hr13\min22\sec57}
+}\pard\plain 
+\sectd\pgnlcrm
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\vertalc\qc\par\par\par\par\par\par\par
+\pard\plain \s15\qc\sb240\sa60\widctlpar\outlinelevel0\adjustright \b\f1\fs32\kerning28\cgrid 
+{\field\fldedit {\*\fldinst TITLE \\*MERGEFORMAT}{\fldrslt aecSpace}}\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+\par
+\par\par\par\par\par\par\par\par\par\par\par\par
+\pard\plain \s16\qc\sa60\widctlpar\outlinelevel1\adjustright \f1\cgrid 
+{\field\fldedit {\*\fldinst AUTHOR \\*MERGEFORMAT}{\fldrslt AUTHOR}}\par
+Version 0.6\par{\field\fldedit {\*\fldinst CREATEDATE \\*MERGEFORMAT}{\fldrslt Thu May 17 2018 }}\par
+\page\page\vertalt
+\pard\plain 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid Table of Contents\par
+\pard\plain \par
+{\field\fldedit {\*\fldinst TOC \\f \\*MERGEFORMAT}{\fldrslt Table of contents}}\par
+\pard\plain 
+\sect \sbkpage \pgndec \pgnrestart
+\sect \sectd \sbknone
+{\footer \s29\widctlpar\tqc\tx4320\tqr\tx8640\qr\adjustright \fs20\cgrid {\chpgn}}
+
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Class Index\par \pard\plain 
+{\tc \v Class Index}
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+Class List\par \pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid Here are the classes, structs, unions and interfaces with brief descriptions:}
+{
+\par
+\pard\plain \s71\li360\sa27\sb27\widctlpar\tqr\tldot\tx8640\adjustright \fs20\cgrid 
+{\b {\b aecColors.aecColors} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAA \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b aecCompass.aecCompass} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAAQ \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b aecErrorCheck.aecErrorCheck} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAABK \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b aecGeomCalc.aecGeomCalc} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAABT \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b aecGrid.aecGeomCalc} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAACL \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b aecSpace.aecSpace} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAACO \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b aecSpaceDrawOCC.aecSpaceDrawOCC} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAFM \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b aecSpaceGrid.aecSpaceGrid} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAFU \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b aecSpaceGroup.aecSpaceGroup} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAGI \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b aecSpacer.aecSpacer} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAHE \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+{\b {\b aecVertex.aecVertex} } \tab {\field\fldedit {\*\fldinst PAGEREF AAAAAAAAHO \\*MERGEFORMAT}{\fldrslt pagenum}}
+\par
+\par}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+Class Documentation{\tc \v Class Documentation}
+\par \pard\plain 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+aecColors.aecColors Class Reference\par \pard\plain 
+{\tc\tcl2 \v aecColors.aecColors}
+{\xe \v aecColors.aecColors}
+{\bkmkstart AAAAAAAAAA}
+{\bkmkend AAAAAAAAAA}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b __init__} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getType} (self)\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Static Public Attributes\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+tuple {\b aqua} = (77, 184, 100){\bkmkstart AAAAAAAAAB}
+{\bkmkend AAAAAAAAAB}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+tuple {\b blue} = (50, 166, 255){\bkmkstart AAAAAAAAAC}
+{\bkmkend AAAAAAAAAC}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+tuple {\b stone} = (20, 20, 20){\bkmkstart AAAAAAAAAD}
+{\bkmkend AAAAAAAAAD}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+tuple {\b gray} = (64, 64, 64){\bkmkstart AAAAAAAAAE}
+{\bkmkend AAAAAAAAAE}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+tuple {\b granite} = (60, 60, 60){\bkmkstart AAAAAAAAAF}
+{\bkmkend AAAAAAAAAF}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+tuple {\b green} = (76, 205, 0){\bkmkstart AAAAAAAAAG}
+{\bkmkend AAAAAAAAAG}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+tuple {\b orange} = (255, 115, 15){\bkmkstart AAAAAAAAAH}
+{\bkmkend AAAAAAAAAH}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+tuple {\b purple} = (191, 2, 255){\bkmkstart AAAAAAAAAI}
+{\bkmkend AAAAAAAAAI}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+tuple {\b pink} = (255, 66, 138){\bkmkstart AAAAAAAAAJ}
+{\bkmkend AAAAAAAAAJ}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+tuple {\b red} = (255, 0, 0){\bkmkstart AAAAAAAAAK}
+{\bkmkend AAAAAAAAAK}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+tuple {\b sand} = (255, 215, 96){\bkmkstart AAAAAAAAAL}
+{\bkmkend AAAAAAAAAL}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+tuple {\b white} = (255, 255, 255){\bkmkstart AAAAAAAAAM}
+{\bkmkend AAAAAAAAAM}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+tuple {\b yellow} = (255, 239, 17){\bkmkstart AAAAAAAAAN}
+{\bkmkend AAAAAAAAAN}
+\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v __init__\:aecColors::aecColors}
+{\xe \v aecColors::aecColors\:__init__}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecColors.aecColors.__init__ (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAAO}
+{\bkmkend AAAAAAAAAO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid aecColors Constructor\par
+Passes for now, no setup required.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v getType\:aecColors::aecColors}
+{\xe \v aecColors::aecColors\:getType}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecColors.aecColors.getType (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAAP}
+{\bkmkend AAAAAAAAAP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid string getType()\par
+Returns a string constant to identify the object type.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following file:{\par
+\pard\plain \s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid 
+aecColors.py\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+aecCompass.aecCompass Class Reference\par \pard\plain 
+{\tc\tcl2 \v aecCompass.aecCompass}
+{\xe \v aecCompass.aecCompass}
+{\bkmkstart AAAAAAAAAQ}
+{\bkmkend AAAAAAAAAQ}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b __init__} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getType} (self)\par
+}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Static Public Attributes\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+int {\b C} = 0{\bkmkstart AAAAAAAAAR}
+{\bkmkend AAAAAAAAAR}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+int {\b N} = 1{\bkmkstart AAAAAAAAAS}
+{\bkmkend AAAAAAAAAS}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+int {\b NNE} = 2{\bkmkstart AAAAAAAAAT}
+{\bkmkend AAAAAAAAAT}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+int {\b NE} = 3{\bkmkstart AAAAAAAAAU}
+{\bkmkend AAAAAAAAAU}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+int {\b ENE} = 4{\bkmkstart AAAAAAAAAV}
+{\bkmkend AAAAAAAAAV}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+int {\b E} = 5{\bkmkstart AAAAAAAAAW}
+{\bkmkend AAAAAAAAAW}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+int {\b ESE} = 6{\bkmkstart AAAAAAAAAX}
+{\bkmkend AAAAAAAAAX}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+int {\b SE} = 7{\bkmkstart AAAAAAAAAY}
+{\bkmkend AAAAAAAAAY}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+int {\b SSE} = 8{\bkmkstart AAAAAAAAAZ}
+{\bkmkend AAAAAAAAAZ}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+int {\b S} = 9{\bkmkstart AAAAAAAABA}
+{\bkmkend AAAAAAAABA}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+int {\b SSW} = 10{\bkmkstart AAAAAAAABB}
+{\bkmkend AAAAAAAABB}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+int {\b SW} = 11{\bkmkstart AAAAAAAABC}
+{\bkmkend AAAAAAAABC}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+int {\b WSW} = 12{\bkmkstart AAAAAAAABD}
+{\bkmkend AAAAAAAABD}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+int {\b W} = 13{\bkmkstart AAAAAAAABE}
+{\bkmkend AAAAAAAABE}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+int {\b WNW} = 14{\bkmkstart AAAAAAAABF}
+{\bkmkend AAAAAAAABF}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+int {\b NW} = 15{\bkmkstart AAAAAAAABG}
+{\bkmkend AAAAAAAABG}
+\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+
+int {\b NNW} = 16{\bkmkstart AAAAAAAABH}
+{\bkmkend AAAAAAAABH}
+\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v __init__\:aecCompass::aecCompass}
+{\xe \v aecCompass::aecCompass\:__init__}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecCompass.aecCompass.__init__ (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAABI}
+{\bkmkend AAAAAAAABI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid aecColors Constructor\par
+Passes for now, no setup required.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v getType\:aecCompass::aecCompass}
+{\xe \v aecCompass::aecCompass\:getType}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecCompass.aecCompass.getType (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAABJ}
+{\bkmkend AAAAAAAABJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid string getType()\par
+Returns a string constant to identify the object type.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following file:{\par
+\pard\plain \s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid 
+aecCompass.py\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+aecErrorCheck.aecErrorCheck Class Reference\par \pard\plain 
+{\tc\tcl2 \v aecErrorCheck.aecErrorCheck}
+{\xe \v aecErrorCheck.aecErrorCheck}
+{\bkmkstart AAAAAAAABK}
+{\bkmkend AAAAAAAABK}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b __init__} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b checkAddress} (self, address=(0, 0, 0), bounds=None)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b checkAngle} (self, angle)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b checkColor} (self, color)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b checkIndices} (self, indices=None, limit=None)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b checkPercentage} (self, number=0)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b checkPoint} (self, testPoint, point2D=False)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getType} (self)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid aecErrorCheck contains data validating functions.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v __init__\:aecErrorCheck::aecErrorCheck}
+{\xe \v aecErrorCheck::aecErrorCheck\:__init__}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecErrorCheck.aecErrorCheck.__init__ (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAABL}
+{\bkmkend AAAAAAAABL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid aecErrorCheck Constructor\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v checkAddress\:aecErrorCheck::aecErrorCheck}
+{\xe \v aecErrorCheck::aecErrorCheck\:checkAddress}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecErrorCheck.aecErrorCheck.checkAddress (  {\i self},   {\i address} = {\f2 (0,\~ 0,\~ 0)},   {\i bounds} = {\f2 None})}}
+\par
+{\bkmkstart AAAAAAAABM}
+{\bkmkend AAAAAAAABM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid (int, int, int) checkAddress((int, int, int), (int, int, int))\par
+Attempts to return a plausible 3 digit address for an item\par
+with a 3-dimensional matrix. \par
+If bounds are supplied as a tuple or list of 3 integers comparisons\par
+to the corresponding address coordinate are made to ensure the\par
+address is within or equal to the asserted bounds.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v checkAngle\:aecErrorCheck::aecErrorCheck}
+{\xe \v aecErrorCheck::aecErrorCheck\:checkAngle}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecErrorCheck.aecErrorCheck.checkAngle (  {\i self},   {\i angle})}}
+\par
+{\bkmkstart AAAAAAAABN}
+{\bkmkend AAAAAAAABN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid float checkAngle(number)\par
+Attempts to return a well-formed float angle between 0 and 360.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v checkColor\:aecErrorCheck::aecErrorCheck}
+{\xe \v aecErrorCheck::aecErrorCheck\:checkColor}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecErrorCheck.aecErrorCheck.checkColor (  {\i self},   {\i color})}}
+\par
+{\bkmkstart AAAAAAAABO}
+{\bkmkend AAAAAAAABO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid (int, int, int) checkColor(int, int, int)\par
+Attempts to return a well-formed tuple of 3 ints representing RGB values from 0 to 255.\par
+Returns None if unable to form a color as specified.\par
+}
+ \par
+}}
+{\xe \v checkIndices\:aecErrorCheck::aecErrorCheck}
+{\xe \v aecErrorCheck::aecErrorCheck\:checkIndices}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecErrorCheck.aecErrorCheck.checkIndices (  {\i self},   {\i indices} = {\f2 None},   {\i limit} = {\f2 None})}}
+\par
+{\bkmkstart AAAAAAAABP}
+{\bkmkend AAAAAAAABP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [int,] checkIndices([number,])\par
+Attempts to return a list of well-formed integer indices.\par
+If no indices are delivered, returns a range of integers from zero to limit.\par
+Absent any arguments, returns [0]\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v checkPercentage\:aecErrorCheck::aecErrorCheck}
+{\xe \v aecErrorCheck::aecErrorCheck\:checkPercentage}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecErrorCheck.aecErrorCheck.checkPercentage (  {\i self},   {\i number} = {\f2 0})}}
+\par
+{\bkmkstart AAAAAAAABQ}
+{\bkmkend AAAAAAAABQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid float 0 - 1 makePercentage(number)\par
+Forces a number into the range of 0 to 1 by taking the absolute\par
+value and dividing a larger number successively by 10.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v checkPoint\:aecErrorCheck::aecErrorCheck}
+{\xe \v aecErrorCheck::aecErrorCheck\:checkPoint}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecErrorCheck.aecErrorCheck.checkPoint (  {\i self},   {\i testPoint},   {\i point2D} = {\f2 False})}}
+\par
+{\bkmkstart AAAAAAAABR}
+{\bkmkend AAAAAAAABR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid (2D or 3D point) checkPoint((2D or 3D point), bool)\par
+Returns a well-formed 2D or 3D point from the delivered argument if possible.\par
+Returns None if unable to form a point as specified.\par
+}
+ \par
+}}
+{\xe \v getType\:aecErrorCheck::aecErrorCheck}
+{\xe \v aecErrorCheck::aecErrorCheck\:getType}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecErrorCheck.aecErrorCheck.getType (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAABS}
+{\bkmkend AAAAAAAABS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid string getType()\par
+Returns a string constant to identify the object type.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following file:{\par
+\pard\plain \s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid 
+aecErrorCheck.py\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+aecGeomCalc.aecGeomCalc Class Reference\par \pard\plain 
+{\tc\tcl2 \v aecGeomCalc.aecGeomCalc}
+{\xe \v aecGeomCalc.aecGeomCalc}
+{\bkmkstart AAAAAAAABT}
+{\bkmkend AAAAAAAABT}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b __init__} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b areColinear} (self, points)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b checkBoundingBox} (self, boundingbox, box2D=False)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b checkPolygon} (self, points)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b containsPoint} (self, boundary, point)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b containsShape} (self, boundary, shape)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b convexHull} (self, points)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b findPoint} (self, boundary)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getBoxPoints} (self, origin=(0, 0, 0), vector=(1, 1, 1), box2D=False)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getCompassPointBox} (self, boundingbox, box2D=False, orient=aecCompass.C)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getDifference} (self, boundary, shape)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getIntersection} (self, boundary, shape)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getMesh2D} (self, points)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getMidpoint} (self, point1, point2)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getType} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b mirrorPoints2D} (self, points, mPoints=[(0, 0))\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b rmvColinear} (self, points)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v __init__\:aecGeomCalc::aecGeomCalc}
+{\xe \v aecGeomCalc::aecGeomCalc\:__init__}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecGeomCalc.aecGeomCalc.__init__ (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAABU}
+{\bkmkend AAAAAAAABU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid aecGeomCalc Constructor\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v areColinear\:aecGeomCalc::aecGeomCalc}
+{\xe \v aecGeomCalc::aecGeomCalc\:areColinear}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecGeomCalc.aecGeomCalc.areColinear (  {\i self},   {\i points})}}
+\par
+{\bkmkstart AAAAAAAABV}
+{\bkmkend AAAAAAAABV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool areColinear([(2D point),])\par
+Returns True if all delivered points are colinear.\par
+Returns False if points are not colinear.\par
+Returns None on failure to make a determination.\par
+}
+ \par
+}}
+{\xe \v checkBoundingBox\:aecGeomCalc::aecGeomCalc}
+{\xe \v aecGeomCalc::aecGeomCalc\:checkBoundingBox}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecGeomCalc.aecGeomCalc.checkBoundingBox (  {\i self},   {\i boundingbox},   {\i box2D} = {\f2 False})}}
+\par
+{\bkmkstart AAAAAAAABW}
+{\bkmkend AAAAAAAABW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [(3D point), (3D point), (3D point), (3D point),] checkBoundingBox([(3Dpoint),])\par
+Attempts to return a list of 3D points describing a bounding box.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v checkPolygon\:aecGeomCalc::aecGeomCalc}
+{\xe \v aecGeomCalc::aecGeomCalc\:checkPolygon}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecGeomCalc.aecGeomCalc.checkPolygon (  {\i self},   {\i points})}}
+\par
+{\bkmkstart AAAAAAAABX}
+{\bkmkend AAAAAAAABX}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [(2D point),] checkPolygon([(2D or 3D point),], bool)\par
+Returns a list of 2D points that seem capable of defining a polygonal perimeter.\par
+Returns False if a condition precluding a polygon is detected.\par
+Returns None on failure to make a determination.\par
+}
+ \par
+}}
+{\xe \v containsPoint\:aecGeomCalc::aecGeomCalc}
+{\xe \v aecGeomCalc::aecGeomCalc\:containsPoint}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecGeomCalc.aecGeomCalc.containsPoint (  {\i self},   {\i boundary},   {\i point})}}
+\par
+{\bkmkstart AAAAAAAABY}
+{\bkmkend AAAAAAAABY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool containsPoint([(2D point),], (2D Point))\par
+Returns True if the boundary contains the point on the shared zero plane.\par
+The boundary argument is assumed to be a sequential 2D point list on a perimeter.\par
+Returns None if the boundary and point cannot be compared.\par
+}
+ \par
+}}
+{\xe \v containsShape\:aecGeomCalc::aecGeomCalc}
+{\xe \v aecGeomCalc::aecGeomCalc\:containsShape}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecGeomCalc.aecGeomCalc.containsShape (  {\i self},   {\i boundary},   {\i shape})}}
+\par
+{\bkmkstart AAAAAAAABZ}
+{\bkmkend AAAAAAAABZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool containsShape([(2D point),], [(2D point),])\par
+Returns True if the boundary wholly contains the shape on the shared zero plane.\par
+Both arguments are 2D point lists assumed to be sequential on two perimeters. \par
+Returns None if the boundary and shape cannot be compared.\par
+}
+ \par
+}}
+{\xe \v convexHull\:aecGeomCalc::aecGeomCalc}
+{\xe \v aecGeomCalc::aecGeomCalc\:convexHull}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecGeomCalc.aecGeomCalc.convexHull (  {\i self},   {\i points})}}
+\par
+{\bkmkstart AAAAAAAACA}
+{\bkmkend AAAAAAAACA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid ([(3D point),]) convexHull ([(3D point),])\par
+Computes the convex hull of a set of 2D points returning the list\par
+of outermost points in counter-clockwise order, starting from the\par
+vertex with the lexicographically smallest coordinates.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v findPoint\:aecGeomCalc::aecGeomCalc}
+{\xe \v aecGeomCalc::aecGeomCalc\:findPoint}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecGeomCalc.aecGeomCalc.findPoint (  {\i self},   {\i boundary})}}
+\par
+{\bkmkstart AAAAAAAACB}
+{\bkmkend AAAAAAAACB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid (2D point) findPoint([(2D or 3D point),])\par
+Returns a random point within the boundary defined by the list of delivered points.\par
+Returns None if no point can be found or on failure.\par
+}
+ \par
+}}
+{\xe \v getBoxPoints\:aecGeomCalc::aecGeomCalc}
+{\xe \v aecGeomCalc::aecGeomCalc\:getBoxPoints}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecGeomCalc.aecGeomCalc.getBoxPoints (  {\i self},   {\i origin} = {\f2 (0,\~ 0,\~ 0)},   {\i vector} = {\f2 (1,\~ 1,\~ 1)},   {\i box2D} = {\f2 False})}}
+\par
+{\bkmkstart AAAAAAAACC}
+{\bkmkend AAAAAAAACC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [(3D point),] getBoxPoints((2D or 3D point), (2D or 3D vector), bool)\par
+Returns the 2D or 3D coordinates of a box based on the origin and vector.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getCompassPointBox\:aecGeomCalc::aecGeomCalc}
+{\xe \v aecGeomCalc::aecGeomCalc\:getCompassPointBox}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecGeomCalc.aecGeomCalc.getCompassPointBox (  {\i self},   {\i boundingbox},   {\i box2D} = {\f2 False},   {\i orient} = {\f2 aecCompass.C})}}
+\par
+{\bkmkstart AAAAAAAACD}
+{\bkmkend AAAAAAAACD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid (3D point) getCompassPoint([(3D point),] aecCompass.constant)\par
+Returns a point on the delivered bounding box corresponding to the orientation of one \par
+of 17 compass directions defined by aecCompass, including the default C denoting the center.\par
+For example, N (north) corresponds to the middle point of maximum y side of the bounding box,\par
+with proportionate distances along the axis represented by NNE (3/4 length from minumum X),\par
+and NE (bounding box maximum x, maximum y corner).\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getDifference\:aecGeomCalc::aecGeomCalc}
+{\xe \v aecGeomCalc::aecGeomCalc\:getDifference}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecGeomCalc.aecGeomCalc.getDifference (  {\i self},   {\i boundary},   {\i shape})}}
+\par
+{\bkmkstart AAAAAAAACE}
+{\bkmkend AAAAAAAACE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [[(2D point),], [(2D point),]]  getDifference([(2D point),], [(2D point),])\par
+Returns the points of perimeter(s) not shared between boundary and shape.\par
+If more than one perimeter is found, the return value is a list of lists of points\par
+defining each perimeter.\par
+Returns None if unable to determine the difference perimeter(s).\par
+}
+ \par
+}}
+{\xe \v getIntersection\:aecGeomCalc::aecGeomCalc}
+{\xe \v aecGeomCalc::aecGeomCalc\:getIntersection}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecGeomCalc.aecGeomCalc.getIntersection (  {\i self},   {\i boundary},   {\i shape})}}
+\par
+{\bkmkstart AAAAAAAACF}
+{\bkmkend AAAAAAAACF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [(2D point),] getIntersection([(2D point),], [(2D point),])\par
+Returns the points of a perimeter representing the \par
+geometric intersection of the boundary and the shape.\par
+Returns None if unable to determine a single intersection perimeter.\par
+}
+ \par
+}}
+{\xe \v getMesh2D\:aecGeomCalc::aecGeomCalc}
+{\xe \v aecGeomCalc::aecGeomCalc\:getMesh2D}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecGeomCalc.aecGeomCalc.getMesh2D (  {\i self},   {\i points})}}
+\par
+{\bkmkstart AAAAAAAACG}
+{\bkmkend AAAAAAAACG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [[(3 indices),][(3D point),],] getMesh2D()\par
+Constructs a compact 2D mesh representation of a horizontal \par
+surface as a list of unique points and triangle indices.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getMidpoint\:aecGeomCalc::aecGeomCalc}
+{\xe \v aecGeomCalc::aecGeomCalc\:getMidpoint}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecGeomCalc.aecGeomCalc.getMidpoint (  {\i self},   {\i point1},   {\i point2})}}
+\par
+{\bkmkstart AAAAAAAACH}
+{\bkmkend AAAAAAAACH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid (2D or 3D point) getMidpoint((2D or 3D point), (2D or 3D point))\par
+Returns the midpoint between two 3D points.\par
+Returns None on failure\par
+}
+ \par
+}}
+{\xe \v getType\:aecGeomCalc::aecGeomCalc}
+{\xe \v aecGeomCalc::aecGeomCalc\:getType}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecGeomCalc.aecGeomCalc.getType (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAACI}
+{\bkmkend AAAAAAAACI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid string getType()\par
+Returns a string constant to identify the object type.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v mirrorPoints2D\:aecGeomCalc::aecGeomCalc}
+{\xe \v aecGeomCalc::aecGeomCalc\:mirrorPoints2D}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecGeomCalc.aecGeomCalc.mirrorPoints2D (  {\i self},   {\i points},   {\i mPoints} = {\f2 [(0,\~ 0)})}}
+\par
+{\bkmkstart AAAAAAAACJ}
+{\bkmkend AAAAAAAACJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [(2D point),] mirrorPoints2D([(2D point),], [(2D point), (2D point)])\par
+Accepts a set of points and a mirror axis defined by two 2D points\par
+and returns a set of points reflected around the mirror axis.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v rmvColinear\:aecGeomCalc::aecGeomCalc}
+{\xe \v aecGeomCalc::aecGeomCalc\:rmvColinear}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecGeomCalc.aecGeomCalc.rmvColinear (  {\i self},   {\i points})}}
+\par
+{\bkmkstart AAAAAAAACK}
+{\bkmkend AAAAAAAACK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [(3D point),] rmvColinear([(3D point),])\par
+Returns the delivered list of points with redundundant colinear points removed.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following file:{\par
+\pard\plain \s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid 
+aecGeomCalc.py\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+aecGrid.aecGeomCalc Class Reference\par \pard\plain 
+{\tc\tcl2 \v aecGrid.aecGeomCalc}
+{\xe \v aecGrid.aecGeomCalc}
+{\bkmkstart AAAAAAAACL}
+{\bkmkend AAAAAAAACL}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b __init__} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getType} (self)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v __init__\:aecGrid::aecGeomCalc}
+{\xe \v aecGrid::aecGeomCalc\:__init__}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecGrid.aecGeomCalc.__init__ (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAACM}
+{\bkmkend AAAAAAAACM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid INTERNAL\par
+Constructor\par
+Creates the dictionary of all internal keys and values.\par
+Sets the ID to a new UUID.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v getType\:aecGrid::aecGeomCalc}
+{\xe \v aecGrid::aecGeomCalc\:getType}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecGrid.aecGeomCalc.getType (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAACN}
+{\bkmkend AAAAAAAACN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid string getType()\par
+Returns a string constant to identify the object type.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following file:{\par
+\pard\plain \s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid 
+aecGrid.py\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+aecSpace.aecSpace Class Reference\par \pard\plain 
+{\tc\tcl2 \v aecSpace.aecSpace}
+{\xe \v aecSpace.aecSpace}
+{\bkmkstart AAAAAAAACO}
+{\bkmkend AAAAAAAACO}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b __init__} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b addBoundary} (self, points, restart=False)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b enclosesPoint} (self, point)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b fitWithin} (self, boundary)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getAddress} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getAngles} (self, degrees=False)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getArea} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getAxisX} (self, points2D=False)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getAxisY} (self, points2D=False)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getAxisMajor} (self, points2D=False)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getAxisMinor} (self, points2D=False)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getBoundary} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getBoundingBox} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getBoundingBoxCeiling} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getBoundingBoxFloor} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getCentroid} (self, point2D=False)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getCircumference} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getColor01} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getColor256} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getCompassPoint} (self, orient=aecCompass.N, point2D=False)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getCompassPointBox} (self, compass=aecCompass.N, point2D=False)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getHeight} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getID} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getLevel} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getMeshCeiling} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getMeshFloor} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getMeshSides} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getMeshGeometric} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getMeshGraphic} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getName} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getNormalCeiling} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getNormalFloor} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getNormalSides} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getNormalsCeiling} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getNormalsFloor} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getNormalsSides} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getOrigin} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getPointsCeiling} (self, points2D=False)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getPointsExterior} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getPointsFloor} (self, points2D=False)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getPointsSides} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getProperties} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getProperty} (self, prpName)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getTransparency} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getType} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getVerticesCeiling} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getVerticesExterior} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getVerticesFloor} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getVerticesSides} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getVolume} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getXsize} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getYsize} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b makeBox} (self, origin=(0, 0, 0), vector=(1, 1, 1))\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b makeBoxes} (self, boxes=[[(0, 0, 0))\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b makeCross} (self, origin=(0, 0, 0), vector=(1, 1, 1), xWidth=0.33333333, yDepth=0.33333333, xAxis=0.5, yAxis=0.5)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b makeCylinder} (self, origin=(0, 0, 0), radius=1, height=0)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b makeH} (self, origin=(0, 0, 0), vector=(1, 1, 1), xWidth1=0.33333333, xWidth2=0.33333333, yDepth=0.33333333)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b makeL} (self, origin=(0, 0, 0), vector=(1, 1, 1), xWidth=0.33333333, yDepth=0.33333333)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b makePolygon} (self, origin=(0, 0, 0), radius=1, sides=3, height=0)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b makeT} (self, origin=(0, 0, 0), vector=(1, 1, 1), xWidth=0.33333333, yDepth=0.33333333)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b makeU} (self, origin=(0, 0, 0), vector=(1, 1, 1), xWidth1=0.33333333, xWidth2=0.33333333, yDepth=0.33333333)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b mirror} (self, mPoints=None)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b move} (self, moveBy=(0, 0, 0))\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b moveTo} (self, fromPnt=(0, 0, 0), toPnt=(0, 0, 0))\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b rotate} (self, angle=180, pivot=None)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b scale} (self, scaleBy=(1, 1, 1), scalePoint=None)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b setAddress} (self, address="")\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b setBoundary} (self, points=[(0, 0))\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b setColor} (self, newColor=None)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b setHeight} (self, newHeight=1)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b setLevel} (self, newLevel=0)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b setName} (self, newName="")\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b setProperty} (self, prpName, value)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b setTransparency} (self, newTrans=0)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b wrap} (self, points)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid class aecSpace\par
+Defines the geometric enclosure of a region described by a list of 3D points,\par
+a level in relation to the zero plane, and a positive height in relation to the level.\par
+\par
+Current Assumptions + Limitations\par
+\par
+The XY plane is considered horizontal, the Z dimension vertical.\par
+\par
+aecSpaces are prisms with bases parallel to the ground plane\par
+and having only vertical boundaries.\par
+\par
+Curved walls must be represented by a series of straight segments.\par
+\par
+Note:\par
+Method comments will refer to "2D point", "3D point", and "3D vector".\par
+In all cases these data types should should be understood as tuples\par
+of 2 or 3 numbers as indicated.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v __init__\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:__init__}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.__init__ (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAACP}
+{\bkmkend AAAAAAAACP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid INTERNAL\par
+aecSpace Constructor\par
+Creates the dictionary of all internal keys and values.\par
+Sets the dimensions to a unit cube with a corner at (0, 0, 0).\par
+Sets the color to random RGB values.\par
+Sets the ID to a new UUID.}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v addBoundary\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:addBoundary}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.addBoundary (  {\i self},   {\i points},   {\i restart} = {\f2 False})}}
+\par
+{\bkmkstart AAAAAAAACQ}
+{\bkmkend AAAAAAAACQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool addBoundary([(2D or 3D point),], bool)\par
+If restart is True, constructs a new boundary from the delivered list of points.\par
+If restart is False, combines the current boundary with boundaries defined by\par
+the delivered points.\par
+Returns False if the delivered points do not resolve to a single non-crossing\par
+polygon and leaves the current boundary unchanged.\par
+Returns True if successful.\par
+}
+ \par
+}}
+{\xe \v enclosesPoint\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:enclosesPoint}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.enclosesPoint (  {\i self},   {\i point})}}
+\par
+{\bkmkstart AAAAAAAACR}
+{\bkmkend AAAAAAAACR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool encloses((3D point))\par
+Returns True if the delivered point falls within the 3D aecSpace,\par
+respecting the boundary, level, and height of the space relative\par
+to the point's position, returning False if the point is outside\par
+the space.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v fitWithin\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:fitWithin}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.fitWithin (  {\i self},   {\i boundary})}}
+\par
+{\bkmkstart AAAAAAAACS}
+{\bkmkend AAAAAAAACS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool fitWithin([(2D or 3D point),*3+])\par
+If the aecSpace boundary is not wholly within the delivered perimeter as\par
+described in a list of points, the aecSpace will reconfigure its perimeter\par
+to fit within the delivered perimeter.\par
+Returns True if successful, otherwise returning None.\par
+}
+ \par
+}}
+{\xe \v getAddress\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getAddress}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getAddress (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAACT}
+{\bkmkend AAAAAAAACT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid value getAddress()\par
+Returns the custom address designation.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getAngles\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getAngles}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getAngles (  {\i self},   {\i degrees} = {\f2 False})}}
+\par
+{\bkmkstart AAAAAAAACU}
+{\bkmkend AAAAAAAACU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [[(3D point), interior angle float, exterior angle float],] getAngles(bool)\par
+Returns the interior and exterior horizontal angles at each point\par
+defining the floor and ceiling, in radians by default, or in\par
+degrees if degrees = True.\par
+Return None on failure.\par
+}
+ \par
+}}
+{\xe \v getArea\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getArea}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getArea (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAACV}
+{\bkmkend AAAAAAAACV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid float getArea()\par
+Returns the area of the boundary at the level.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getAxisMajor\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getAxisMajor}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getAxisMajor (  {\i self},   {\i points2D} = {\f2 False})}}
+\par
+{\bkmkstart AAAAAAAACW}
+{\bkmkend AAAAAAAACW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [(3D point),] getAxisMajor(bool)\par
+By default returns the two 3D endpoints of the longer bounding box\par
+axis at the level or the x-axis if both axes are of equal length.\par
+If points2D = True returns 2D endpoints.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getAxisMinor\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getAxisMinor}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getAxisMinor (  {\i self},   {\i points2D} = {\f2 False})}}
+\par
+{\bkmkstart AAAAAAAACX}
+{\bkmkend AAAAAAAACX}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [(3D point),] getAxisMinor(bool)\par
+By default returns the two 3D endpoints of the shorter bounding box\par
+axis at the level or the y-axis if both axes are of equal length.\par
+If points2D = True returns 2D endpoints.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getAxisX\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getAxisX}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getAxisX (  {\i self},   {\i points2D} = {\f2 False})}}
+\par
+{\bkmkstart AAAAAAAACY}
+{\bkmkend AAAAAAAACY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [(3D point),] getAxisX()\par
+By default returns the two 3D x-axis endpoints of the bounding box at level.\par
+If points2D = True returns 2D endpoints.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getAxisY\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getAxisY}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getAxisY (  {\i self},   {\i points2D} = {\f2 False})}}
+\par
+{\bkmkstart AAAAAAAACZ}
+{\bkmkend AAAAAAAACZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [(3D point),] getAxisX()\par
+By default returns the two 3D y-axis endpoints of the bounding box at level.\par
+If points2D = True returns 2D endpoints.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getBoundary\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getBoundary}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getBoundary (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADA}
+{\bkmkend AAAAAAAADA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid Shapely.Polygon getBoundary()\par
+Returns the 2D Shapely Polygon representation of the floor boundary.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getBoundingBox\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getBoundingBox}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getBoundingBox (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADB}
+{\bkmkend AAAAAAAADB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [(3D point),] getBoundingBox()\par
+Returns the bounding box as four 2D points in counter-clockwise\par
+order from the minimum vertex in the coordinate plane.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getBoundingBoxCeiling\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getBoundingBoxCeiling}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getBoundingBoxCeiling (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADC}
+{\bkmkend AAAAAAAADC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [(3D point),] getBoundingBoxCeiling()\par
+Returns the bounding box at the level + the height as four 3D points in\par
+counter-clockwise order from the minimum vertex in the coordinate plane.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getBoundingBoxFloor\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getBoundingBoxFloor}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getBoundingBoxFloor (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADD}
+{\bkmkend AAAAAAAADD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [(3D point),] getBoundingBoxFloor()\par
+Returns the bounding box at the level as four 3D points in counter-clockwise\par
+order from the minimum vertex in the coordinate plane.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getCentroid\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getCentroid}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getCentroid (  {\i self},   {\i point2D} = {\f2 False})}}
+\par
+{\bkmkstart AAAAAAAADE}
+{\bkmkend AAAAAAAADE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid (3D point) getCentroid(bool)\par
+By default returns the centroid as a 3D point at the level.\par
+If points2D = True returns a 2D point.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getCircumference\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getCircumference}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getCircumference (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADF}
+{\bkmkend AAAAAAAADF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid float getCircumference()\par
+Returns the length of the polygon perimeter at the level.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getColor01\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getColor01}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getColor01 (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADG}
+{\bkmkend AAAAAAAADG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid (3 floats) getColor01()\par
+Returns the color as an RGB tuple with three values in the 0 - 1 range.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getColor256\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getColor256}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getColor256 (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADH}
+{\bkmkend AAAAAAAADH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid (3 ints) getColor256()\par
+Returns the color as an RGB tuple with three values in the 0 - 255 range.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getCompassPoint\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getCompassPoint}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getCompassPoint (  {\i self},   {\i orient} = {\f2 aecCompass.N},   {\i point2D} = {\f2 False})}}
+\par
+{\bkmkstart AAAAAAAADI}
+{\bkmkend AAAAAAAADI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid (3D point) getCompassPoint(aecCompass.orientation)\par
+Returns a point on the boundary at the first intersection of a ray from the \par
+centroid to the cardinal point as defined by aecCompass on the boundingbox.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getCompassPointBox\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getCompassPointBox}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getCompassPointBox (  {\i self},   {\i compass} = {\f2 aecCompass.N},   {\i point2D} = {\f2 False})}}
+\par
+{\bkmkstart AAAAAAAADJ}
+{\bkmkend AAAAAAAADJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid (3D point) getCompassPoint(aecCompass.orientation)\par
+Returns a point on the boundary at the first intersection of a ray from the \par
+centroid to the cardinal point as defined by aecCompass on the boundingbox.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getHeight\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getHeight}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getHeight (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADK}
+{\bkmkend AAAAAAAADK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid float getHeight()\par
+Returns the space height.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getID\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getID}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getID (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADL}
+{\bkmkend AAAAAAAADL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid string getID()\par
+Returns the unique ID automatically generated when\par
+an aecSpace instance is created.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getLevel\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getLevel}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getLevel (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADM}
+{\bkmkend AAAAAAAADM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid float getLevel()\par
+Returns the space level.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getMeshCeiling\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getMeshCeiling}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getMeshCeiling (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADN}
+{\bkmkend AAAAAAAADN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [[(3D point),], [(3 indices),], (3D surface normal)] getMeshCeiling()\par
+Returns a mesh representation of the ceiling including points, triangles\par
+in the form of indices into the point list, and a surface normal.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getMeshFloor\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getMeshFloor}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getMeshFloor (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADO}
+{\bkmkend AAAAAAAADO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [[(3D point),], [(3 indices),], (3D surface normal)] getMeshFloor()\par
+Returns a mesh representation of the floor including points, triangles\par
+in the form of indices into the point list, and a surface normal.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getMeshGeometric\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getMeshGeometric}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getMeshGeometric (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADP}
+{\bkmkend AAAAAAAADP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid ([[[(3D point),] (3D normal)]],[(3 int index),]] getMeshGeometric()\par
+Returns a simple mesh representation of the space including points,\par
+point normals, and triangle indices into the point list.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getMeshGraphic\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getMeshGraphic}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getMeshGraphic (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADQ}
+{\bkmkend AAAAAAAADQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \{'points' : [float,], 'indices' : [int,], 'normals' : [int,]\} getMeshGraphic()\par
+Returns points, triangle indices into the points list, and surface normals\par
+as three flat dictionary entry lists of floats for rendering compatibility\par
+with graphic display systems.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getMeshSides\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getMeshSides}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getMeshSides (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADR}
+{\bkmkend AAAAAAAADR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [[(3D point),], (3D surface normal)], [(3 indices),] getMeshSides()\par
+Returns a mesh representation of the sides including points and surface\par
+normals for each side, and triangles in the form of indices into the point list.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getName\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getName}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getName (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADS}
+{\bkmkend AAAAAAAADS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid string getName()\par
+Returns the custom string designation.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getNormalCeiling\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getNormalCeiling}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getNormalCeiling (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADT}
+{\bkmkend AAAAAAAADT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid (3D vector) getNormalCeiling()\par
+Returns the ceiling surface normal.\par
+RReturns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getNormalFloor\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getNormalFloor}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getNormalFloor (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADU}
+{\bkmkend AAAAAAAADU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid (3D vector) getNormalFloor()\par
+Returns the floor surface normal.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getNormalsCeiling\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getNormalsCeiling}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getNormalsCeiling (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADV}
+{\bkmkend AAAAAAAADV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [[(3D point), (3D vector)],] getNormalsCeiling()\par
+Returns the point normals for each of the ceiling\par
+3D points in a list of paired points and normals.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getNormalsFloor\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getNormalsFloor}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getNormalsFloor (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADW}
+{\bkmkend AAAAAAAADW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [[(3D point), (3D vector)],] getNormalsFloor()\par
+Returns the point normals for each of the floor\par
+3D points in a list of paired points and normals.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getNormalSides\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getNormalSides}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getNormalSides (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADX}
+{\bkmkend AAAAAAAADX}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [[(3D point),], (3D vector)],] getNormalSides()\par
+Returns a list pairing sets of points defining a single side with their surface normal.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getNormalsSides\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getNormalsSides}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getNormalsSides (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADY}
+{\bkmkend AAAAAAAADY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [[[(3D point), (3D vector)],],] getNormalsSides()\par
+Returns the point normals for each of the sides 3D points\par
+in a list of paired points and normals grouped by each side.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getOrigin\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getOrigin}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getOrigin (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAADZ}
+{\bkmkend AAAAAAAADZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid (3D point) getOrigin()\par
+Returns the first 3D point in the sequence defining the current perimeter.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getPointsCeiling\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getPointsCeiling}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getPointsCeiling (  {\i self},   {\i points2D} = {\f2 False})}}
+\par
+{\bkmkstart AAAAAAAAEA}
+{\bkmkend AAAAAAAAEA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [(3D point),] getPointsCeiling()\par
+By default returns a list of 3D points describing the ceiling perimeter.\par
+2D points are returned if points2D = True.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getPointsExterior\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getPointsExterior}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getPointsExterior (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAEB}
+{\bkmkend AAAAAAAAEB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \{'floor' : [(3D point),], 'ceiling' : [(3D point),], 'sides' : [[(3D point),], ]\}\par
+getPointsExterior()\par
+Returns a dictionary of all the points describing the space.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getPointsFloor\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getPointsFloor}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getPointsFloor (  {\i self},   {\i points2D} = {\f2 False})}}
+\par
+{\bkmkstart AAAAAAAAEC}
+{\bkmkend AAAAAAAAEC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [(2D or 3D point,...)] getPointsFloor()\par
+By default returns a list of 3D points describing the floor perimeter.\par
+2D points are returned if points2D = True.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getPointsSides\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getPointsSides}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getPointsSides (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAED}
+{\bkmkend AAAAAAAAED}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [[(3D point),],] getPointsSides()\par
+By default returns a list of lists of 3D points describing the side perimeters.\par
+2D points are returned if points2D = True.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getProperties\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getProperties}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getProperties (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAEE}
+{\bkmkend AAAAAAAAEE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid dictionary getProperties()\par
+Retrieves the properties dictionary of all internal values.\par
+Intended for use by other components of the aecSpace toolkit.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getProperty\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getProperty}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getProperty (  {\i self},   {\i prpName})}}
+\par
+{\bkmkstart AAAAAAAAEF}
+{\bkmkend AAAAAAAAEF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid value getProperty(string)\par
+Directly retrieves a property by its string key, bypassing all error checking.\par
+Intended for use by other components of the aecSpace toolkit.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getTransparency\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getTransparency}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getTransparency (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAEG}
+{\bkmkend AAAAAAAAEG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid float getTransparency()\par
+Returns the Transparency as a percentage between 0 and 1.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getType\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getType}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getType (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAEH}
+{\bkmkend AAAAAAAAEH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid string getType()\par
+Returns a string constant to identify the object type.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getVerticesCeiling\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getVerticesCeiling}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getVerticesCeiling (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAEI}
+{\bkmkend AAAAAAAAEI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [aecVertex,] getVerticesCeiling()\par
+Returns the list of aecVertex instances describing the ceiling perimeter.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getVerticesExterior\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getVerticesExterior}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getVerticesExterior (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAEJ}
+{\bkmkend AAAAAAAAEJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid \{'floor' : [aecVertex,], 'ceiling' : [aecVertex,], 'sides' : [aecVertex,]\}\par
+getVerticesExterior()\par
+Returns a dictionary of all the aecVertex instances describing the space.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getVerticesFloor\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getVerticesFloor}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getVerticesFloor (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAEK}
+{\bkmkend AAAAAAAAEK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [aecVertex,] getVerticesFloor()\par
+Returns the list of aecVertex instances describing the floor perimeter.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getVerticesSides\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getVerticesSides}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getVerticesSides (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAEL}
+{\bkmkend AAAAAAAAEL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [[aecVertex,],] getVerticesFloor()\par
+Returns the list of lists of aecVertex instances describing the perimeter of each side.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getVolume\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getVolume}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getVolume (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAEM}
+{\bkmkend AAAAAAAAEM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid float getVolume()\par
+Returns the volume calculated from the boundary area multiplied by the height.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getXsize\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getXsize}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getXsize (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAEN}
+{\bkmkend AAAAAAAAEN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid float getBoxXsize()\par
+Returns the 2D x-axis length of the space bounding box.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v getYsize\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:getYsize}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.getYsize (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAEO}
+{\bkmkend AAAAAAAAEO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid float getBoxYsize()\par
+Returns the 2D y-axis length of the space bounding box.\par
+Returns None if there is no current boundary or on other failure.\par
+}
+ \par
+}}
+{\xe \v makeBox\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:makeBox}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.makeBox (  {\i self},   {\i origin} = {\f2 (0,\~ 0,\~ 0)},   {\i vector} = {\f2 (1,\~ 1,\~ 1)})}}
+\par
+{\bkmkstart AAAAAAAAEP}
+{\bkmkend AAAAAAAAEP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool makeBox((3D point), (3D vector))\par
+Creates a rectangular space constructed from an origin point\par
+and a 3D vector describing length, width, and height.\par
+Returns True on success.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v makeBoxes\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:makeBoxes}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.makeBoxes (  {\i self},   {\i boxes} = {\f2 [[(0,\~ 0,\~ 0)})}}
+\par
+{\bkmkstart AAAAAAAAEQ}
+{\bkmkend AAAAAAAAEQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool makeBoxes([[(3D Point), (3D vector)],])\par
+Attempts to construct a new perimeter from a list of orthogonal\par
+rectangles described by paired origins and vectors.\par
+Returns True if successful.\par
+}
+ \par
+}}
+{\xe \v makeCross\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:makeCross}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.makeCross (  {\i self},   {\i origin} = {\f2 (0,\~ 0,\~ 0)},   {\i vector} = {\f2 (1,\~ 1,\~ 1)},   {\i xWidth} = {\f2 0.33333333},   {\i yDepth} = {\f2 0.33333333},   {\i xAxis} = {\f2 0.5},   {\i yAxis} = {\f2 0.5})}}
+\par
+{\bkmkstart AAAAAAAAER}
+{\bkmkend AAAAAAAAER}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool makeCross((3D point), (3D vector), percent, percent, percent, percent)\par
+Constructs a cross-shaped space within the box defined by point and vector.\par
+xWidth and yDepth are percentages of overall x-axis and y-axis distances that\par
+determine the width of each cross arm.\par
+xAxis and yAxis are percentages of overall x-axis and y-axis distances that\par
+determine the centerline of each cross arm.\par
+Returns True on success.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v makeCylinder\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:makeCylinder}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.makeCylinder (  {\i self},   {\i origin} = {\f2 (0,\~ 0,\~ 0)},   {\i radius} = {\f2 1},   {\i height} = {\f2 0})}}
+\par
+{\bkmkstart AAAAAAAAES}
+{\bkmkend AAAAAAAAES}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool makeCylinder((3D point), number, number)\par
+Contructs the perimeter as an approximate circle, setting a ratio from\par
+the delivered  radius to the number of sides and setting the space height.\par
+Returns True on success.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v makeH\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:makeH}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.makeH (  {\i self},   {\i origin} = {\f2 (0,\~ 0,\~ 0)},   {\i vector} = {\f2 (1,\~ 1,\~ 1)},   {\i xWidth1} = {\f2 0.33333333},   {\i xWidth2} = {\f2 0.33333333},   {\i yDepth} = {\f2 0.33333333})}}
+\par
+{\bkmkstart AAAAAAAAET}
+{\bkmkend AAAAAAAAET}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool makeH((3D point), (3D vector), percent, percent, percent)\par
+Constructs an H-shaped boundary within the box defined by point and vector.\par
+xWidth1, xWidth2, and yDepth are percentages of overall x-axis and y-axis distances that\par
+determine the width of each vertical and cross bar, respectively.\par
+Returns True on success.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v makeL\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:makeL}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.makeL (  {\i self},   {\i origin} = {\f2 (0,\~ 0,\~ 0)},   {\i vector} = {\f2 (1,\~ 1,\~ 1)},   {\i xWidth} = {\f2 0.33333333},   {\i yDepth} = {\f2 0.33333333})}}
+\par
+{\bkmkstart AAAAAAAAEU}
+{\bkmkend AAAAAAAAEU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool makeL((3D point), (3D vector), percent, percent)\par
+Constructs a L-shaped boundary within the box defined by point and vector.\par
+xWidth and yDepth are percentages of overall x-axis and y-axis distances\par
+that determine the width of each bar.\par
+Returns True on success.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v makePolygon\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:makePolygon}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.makePolygon (  {\i self},   {\i origin} = {\f2 (0,\~ 0,\~ 0)},   {\i radius} = {\f2 1},   {\i sides} = {\f2 3},   {\i height} = {\f2 0})}}
+\par
+{\bkmkstart AAAAAAAAEV}
+{\bkmkend AAAAAAAAEV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool makePolygon((3D point), number, integer, number)\par
+Constructs the perimeter as a regular polygon centered on the delivered\par
+origin point with the first vertex at the maximum y-coordinate.\par
+Sets the height of the space.\par
+Returns True on success.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v makeT\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:makeT}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.makeT (  {\i self},   {\i origin} = {\f2 (0,\~ 0,\~ 0)},   {\i vector} = {\f2 (1,\~ 1,\~ 1)},   {\i xWidth} = {\f2 0.33333333},   {\i yDepth} = {\f2 0.33333333})}}
+\par
+{\bkmkstart AAAAAAAAEW}
+{\bkmkend AAAAAAAAEW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool makeT((3D point), (3D vector), percent, percent)\par
+Constructs a T-shaped boundary within the box defined by point and vector.\par
+xWidth and yDepth are percentages of overall x-axis and y-axis distances that\par
+determine the width of the vertical and horizonatl bars, respectively.\par
+Returns True on success.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v makeU\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:makeU}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.makeU (  {\i self},   {\i origin} = {\f2 (0,\~ 0,\~ 0)},   {\i vector} = {\f2 (1,\~ 1,\~ 1)},   {\i xWidth1} = {\f2 0.33333333},   {\i xWidth2} = {\f2 0.33333333},   {\i yDepth} = {\f2 0.33333333})}}
+\par
+{\bkmkstart AAAAAAAAEX}
+{\bkmkend AAAAAAAAEX}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool makeU((3D point), (3D vector), percent, percent, percent)\par
+xWidth1, xWidth2, and yDepth are percentages of overall x-axis and y-axis distances\par
+that determine the width of each vertical and cross bar, respectively.\par
+Returns True on success.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v mirror\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:mirror}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.mirror (  {\i self},   {\i mPoints} = {\f2 None})}}
+\par
+{\bkmkstart AAAAAAAAEY}
+{\bkmkend AAAAAAAAEY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool mirror([(3D point), (3D point)])\par
+Mirrors the space orthogonally around the specified line as defined\par
+by two points, or by default around the major orthogonal axis.\par
+Returns True on success.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v move\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:move}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.move (  {\i self},   {\i moveBy} = {\f2 (0,\~ 0,\~ 0)})}}
+\par
+{\bkmkstart AAAAAAAAEZ}
+{\bkmkend AAAAAAAAEZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool move((3D vector))\par
+Moves the space according to the delivered vector.\par
+Returns True on success.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v moveTo\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:moveTo}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.moveTo (  {\i self},   {\i fromPnt} = {\f2 (0,\~ 0,\~ 0)},   {\i toPnt} = {\f2 (0,\~ 0,\~ 0)})}}
+\par
+{\bkmkstart AAAAAAAAFA}
+{\bkmkend AAAAAAAAFA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool moveTo((3D point), (3D point))\par
+Attempts to move the space by constructing a vector between the "from" and "to" points.\par
+Returns True on success.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v rotate\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:rotate}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.rotate (  {\i self},   {\i angle} = {\f2 180},   {\i pivot} = {\f2 None})}}
+\par
+{\bkmkstart AAAAAAAAFB}
+{\bkmkend AAAAAAAAFB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool rotate (float, (2D point))\par
+Rotates the space counterclockwise around the 2D pivot point\par
+by the delivered rotation in degrees.\par
+If no pivot point is provided, the space will rotate around its centroid.\par
+Returns True on success.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v scale\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:scale}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.scale (  {\i self},   {\i scaleBy} = {\f2 (1,\~ 1,\~ 1)},   {\i scalePoint} = {\f2 None})}}
+\par
+{\bkmkstart AAAAAAAAFC}
+{\bkmkend AAAAAAAAFC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool scale (3 numbers), (3D point))\par
+Scales the space by a vector from the delivered point.\par
+If no point is provided, the space will scale from its centroid.\par
+Returns True on success.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v setAddress\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:setAddress}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.setAddress (  {\i self},   {\i address} = {\f2 ""})}}
+\par
+{\bkmkstart AAAAAAAAFD}
+{\bkmkend AAAAAAAAFD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool setAddress(string)\par
+Sets the address value.\par
+Returns True if successful.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v setBoundary\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:setBoundary}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.setBoundary (  {\i self},   {\i points} = {\f2 [(0,\~ 0)})}}
+\par
+{\bkmkstart AAAAAAAAFE}
+{\bkmkend AAAAAAAAFE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool setPerimeter([(2D point),])\par
+Creates a new perimeter from the delivered 2D points.\par
+Colinear points are removed. Fails if a single \par
+non-crossing polygon cannot be contructed.\par
+Returns True on success.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v setColor\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:setColor}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.setColor (  {\i self},   {\i newColor} = {\f2 None})}}
+\par
+{\bkmkstart AAAAAAAAFF}
+{\bkmkend AAAAAAAAFF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool setColor ((int range 0 - 255, int range 0 - 255, int range 0 - 255)\par
+Sets the Color[R G B] values or without argument randomizes the color.\par
+Returns True if successful.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v setHeight\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:setHeight}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.setHeight (  {\i self},   {\i newHeight} = {\f2 1})}}
+\par
+{\bkmkstart AAAAAAAAFG}
+{\bkmkend AAAAAAAAFG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool setHeight(number | string)\par
+Sets the height as a float.\par
+Returns True if successful.\par
+Returns False on failure.        \par
+}
+ \par
+}}
+{\xe \v setLevel\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:setLevel}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.setLevel (  {\i self},   {\i newLevel} = {\f2 0})}}
+\par
+{\bkmkstart AAAAAAAAFH}
+{\bkmkend AAAAAAAAFH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool setLevel(number | string)\par
+Sets the level as a float.\par
+Returns True if successful.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v setName\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:setName}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.setName (  {\i self},   {\i newName} = {\f2 ""})}}
+\par
+{\bkmkstart AAAAAAAAFI}
+{\bkmkend AAAAAAAAFI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool setName(string)\par
+Sets the Name as a string.\par
+Returns True if successful.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v setProperty\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:setProperty}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.setProperty (  {\i self},   {\i prpName},   {\i value})}}
+\par
+{\bkmkstart AAAAAAAAFJ}
+{\bkmkend AAAAAAAAFJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool setProperty(string, value)\par
+Directly sets a property its key, bypassing all error checking.\par
+Intended for use by other components of the aecSpace toolkit.\par
+Returns True if successful.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v setTransparency\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:setTransparency}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.setTransparency (  {\i self},   {\i newTrans} = {\f2 0})}}
+\par
+{\bkmkstart AAAAAAAAFK}
+{\bkmkend AAAAAAAAFK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool setTransparency(number | string)\par
+Sets the transparency as a percentage or without argument sets transparency to 0.\par
+Converts inputs to a range from 0 to 1.\par
+Returns True if successful.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v wrap\:aecSpace::aecSpace}
+{\xe \v aecSpace::aecSpace\:wrap}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpace.aecSpace.wrap (  {\i self},   {\i points})}}
+\par
+{\bkmkstart AAAAAAAAFL}
+{\bkmkend AAAAAAAAFL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool wrap ([(3D point),])\par
+Sets the boundary of the space to a convex hull\par
+derived from the delivered list of points.\par
+Returns True if successful.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following file:{\par
+\pard\plain \s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid 
+aecSpace.py\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+aecSpaceDrawOCC.aecSpaceDrawOCC Class Reference\par \pard\plain 
+{\tc\tcl2 \v aecSpaceDrawOCC.aecSpaceDrawOCC}
+{\xe \v aecSpaceDrawOCC.aecSpaceDrawOCC}
+{\bkmkstart AAAAAAAAFM}
+{\bkmkend AAAAAAAAFM}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b __init__} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getType} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b makeEdges} (self, pointPairs)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b makePointPairs} (self, points)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b makePoints} (self, space)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b makeWire} (self, edges)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b draw3D} (self, spaces, displaySize=(1024, 768), update=False)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v __init__\:aecSpaceDrawOCC::aecSpaceDrawOCC}
+{\xe \v aecSpaceDrawOCC::aecSpaceDrawOCC\:__init__}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceDrawOCC.aecSpaceDrawOCC.__init__ (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAFN}
+{\bkmkend AAAAAAAAFN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid aecSpaceDrawOCC Constructor\par
+Creates a new aecErrorCheck object.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v draw3D\:aecSpaceDrawOCC::aecSpaceDrawOCC}
+{\xe \v aecSpaceDrawOCC::aecSpaceDrawOCC\:draw3D}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceDrawOCC.aecSpaceDrawOCC.draw3D (  {\i self},   {\i spaces},   {\i displaySize} = {\f2 (1024,\~ 768)},   {\i update} = {\f2 False})}}
+\par
+{\bkmkstart AAAAAAAAFO}
+{\bkmkend AAAAAAAAFO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid draw3D(aecSpaceGroup)\par
+Accepts an aecSpaceGroup object and renders its list of aecSpaces to the pythonOCC display.\par
+Returns True on success failure.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v getType\:aecSpaceDrawOCC::aecSpaceDrawOCC}
+{\xe \v aecSpaceDrawOCC::aecSpaceDrawOCC\:getType}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceDrawOCC.aecSpaceDrawOCC.getType (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAFP}
+{\bkmkend AAAAAAAAFP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid string getType()\par
+Returns a string constant to identify the object type.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v makeEdges\:aecSpaceDrawOCC::aecSpaceDrawOCC}
+{\xe \v aecSpaceDrawOCC::aecSpaceDrawOCC\:makeEdges}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceDrawOCC.aecSpaceDrawOCC.makeEdges (  {\i self},   {\i pointPairs})}}
+\par
+{\bkmkstart AAAAAAAAFQ}
+{\bkmkend AAAAAAAAFQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [Topo_DS_Edge,] makeEdges([[gp_Pnt, gp_Pnt],])\par
+Returns a list of Topo_DS_Edges derived from a list of gp_Pnt pairs.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v makePointPairs\:aecSpaceDrawOCC::aecSpaceDrawOCC}
+{\xe \v aecSpaceDrawOCC::aecSpaceDrawOCC\:makePointPairs}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceDrawOCC.aecSpaceDrawOCC.makePointPairs (  {\i self},   {\i points})}}
+\par
+{\bkmkstart AAAAAAAAFR}
+{\bkmkend AAAAAAAAFR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [[gp_Pnt, gp_Pnt],] makePointPairs([gp_Pnt,])\par
+Returns a list of point pairs derived from a list of gp_Pnt points.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v makePoints\:aecSpaceDrawOCC::aecSpaceDrawOCC}
+{\xe \v aecSpaceDrawOCC::aecSpaceDrawOCC\:makePoints}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceDrawOCC.aecSpaceDrawOCC.makePoints (  {\i self},   {\i space})}}
+\par
+{\bkmkstart AAAAAAAAFS}
+{\bkmkend AAAAAAAAFS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [gp_Pnt,] makePoints(aecSpace)\par
+Returns a list of gp_Pnts compatible with pythonOCC\par
+derived from the delivered aecSpace object.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v makeWire\:aecSpaceDrawOCC::aecSpaceDrawOCC}
+{\xe \v aecSpaceDrawOCC::aecSpaceDrawOCC\:makeWire}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceDrawOCC.aecSpaceDrawOCC.makeWire (  {\i self},   {\i edges})}}
+\par
+{\bkmkstart AAAAAAAAFT}
+{\bkmkend AAAAAAAAFT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid Topo_DS_Wire makeWire([Topo_DS_Edge, Topo_DS_Edge,...])\par
+Returns a pythonOCC Wire object constructed\par
+from the delivered list of Topo_DS_Edges.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following file:{\par
+\pard\plain \s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid 
+aecSpaceDrawOCC.py\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+aecSpaceGrid.aecSpaceGrid Class Reference\par \pard\plain 
+{\tc\tcl2 \v aecSpaceGrid.aecSpaceGrid}
+{\xe \v aecSpaceGrid.aecSpaceGrid}
+{\bkmkstart AAAAAAAAFU}
+{\bkmkend AAAAAAAAFU}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b __init__} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b deleteCell} (self, address)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b deleteCells} (self, addresses)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getAddresses} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getCell} (self, address)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getCells} (self, addresses=None)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getExtents} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getProperties} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getProperty} (self, prpName)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getType} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b makeCells} (self, origin=(0, 0, 0), cellSize=1, extents=(1, 1, 1))\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b setColor} (self, newColor=None, addresses=None)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b setTransparency} (self, newTrans=0, addresses=None)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v __init__\:aecSpaceGrid::aecSpaceGrid}
+{\xe \v aecSpaceGrid::aecSpaceGrid\:__init__}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGrid.aecSpaceGrid.__init__ (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAFV}
+{\bkmkend AAAAAAAAFV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid INTERNAL\par
+Constructor\par
+Creates the dictionary of all internal keys and values.\par
+Sets the ID to a new UUID.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v deleteCell\:aecSpaceGrid::aecSpaceGrid}
+{\xe \v aecSpaceGrid::aecSpaceGrid\:deleteCell}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGrid.aecSpaceGrid.deleteCell (  {\i self},   {\i address})}}
+\par
+{\bkmkstart AAAAAAAAFW}
+{\bkmkend AAAAAAAAFW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool deleteCell((int, int, int))\par
+Deletes the cell at the specified address.\par
+}
+ \par
+}}
+{\xe \v deleteCells\:aecSpaceGrid::aecSpaceGrid}
+{\xe \v aecSpaceGrid::aecSpaceGrid\:deleteCells}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGrid.aecSpaceGrid.deleteCells (  {\i self},   {\i addresses})}}
+\par
+{\bkmkstart AAAAAAAAFX}
+{\bkmkend AAAAAAAAFX}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [(int, int, int),] deleteCell([(int, int, int),])\par
+Deletes the cells at the specified list of addresses.\par
+Returns list of cells successfully deleted.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v getAddresses\:aecSpaceGrid::aecSpaceGrid}
+{\xe \v aecSpaceGrid::aecSpaceGrid\:getAddresses}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGrid.aecSpaceGrid.getAddresses (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAFY}
+{\bkmkend AAAAAAAAFY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [(int, int, int),] getAddresses()\par
+Returns the list of all cell addresses in the grid.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getCell\:aecSpaceGrid::aecSpaceGrid}
+{\xe \v aecSpaceGrid::aecSpaceGrid\:getCell}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGrid.aecSpaceGrid.getCell (  {\i self},   {\i address})}}
+\par
+{\bkmkstart AAAAAAAAFZ}
+{\bkmkend AAAAAAAAFZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid aecSpace getCell((int, int, int))\par
+Returns the cell at the specified address as an aecSpace.\par
+Returns the last cell if the address is out of range. \par
+Returns None if the cell at the address has been deleted.\par
+Returns None on Failure.\par
+}
+ \par
+}}
+{\xe \v getCells\:aecSpaceGrid::aecSpaceGrid}
+{\xe \v aecSpaceGrid::aecSpaceGrid\:getCells}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGrid.aecSpaceGrid.getCells (  {\i self},   {\i addresses} = {\f2 None})}}
+\par
+{\bkmkstart AAAAAAAAGA}
+{\bkmkend AAAAAAAAGA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [aecSpace,] getCells([(int, int, int),])\par
+Returns the cells at the specified addresess as a list of aecSpaces.\par
+Returns the last cell if a specified address is out of range. \par
+Returns an entry of None for every requested cell that has been deleted.\par
+Returns None on Failure.\par
+}
+ \par
+}}
+{\xe \v getExtents\:aecSpaceGrid::aecSpaceGrid}
+{\xe \v aecSpaceGrid::aecSpaceGrid\:getExtents}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGrid.aecSpaceGrid.getExtents (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAGB}
+{\bkmkend AAAAAAAAGB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid (int, int, int) getExtents()\par
+Returns the extents of grid as a 3-digit tuple.\par
+Returns None on Failure.\par
+}
+ \par
+}}
+{\xe \v getProperties\:aecSpaceGrid::aecSpaceGrid}
+{\xe \v aecSpaceGrid::aecSpaceGrid\:getProperties}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGrid.aecSpaceGrid.getProperties (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAGC}
+{\bkmkend AAAAAAAAGC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid dictionary getProperties()\par
+Retrieves the properties dictionary of all internal values.\par
+Intended for use by other components of the aecSpace toolkit.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getProperty\:aecSpaceGrid::aecSpaceGrid}
+{\xe \v aecSpaceGrid::aecSpaceGrid\:getProperty}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGrid.aecSpaceGrid.getProperty (  {\i self},   {\i prpName})}}
+\par
+{\bkmkstart AAAAAAAAGD}
+{\bkmkend AAAAAAAAGD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid value getProperty(string)\par
+Directly retrieves a property by its string key, bypassing all error checking.\par
+Intended for use by other components of the aecSpace toolkit.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getType\:aecSpaceGrid::aecSpaceGrid}
+{\xe \v aecSpaceGrid::aecSpaceGrid\:getType}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGrid.aecSpaceGrid.getType (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAGE}
+{\bkmkend AAAAAAAAGE}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid string getType()\par
+Returns a string constant to identify the object type.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v makeCells\:aecSpaceGrid::aecSpaceGrid}
+{\xe \v aecSpaceGrid::aecSpaceGrid\:makeCells}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGrid.aecSpaceGrid.makeCells (  {\i self},   {\i origin} = {\f2 (0,\~ 0,\~ 0)},   {\i cellSize} = {\f2 1},   {\i extents} = {\f2 (1,\~ 1,\~ 1)})}}
+\par
+{\bkmkstart AAAAAAAAGF}
+{\bkmkend AAAAAAAAGF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool makeCells((3D point), number, (int, int, int))\par
+Creates a grid in the positive xyz directions from the specified origin.\par
+Each cell will be an aecSpace cube of diameter cellSize.\par
+The overall dimensions of the grid are extents[0] x-axis cells\par
+by extents[1] y-axis cells by extents[2] z-axis cells.\par
+Returns True on success.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v setColor\:aecSpaceGrid::aecSpaceGrid}
+{\xe \v aecSpaceGrid::aecSpaceGrid\:setColor}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGrid.aecSpaceGrid.setColor (  {\i self},   {\i newColor} = {\f2 None},   {\i addresses} = {\f2 None})}}
+\par
+{\bkmkstart AAAAAAAAGG}
+{\bkmkend AAAAAAAAGG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [(int, int, int),] setColor (int range 0 - 255, int range 0 - 255, int range 0 - 255), [(int, int, int),])\par
+Sets the color[R G B] values of each cell listed by address in addresses,\par
+or without argument randomizes the color.\par
+Affects all cells if no indices are delivered.        \par
+Returns a list of cell addresses whose color has been changed.\par
+Returns n\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v setTransparency\:aecSpaceGrid::aecSpaceGrid}
+{\xe \v aecSpaceGrid::aecSpaceGrid\:setTransparency}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGrid.aecSpaceGrid.setTransparency (  {\i self},   {\i newTrans} = {\f2 0},   {\i addresses} = {\f2 None})}}
+\par
+{\bkmkstart AAAAAAAAGH}
+{\bkmkend AAAAAAAAGH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [(int, int, int),] setTransparency(number | string, [(int, int, int),])\par
+Sets the transparency as a percentage or without argument sets transparency to 0.\par
+Converts newTrans input to a range from 0 to 1.\par
+Returns True if successful.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following file:{\par
+\pard\plain \s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid 
+aecSpaceGrid.py\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+aecSpaceGroup.aecSpaceGroup Class Reference\par \pard\plain 
+{\tc\tcl2 \v aecSpaceGroup.aecSpaceGroup}
+{\xe \v aecSpaceGroup.aecSpaceGroup}
+{\bkmkstart AAAAAAAAGI}
+{\bkmkend AAAAAAAAGI}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b __init__} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b addSpaces} (self, spaces)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b clearSpaces} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b deleteSpaces} (self, indices)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getArea} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getCount} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getIndices} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getProperties} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getSpaces} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getType} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getVolume} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b move} (self, moveBy=(1, 1, 1), indices=None)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b rotate} (self, angle=180, pivot=None, indices=None)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b scale} (self, scaleBy=(1, 1, 1), scalePoint=None, indices=None)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b setColor} (self, newColor=None, indices=None)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b setHeight} (self, height=1, indices=None)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b setLevel} (self, level=0, indices=None)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b setName} (self, newName="")\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b setNames} (self, newName="", indices=None)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b setTransparency} (self, transparency=0, indices=[])\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b wrap} (self, points, indices=None)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid class aecSpaceGroup\par
+Manages multiple aecSpace instances as a single object, \par
+enabling collective editing and reporting.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v __init__\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:__init__}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.__init__ (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAGJ}
+{\bkmkend AAAAAAAAGJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid INTERNAL\par
+Constructor\par
+Creates the dictionary of all internal keys and values.\par
+Sets the ID to a new UUID.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v addSpaces\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:addSpaces}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.addSpaces (  {\i self},   {\i spaces})}}
+\par
+{\bkmkstart AAAAAAAAGK}
+{\bkmkend AAAAAAAAGK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool addSpaces([aecSpace,])\par
+Appends a list of aecSpaces to the spaces list.\par
+Returns True on success.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v clearSpaces\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:clearSpaces}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.clearSpaces (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAGL}
+{\bkmkend AAAAAAAAGL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool clearSpaces()\par
+Resets the aecSpace list to an empty list and initializes the instance.\par
+Returns True on success.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v deleteSpaces\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:deleteSpaces}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.deleteSpaces (  {\i self},   {\i indices})}}
+\par
+{\bkmkstart AAAAAAAAGM}
+{\bkmkend AAAAAAAAGM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool delSpaces([int,])\par
+Deletes the spaces at the specified indices of the current list of aecSpaces.\par
+Returns True on success.\par
+Returns False if the spaces list is empty or on other failure.\par
+}
+ \par
+}}
+{\xe \v getArea\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:getArea}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.getArea (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAGN}
+{\bkmkend AAAAAAAAGN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid float getArea()\par
+Returns the aggregate area of the floors of all aecSpaces.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getCount\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:getCount}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.getCount (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAGO}
+{\bkmkend AAAAAAAAGO}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid float getCount()\par
+Returns the quantity of spaces in the spaces list.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getIndices\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:getIndices}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.getIndices (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAGP}
+{\bkmkend AAAAAAAAGP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid (int,) getIndices()\par
+Returns a list of all indices.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getProperties\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:getProperties}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.getProperties (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAGQ}
+{\bkmkend AAAAAAAAGQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid dictionary getProperties()\par
+Returns the properties dictionary.\par
+Intended for use by other components of the aecSpace toolkit.\par
+Returns None on failure.        \par
+}
+ \par
+}}
+{\xe \v getSpaces\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:getSpaces}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.getSpaces (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAGR}
+{\bkmkend AAAAAAAAGR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [aecSpace,] getSpaces()\par
+Returns the list of aecSpaces.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getType\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:getType}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.getType (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAGS}
+{\bkmkend AAAAAAAAGS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid string getType()\par
+Returns a string constant to identify the object type.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getVolume\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:getVolume}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.getVolume (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAGT}
+{\bkmkend AAAAAAAAGT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid float getVolume()\par
+Returns the aggregate volume of all aecSpaces.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v move\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:move}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.move (  {\i self},   {\i moveBy} = {\f2 (1,\~ 1,\~ 1)},   {\i indices} = {\f2 None})}}
+\par
+{\bkmkstart AAAAAAAAGU}
+{\bkmkend AAAAAAAAGU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid (int,) scale ((3D vector), (int,))\par
+Moves each aecSpace listed by index in indices by the delivered vector.\par
+Affects all aecSpaces if no indices are delivered.\par
+Returns a list of indices of all spaces successfully moved.\par
+}
+ \par
+}}
+{\xe \v rotate\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:rotate}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.rotate (  {\i self},   {\i angle} = {\f2 180},   {\i pivot} = {\f2 None},   {\i indices} = {\f2 None})}}
+\par
+{\bkmkstart AAAAAAAAGV}
+{\bkmkend AAAAAAAAGV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool rotate (float, (2D point), (int,))\par
+Rotates each aecSpace listed by index in indices counterclockwise around the \par
+2D pivot point by the delivered rotation in degrees.\par
+Affects all aecSpaces if no indices are delivered.\par
+If no pivot point is provided, each indicated \par
+aecSpace will be rotated around its centroid.\par
+Returns a list of indices of all spaces successfully rotated.\par
+}
+ \par
+}}
+{\xe \v scale\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:scale}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.scale (  {\i self},   {\i scaleBy} = {\f2 (1,\~ 1,\~ 1)},   {\i scalePoint} = {\f2 None},   {\i indices} = {\f2 None})}}
+\par
+{\bkmkstart AAAAAAAAGW}
+{\bkmkend AAAAAAAAGW}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool scale (3D vector), (3D point), (int,))\par
+Scales each aecSpace listed by index in indices by a vector from the delivered point.\par
+Affects all aecSpaces if no indices are delivered.\par
+If no pivot scale point is provided, each indicated  \par
+aecSpace will be scaled from its centroid.\par
+Returns a list of indices of all spaces successfully scaled.\par
+}
+ \par
+}}
+{\xe \v setColor\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:setColor}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.setColor (  {\i self},   {\i newColor} = {\f2 None},   {\i indices} = {\f2 None})}}
+\par
+{\bkmkstart AAAAAAAAGX}
+{\bkmkend AAAAAAAAGX}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool setColor ((int range 0 - 255, int range 0 - 255, int range 0 - 255), (int,))\par
+Sets the color[R G B] values of each aecSpace listed by index in indices\par
+or without argument randomizes the color.\par
+Affects all aecSpaces if no indices are delivered.        \par
+Returns True on success.\par
+Returns False if the spaces list is empty or on other failure.\par
+}
+ \par
+}}
+{\xe \v setHeight\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:setHeight}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.setHeight (  {\i self},   {\i height} = {\f2 1},   {\i indices} = {\f2 None})}}
+\par
+{\bkmkstart AAAAAAAAGY}
+{\bkmkend AAAAAAAAGY}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool setHeight(number | string, (int,))\par
+Sets the height as a float for each aecSpace listed by index in indices.\par
+Affects all aecSpaces if no indices are delivered.     \par
+Returns True on success.\par
+Returns False if the spaces list is empty or on other failure.\par
+}
+ \par
+}}
+{\xe \v setLevel\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:setLevel}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.setLevel (  {\i self},   {\i level} = {\f2 0},   {\i indices} = {\f2 None})}}
+\par
+{\bkmkstart AAAAAAAAGZ}
+{\bkmkend AAAAAAAAGZ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool setLevel(number | string)\par
+Sets the level as a float for each aecSpace listed by index in indices.\par
+Affects all aecSpaces if no indices are delivered.\par
+Returns True on success.\par
+Returns False if the spaces list is empty or on other failure.       \par
+}
+ \par
+}}
+{\xe \v setName\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:setName}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.setName (  {\i self},   {\i newName} = {\f2 ""})}}
+\par
+{\bkmkstart AAAAAAAAHA}
+{\bkmkend AAAAAAAAHA}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool setName(string)\par
+Sets the Name of the aecGroup as a string.\par
+Returns True on success.\par
+Returns False if the spaces list is empty or on other failure.\par
+}
+ \par
+}}
+{\xe \v setNames\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:setNames}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.setNames (  {\i self},   {\i newName} = {\f2 ""},   {\i indices} = {\f2 None})}}
+\par
+{\bkmkstart AAAAAAAAHB}
+{\bkmkend AAAAAAAAHB}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool setName(string)\par
+Sets the name of each aecSpace listed by index in indices.\par
+Affects all aecSpaces if no indices are delivered.\par
+Returns True on success.\par
+Returns False if the spaces list is empty or on other failure.        \par
+}
+ \par
+}}
+{\xe \v setTransparency\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:setTransparency}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.setTransparency (  {\i self},   {\i transparency} = {\f2 0},   {\i indices} = {\f2 []})}}
+\par
+{\bkmkstart AAAAAAAAHC}
+{\bkmkend AAAAAAAAHC}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool setTransparency(number | string)\par
+Sets the transparency percentage or without argument sets Transparency to 0 for\par
+each aecSpace listed by index in indices.\par
+Converts inputs to a range from 0 to 1.        \par
+Affects all aecSpaces if no indices are delivered.        \par
+Returns True on success.\par
+Returns False if the spaces list is empty or on other failure.       \par
+}
+ \par
+}}
+{\xe \v wrap\:aecSpaceGroup::aecSpaceGroup}
+{\xe \v aecSpaceGroup::aecSpaceGroup\:wrap}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpaceGroup.aecSpaceGroup.wrap (  {\i self},   {\i points},   {\i indices} = {\f2 None})}}
+\par
+{\bkmkstart AAAAAAAAHD}
+{\bkmkend AAAAAAAAHD}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool wrap ([(3D point),*3+])\par
+Sets the boundary of each aecSpace listed by index in indices \par
+to a convex hull derived from the delivered list of points.\par
+Affects all aecSpaces if no indices are delivered.        \par
+Returns True on success.\par
+Returns False if the spaces list is empty or on other failure.      \par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following file:{\par
+\pard\plain \s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid 
+aecSpaceGroup.py\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+aecSpacer.aecSpacer Class Reference\par \pard\plain 
+{\tc\tcl2 \v aecSpacer.aecSpacer}
+{\xe \v aecSpacer.aecSpacer}
+{\bkmkstart AAAAAAAAHE}
+{\bkmkend AAAAAAAAHE}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b __init__} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b copy} (self, space, moveBy=(0, 0, 0))\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getType} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b place} (self, space, copies=1, moveBy=(0, 0, 0))\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b placeWithin} (self, shape, bound)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b placeWithinLine} (self, shape, bound, compass=aecCompass.N)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b row} (self, space, copies=1, gap=0, xAxis=True)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b stack} (self, space, copies=1, plenum=0)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b stackToArea} (self, space, area, plenum=0)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v __init__\:aecSpacer::aecSpacer}
+{\xe \v aecSpacer::aecSpacer\:__init__}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpacer.aecSpacer.__init__ (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAHF}
+{\bkmkend AAAAAAAAHF}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid aecSpacer Constructor\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v copy\:aecSpacer::aecSpacer}
+{\xe \v aecSpacer::aecSpacer\:copy}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpacer.aecSpacer.copy (  {\i self},   {\i space},   {\i moveBy} = {\f2 (0,\~ 0,\~ 0)})}}
+\par
+{\bkmkstart AAAAAAAAHG}
+{\bkmkend AAAAAAAAHG}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid aecSpace copy(aecSpace, (3D vector))\par
+Returns a new aecSpace that is a copy of the delivered aecSpace.\par
+The copy will be moved by the delivered vector.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getType\:aecSpacer::aecSpacer}
+{\xe \v aecSpacer::aecSpacer\:getType}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpacer.aecSpacer.getType (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAHH}
+{\bkmkend AAAAAAAAHH}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid string getType()\par
+Returns a string constant to identify the object type.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v place\:aecSpacer::aecSpacer}
+{\xe \v aecSpacer::aecSpacer\:place}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpacer.aecSpacer.place (  {\i self},   {\i space},   {\i copies} = {\f2 1},   {\i moveBy} = {\f2 (0,\~ 0,\~ 0)})}}
+\par
+{\bkmkstart AAAAAAAAHI}
+{\bkmkend AAAAAAAAHI}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [aecSpace,] place(aecSpace, int, (3D vector))\par
+Creates and returns a list of aecSpaces placed along a delivered vector.\par
+Returned list does not include the delivered aecSpace.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v placeWithin\:aecSpacer::aecSpacer}
+{\xe \v aecSpacer::aecSpacer\:placeWithin}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpacer.aecSpacer.placeWithin (  {\i self},   {\i shape},   {\i bound})}}
+\par
+{\bkmkstart AAAAAAAAHJ}
+{\bkmkend AAAAAAAAHJ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool placeWithin(aecSpace, aecSpace, compassPoint)\par
+Attempts to place one aecSpace (shape) within the boundary \par
+of another (bound) at a random interior point.\par
+Returns True on success.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\xe \v placeWithinLine\:aecSpacer::aecSpacer}
+{\xe \v aecSpacer::aecSpacer\:placeWithinLine}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpacer.aecSpacer.placeWithinLine (  {\i self},   {\i shape},   {\i bound},   {\i compass} = {\f2 aecCompass.N})}}
+\par
+{\bkmkstart AAAAAAAAHK}
+{\bkmkend AAAAAAAAHK}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool placeWithinLine(aecSpace, aecSpace, (3D point), (3D point))\par
+Attempts to place one aecSpace (shape) within the boundary of\par
+another (bound) at a random interior point along a specified line\par
+from the center of the boundary to the specified compass point on\par
+the boundary.\par
+Returns True on success.\par
+Returns False on failure.        \par
+}
+ \par
+}}
+{\xe \v row\:aecSpacer::aecSpacer}
+{\xe \v aecSpacer::aecSpacer\:row}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpacer.aecSpacer.row (  {\i self},   {\i space},   {\i copies} = {\f2 1},   {\i gap} = {\f2 0},   {\i xAxis} = {\f2 True})}}
+\par
+{\bkmkstart AAAAAAAAHL}
+{\bkmkend AAAAAAAAHL}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [aecSpace,] row(aecSpace, int, number, bool)\par
+Creates and returns a list of aecSpaces placed along the x-axis from the delivered\par
+aecSpace by the bounding box width plus the distance added by the gap parameter.\par
+By default places new spaces along the positive x-axis from the position of the\par
+delivered aecSpace, or if xAxis is false, along the positive y-axis.\par
+Returned list does not include the delivered aecSpace.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v stack\:aecSpacer::aecSpacer}
+{\xe \v aecSpacer::aecSpacer\:stack}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpacer.aecSpacer.stack (  {\i self},   {\i space},   {\i copies} = {\f2 1},   {\i plenum} = {\f2 0})}}
+\par
+{\bkmkstart AAAAAAAAHM}
+{\bkmkend AAAAAAAAHM}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [aecSpace,] stacker(aecSpace, int, number)\par
+Creates and returns a list of aecSpaces stacked upward from the\par
+delivered aecSpace by the height of the aecSpace plus additional\par
+elevation added by the plenum parameter.\par
+Returned list does not include the delivered aecSpace.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v stackToArea\:aecSpacer::aecSpacer}
+{\xe \v aecSpacer::aecSpacer\:stackToArea}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecSpacer.aecSpacer.stackToArea (  {\i self},   {\i space},   {\i area},   {\i plenum} = {\f2 0})}}
+\par
+{\bkmkstart AAAAAAAAHN}
+{\bkmkend AAAAAAAAHN}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid [aecSpace,] buildToArea(aecSpace, number, number)\par
+Compares the area of the delivered aecSpace to the target area and stacks\par
+identical spaces from the original space until the target area is met or\par
+exceeded, returning a list of resulting aecSpaces.\par
+Returned list does not include the delivered aecSpace.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following file:{\par
+\pard\plain \s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid 
+aecSpacer.py\par
+}\par \pard\plain 
+
+\pard\plain \sect\sbkpage
+\s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+\pard\plain \s2\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs28\kerning28\cgrid 
+aecVertex.aecVertex Class Reference\par \pard\plain 
+{\tc\tcl2 \v aecVertex.aecVertex}
+{\xe \v aecVertex.aecVertex}
+{\bkmkstart AAAAAAAAHO}
+{\bkmkend AAAAAAAAHO}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Public Member Functions\par
+\pard\plain 
+
+{
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b __init__} (self, points, index, nrmPoint)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getAngle} (self, exterior=False, degrees=False)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getID} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getNormal} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getPoint} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b getType} (self)\par
+\pard\plain \s80\fi-360\li360\widctlpar\jclisttab\tx360{\*\pn \pnlvlbody\ilvl0\ls1\pnrnot0\pndec }\ls1\adjustright \fs20\cgrid 
+def {\b setVertex} (self, points, index, nrmPoint)\par
+}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Detailed Description\par
+\pard\plain 
+{
+\pard\plain \s17\sa60\sb30\widctlpar\qj \fs22\cgrid {\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s40\li0\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid class aecVertex\par
+Defines a 3D vertex as a component of the boundary of an aecSpace,\par
+with additional information for geometric and graphic calculations.\par
+The XY plane is considered horizontal, the Z dimension vertical.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Constructor & Destructor Documentation\par
+\pard\plain 
+{\xe \v __init__\:aecVertex::aecVertex}
+{\xe \v aecVertex::aecVertex\:__init__}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecVertex.aecVertex.__init__ (  {\i self},   {\i points},   {\i index},   {\i nrmPoint})}}
+\par
+{\bkmkstart AAAAAAAAHP}
+{\bkmkend AAAAAAAAHP}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid aecPoint Constructor\par
+Sets the ID to a new UUID.\par
+Creates a new aecErrorCheck object.\par
+if point coordinates are delivered, checks and uses them,\par
+otherwise sets the coordinates to the origin.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+\pard\plain \s3\sb240\sa60\keepn\widctlpar\adjustright \b\f1\cgrid 
+Member Function Documentation\par
+\pard\plain 
+{\xe \v getAngle\:aecVertex::aecVertex}
+{\xe \v aecVertex::aecVertex\:getAngle}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecVertex.aecVertex.getAngle (  {\i self},   {\i exterior} = {\f2 False},   {\i degrees} = {\f2 False})}}
+\par
+{\bkmkstart AAAAAAAAHQ}
+{\bkmkend AAAAAAAAHQ}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid float getAngleInterior(bool, bool)\par
+Returns the value of the polygon's interior or exterior angle \par
+at the vertex in radians by default or degrees if degrees = True.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getID\:aecVertex::aecVertex}
+{\xe \v aecVertex::aecVertex\:getID}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecVertex.aecVertex.getID (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAHR}
+{\bkmkend AAAAAAAAHR}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid string getID()\par
+Returns the UUID.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v getNormal\:aecVertex::aecVertex}
+{\xe \v aecVertex::aecVertex\:getNormal}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecVertex.aecVertex.getNormal (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAHS}
+{\bkmkend AAAAAAAAHS}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid (3D vector) getNormal()\par
+Returns the point normal of the vertex.\par
+Returns None on failure.        \par
+}
+ \par
+}}
+{\xe \v getPoint\:aecVertex::aecVertex}
+{\xe \v aecVertex::aecVertex\:getPoint}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecVertex.aecVertex.getPoint (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAHT}
+{\bkmkend AAAAAAAAHT}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid (3D point) getCoordinates()\par
+Returns the coordinates of the vertex as a 3D point.\par
+Returns None on failure.        \par
+}
+ \par
+}}
+{\xe \v getType\:aecVertex::aecVertex}
+{\xe \v aecVertex::aecVertex\:getType}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecVertex.aecVertex.getType (  {\i self})}}
+\par
+{\bkmkstart AAAAAAAAHU}
+{\bkmkend AAAAAAAAHU}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid string getType()\par
+Returns a string constant to identify the object type.\par
+Returns None on failure.\par
+}
+ \par
+}}
+{\xe \v setVertex\:aecVertex::aecVertex}
+{\xe \v aecVertex::aecVertex\:setVertex}
+\pard\plain \s4\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs20\cgrid {
+{\b 
+def aecVertex.aecVertex.setVertex (  {\i self},   {\i points},   {\i index},   {\i nrmPoint})}}
+\par
+{\bkmkstart AAAAAAAAHV}
+{\bkmkend AAAAAAAAHV}
+{
+\pard\plain \s51\li360\sa60\sb30\qj\widctlpar\qj\adjustright \fs20\cgrid 
+{\s17\sa60\sb30\widctlpar\qj \fs22\cgrid 
+{
+\par
+\pard\plain \s41\li360\widctlpar\adjustright \shading1000\cbpat8 \f2\fs16\cgrid bool setVertex((3D point),], int, (3D point))\par
+Sets the vertex 3D point, angle, and point normal.\par
+Returns True on success.\par
+Returns False on failure.\par
+}
+ \par
+}}
+{\pard\widctlpar\brdrb\brdrs\brdrw5\brsp20 \adjustright \par}
+The documentation for this class was generated from the following file:{\par
+\pard\plain \s81\fi-360\li720\widctlpar\jclisttab\tx720{\*\pn \pnlvlbody\ilvl0\ls2\pnrnot0\pndec }\ls2\adjustright \fs20\cgrid 
+aecVertex.py\par
+}
+\pard\plain \sect\sbkpage
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid 
+\s1\sb240\sa60\keepn\widctlpar\adjustright \b\f1\fs36\kerning36\cgrid Index\par 
+\pard\plain 
+{\tc \v Index}
+{\field\fldedit {\*\fldinst INDEX \\c2 \\*MERGEFORMAT}{\fldrslt INDEX}}
+}
