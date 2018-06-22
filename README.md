@@ -1,5 +1,16 @@
-# aecSpace 0.6 | 2018.05.17
+# aecSpace 0.7 | 2018.06.22
 Python classes useful for creating and editing volumes indicating building spaces and other objects.
+
+# 0.7 Version Notes
+
+* This release is a major overhaul of the toolkit to take advantage of the Python class Property mechanism. Syntax for calling functions and accessing data is more mnemonic and reads more clearly in the examples. This *should* be the last structural overhaul. Subsequent changes should elaborate functionality on the basis of this architecture.
+* Defines an aecPoint class to handle coordinate information.
+* Defines many new colors as part of aecColor class.
+* Re-introduces the aecShaper class to provide a small vocabulary of common boundary shapes.
+* Fixes a number of issues with graphic mesh generation to achieve consistent results.
+* Includes a module for displaying aecSpaces in the Plotly viewer.
+* Reorganizes file structure to configure aecSpace as a Python package.
+* Tempoararily deprecates aecSpaceGrid in preparation for compatibility changes anticipated for version 0.8.
 
 # 0.6 Version Notes
 
