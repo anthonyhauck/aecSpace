@@ -3,7 +3,7 @@ import traceback
 class aecValid:
 
     """
-    aecErrorCheck contains data validating functions.
+    aecValid contains data validating functions.
     """
         
     def __init__(self):
@@ -14,9 +14,8 @@ class aecValid:
 
     def address(self, address = (0, 0, 0), bounds = None):
         """
-        (int, int, int) checkAddress((int, int, int), (int, int, int))
         Attempts to return a plausible 3 digit address for an item
-        with a 3-dimensional matrix. 
+        within a 3-dimensional matrix. 
         If bounds are supplied as a tuple or list of 3 integers comparisons
         to the corresponding address coordinate are made to ensure the
         address is within or equal to the asserted bounds.
@@ -40,7 +39,6 @@ class aecValid:
     
     def angle(self, angle):
         """
-        float checkAngle(number)
         Attempts to return a well-formed float angle between 0 and 360.
         Returns None on failure.
         """
@@ -56,7 +54,6 @@ class aecValid:
     
     def color(self, color):
         """
-        (int, int, int) checkColor(int, int, int)
         Attempts to return a well-formed tuple of 3 ints representing RGB values from 0 to 255.
         Returns None if unable to form a color as specified.
         """
@@ -71,7 +68,6 @@ class aecValid:
 
     def indices(self, indices = None, limit = None):
         """
-        [int,] checkIndices([number,])
         Attempts to return a list of well-formed integer indices.
         If no indices are delivered, returns a range of integers from zero to limit.
         Absent any arguments, returns [0]
@@ -96,7 +92,6 @@ class aecValid:
     
     def percent(self, number: float = 0.0):
         """
-        float 0 - 1 makePercentage(number)
         Forces a number into the range of 0 to 1 by taking the absolute
         value and dividing a larger number successively by 10.
         Returns None on failure.

@@ -94,7 +94,7 @@ class aecColor:
     @color.setter
     def color(self, value: Tuple[int, int, int]):
         """
-        Sets the current color with a tuple.
+        Sets the color RGB values.
         """
         try:
             if len(value) != 3: return
@@ -108,7 +108,7 @@ class aecColor:
     @property
     def color_01(self) -> Tuple[float, float, float]:
         """
-        Returns the current color as float RGB values from 0 to 1.
+        Returns the color as RGB values from 0 to 1.
         """
         try:
             return (self.__red / 255, 

@@ -113,7 +113,7 @@ class aecPoint():
     def xy(self) -> Tuple[float, float]:
         """
         Property
-        Returns x and y coordinates as a (x, y) tuple.
+        Returns x and y coordinates.
         """
         try:
             return (self.x, self.y)
@@ -125,7 +125,7 @@ class aecPoint():
     def xy(self, coord: Tuple[float, float]):
         """
         Property
-        Sets the x and y coordinates with an (x, y) tuple.
+        Sets the x and y coordinates.
         """
         try:
             preX = self.x
@@ -200,7 +200,7 @@ class aecPoint():
     def xyz_array(self) -> numpy.array:
         """
         Property
-        Returns the 3D coordinates as a numpY array.
+        Returns the coordinates as a numpy array.
         """
         try:
             return numpy.array(self.xyz)
@@ -212,7 +212,7 @@ class aecPoint():
     def xyz_list(self) -> List[float]:
         """
         Property
-        Returns the 3D coordinates as a list.
+        Returns the coordinates as a list.
         """
         try:
             return list(self.xyz)

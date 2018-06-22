@@ -11,7 +11,7 @@ from aecSpace.aecValid import aecValid
 
 class aecShaper():
     """
-    Provides functions for a limited vocabulary of plan shapes.
+    Provides functions for a basic vocabulary of boundary shapes.
     """
          
     __aecGeometry = aecGeometry()
@@ -23,11 +23,10 @@ class aecShaper():
         """
         pass
    
-    def __add(self, pointSet: List[List[aecPoint]]) -> bool:
+    def __add(self, pointSet: List[List[aecPoint]]) -> List[aecPoint]:
         """
-        Returns False if the delivered points do not resolve to a single non-crossing
-        polygon and leaves the current boundary unchanged.
-        Returns True if successful.
+        Returns a series of anticlockwise points representing a single non-crossing polygon.
+        Returns None on failure.
         """
         try:
             boundaries = []
@@ -36,17 +35,19 @@ class aecShaper():
                 if type(polygon) != shapely.polygon.Polygon: raise Exception
                 boundaries.append(polygon)
             boundary = shapelyOps.unary_union(shapely.MultiPolygon(boundaries))
-            if type(boundary) != shapely.polygon.Polygon: return False
+            if type(boundary) != shapely.polygon.Polygon: return None
             return [aecPoint(pnt[0], pnt[1]) for pnt in list(boundary.exterior.coords)[:-1]]                
         except Exception:
             traceback.print_exc()
-            return False
+            return None
       
     def makeBox(self, origin: aecPoint = aecPoint(), 
                       xSize: float = 1.0, 
-                      ySize: float = 1.0) -> bool:
+                      ySize: float = 1.0) -> List[aecPoint]:
         """
-        Creates a rectangular boundary from two diagonal points.
+        Returns a series of anticlockwise points representing
+        a rectangular boundary derived from two diagonal points.
+        Returns None on failure.
         """
         try:
             return [aecPoint(origin.x, origin.y),
@@ -55,7 +56,7 @@ class aecShaper():
                     aecPoint(origin.x, origin.y + ySize)]
         except Exception:
             traceback.print_exc()
-            return False    
+            return None    
 
     def makeCross(self, origin: aecPoint = aecPoint(0, 0, 0), 
                         xSize: float = 1, 
@@ -63,12 +64,13 @@ class aecShaper():
                         xWidth = None, 
                         yDepth = None,
                         xAxis: float = 0.5, 
-                        yAxis: float = 0.5) -> bool:
+                        yAxis: float = 0.5) -> List[aecPoint]:
         """
-        Constructs a cross-shaped boundary within the box defined by the origin and xy deltas.
+        Returns a series of anticlockwise points representing a cross-shaped boundary 
+        within the box defined by the origin point and xSize and ySize.
         xWidth and yDepth define the widths of the two arms.
-        xAxis and yAxis are percentages of overall x-axis and y-axis distances that
-        determine the centerline of each cross arm.
+        xAxis and yAxis are percentages of overall x-axis and y-axis distances determining
+        the centerline of each cross arm.
         Returns None on failure.
         """
         try:
@@ -83,13 +85,11 @@ class aecShaper():
             traceback.print_exc()
             return None
 
-    def makeCylinder(self, origin: aecPoint = aecPoint(), 
-                           radius = 1) -> bool:
+    def makeCylinder(self, origin: aecPoint = aecPoint(), radius = 1) -> List[aecPoint]:
         """
-        Contructs the perimeter as an approximate circle, setting 
-        a ratio from the delivered radius to the number of sides.
-        Returns True on success.
-        Returns False on failure.
+        Returns a series of anticlockwise points representing an approximated circular boundary 
+        setting a ratio from the delivered radius to the number of sides.
+        Returns None on failure.
         """
         try:
             if radius < 3: sides = 3
@@ -97,20 +97,22 @@ class aecShaper():
             return self.makePolygon(origin, radius, sides)
         except Exception:
             traceback.print_exc()
-            return False
+            return None
 
     def makeH(self, origin: aecPoint = aecPoint(),
                     xSize: float = 1, 
                     ySize: float = 1,
                     xWidth1 = None, 
                     xWidth2= None, 
-                    yDepth = None) -> bool:
+                    yDepth = None) -> List[aecPoint]:
         """
-        Constructs an H-shaped boundary within the box defined by point and xy deltas.
-        xWidth1, xWidth2, and yDepth are percentages of overall x-axis and y-axis distances that
-        determine the width of each vertical and cross bar, respectively.
-        Returns True on success.
-        Returns False on failure.
+        Returns a series of anticlockwise points representing an H-shaped boundary
+        within the box defined by the origin point and xSize and ySize.
+        xWidth1, xWidth2, and yDepth determine the widths of the vertical and 
+        horizontal bars, respectively.
+        
+        the width of each vertical and cross bar, respectively.
+        Returns None on failure.
         """
         try:
             if not xWidth1: xWidth1 = xSize * 0.3
@@ -127,16 +129,17 @@ class aecShaper():
             return self.__add([arm1, arm2, arm3])
         except Exception:
             traceback.print_exc()
-            return False
+            return None
 
     def makeL(self, origin: aecPoint = aecPoint(), 
                     xSize: float = 1, 
                     ySize: float = 1,
                     xWidth = None, 
-                    yDepth = None) -> bool:
+                    yDepth = None) -> List[aecPoint]:
         """
-        Constructs a L-shaped boundary within the box defined by point and 
-        xy deltas, with distinct values for the width of each arm.
+        Returns a series of anticlockwise points representing an L-shaped boundary
+        within the box defined by the origin point and xSize and ySize.
+        xWidth and yDepth determine the widths of the vertical and horizontal bars, respectively.
         Returns None on failure.
         """
         try:
@@ -149,15 +152,15 @@ class aecShaper():
             return self.__add([armX, armY])
         except Exception:
             traceback.print_exc()
-            return False
+            return None
 
     def makePolygon(self, origin: aecPoint = aecPoint(), 
-                          radius = 1, sides = 3) -> bool:
+                          radius = 1, 
+                          sides = 3) -> List[aecPoint]:
         """
-        Constructs the boundary as a regular polygon centered on the delivered
-        origin point with the first vertex at the maximum y-coordinate.
-        Returns True on success.
-        Returns False on failure.
+        Returns a series of anticlockwise points representing a regular polygon boundary centered
+        on the delivered origin point with the first vertex at the maximum y-coordinate.
+        Returns None failure.
         """
         try:
             radius = abs(radius)
@@ -177,19 +180,18 @@ class aecShaper():
             return points
         except Exception:
             traceback.print_exc()
-            return False
+            return None
  
     def makeT(self, origin = aecPoint(), 
                     xSize: float = 1, 
                     ySize: float = 1,
                     xWidth = None, 
-                    yDepth = None) -> bool:
+                    yDepth = None) -> List[aecPoint]:
         """
-        Constructs a T-shaped boundary within the box defined by point and xy deltas.
-        xWidth and yDepth are percentages of overall x-axis and y-axis distances that
-        determine the width of the vertical and horizonatl bars, respectively.
-        Returns True on success.
-        Returns False on failure.
+        Returns a series of anticlockwise points representing a T-shaped boundary
+        within the box defined by the origin point and xSize and ySize.
+        xWidth and yDepth determine the widths of the vertical and horizontal bars, respectively.
+        Returns None on failure.
         """
         try:
             if not xWidth: xWidth = xSize * 0.5
@@ -203,20 +205,19 @@ class aecShaper():
             return self.__add([arm1, arm2])
         except Exception:
             traceback.print_exc()
-            return False
+            return None
         
     def makeU(self, origin = aecPoint(),
                     xSize: float = 1,
                     ySize: float = 1,
                     xWidth1 = None, 
                     xWidth2= None, 
-                    yDepth = None):
+                    yDepth = None) -> List[aecPoint]:
         """
-        Constructs a U-shaped boundary within the box defined by point and xy deltas.
-        xWidth1, xWidth2, and yDepth are percentages of overall x-axis and y-axis distances
-        that determine the width of each vertical and cross bar, respectively.
-        Returns True on success.
-        Returns False on failure.
+        Returns a series of anticlockwise points representing a U-shaped boundary
+        within the box defined by the origin point and xSize and ySize.
+        xWidth and yDepth determine the widths of the vertical and horizontal bars, respectively.
+        Returns None on failure.
         """
         try:
             if not xWidth1: xWidth1 = xSize * 0.3
@@ -231,4 +232,4 @@ class aecShaper():
             return self.__add([pointsL, pointsU])
         except Exception:
             traceback.print_exc()
-            return False
+            return None

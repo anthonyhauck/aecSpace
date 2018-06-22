@@ -3,7 +3,6 @@ import traceback
 from typing import List, Tuple
 from uuid import uuid4
 
-from .aecColor import aecColor
 from .aecGeometry import aecGeometry
 from .aecPoint import aecPoint
 from .aecSpace import aecSpace
@@ -28,6 +27,7 @@ class aecSpaceGroup:
     @property
     def area(self) -> float:
         """
+        Property
         Returns the total area of all spaces.
         Return None on failure.
         """
@@ -42,19 +42,20 @@ class aecSpaceGroup:
     @property
     def by_level(self) -> List[aecSpace]:
         """
-        INTERNAL
-        bool __sortByLevel()
-        Returns a list of all spaces by their level, lowest to highest.
+        Property
+        Returns a list of all spaces sorted by their level, lowest to highest.
+        Return None on failure.
         """
         try:
             return self.__spaces.sort(key = lambda space: space.level)
         except Exception:
             traceback.print_exc()
-            return False     
+            return None     
 
     @property
     def count(self) -> float:
         """
+        Property
         Returns the count of spaces.
         Return None on failure.
         """
@@ -67,6 +68,7 @@ class aecSpaceGroup:
     @property
     def indices(self) -> List[int]:
         """
+        Property
         Returns a list of all indices.
         Returns None on failure.
         """
@@ -105,6 +107,7 @@ class aecSpaceGroup:
     @property
     def spaces(self) -> List[aecSpace]:
         """
+        Property
         Returns the list of aecSpaces.
         Returns None on failure.
         """
@@ -117,6 +120,7 @@ class aecSpaceGroup:
     @spaces.setter
     def spaces(self, value: List[aecSpace]):
         """
+        Property
         Returns the list of aecSpaces.
         Returns None on failure.
         """
@@ -126,10 +130,12 @@ class aecSpaceGroup:
         except Exception:
             self.__spaces = preSpaces
             traceback.print_exc()
+            return None
     
     @property
     def volume(self):
         """
+        Property
         Returns the aggregate volume of all spaces.
         Returns None on failure.
         """
@@ -186,7 +192,8 @@ class aecSpaceGroup:
         
     def moveBy(self, x: float = 0, y: float = 0, z: float = 0, index: int = None) -> bool:
         """
-        Moves the spaces by the delivered x, y, and z displacements.
+        Moves the indicated space by the delivered x, y, and z displacements.
+        Affects all spaces if no index is delivered.
         Returns True on success.
         Returns False on failure.
         """
@@ -205,7 +212,8 @@ class aecSpaceGroup:
 
     def moveTo(self, fromPnt: aecPoint, toPnt: aecPoint, index: int = None) -> bool:
         """
-        Moves the spaces by constructing a vector between the "from" and "to" points.
+        Moves the indicated space by constructing a vector between the "from" and "to" points.
+        Affects all spaces if no index is delivered.
         Returns True on success.
         Returns False on failure.
         """        
@@ -224,8 +232,9 @@ class aecSpaceGroup:
 
     def rotate(self, angle: float, point: aecPoint = None, index: int = None) -> bool:
         """
-        Rotates the space by the delivered angle in degrees.
-        If no point is provided, the space will scale from its centroid.
+        Rotates the indicated space by the delivered angle in degrees.
+        If no point is provided, the space will scale from its floor centroid.
+        Affects all spaces if no index is delivered.
         Returns True on success.
         Returns False on failure.
         """     
@@ -245,8 +254,9 @@ class aecSpaceGroup:
     def scale(self, x: float = 1, y: float = 1, z: float = 1, 
                     point: aecPoint = None, index: int = None) -> bool:
         """
-        Scales the space by the delivered x, y, and z factors.
-        If no point is provided, the space will scale from its centroid.
+        Scales the indicated space by the delivered x, y, and z factors.
+        If no point is provided, the space will scale from its floor centroid.
+        Affects all spaces if no index is delivered.
         Returns True on success.
         Returns False on failure.
         """
@@ -285,7 +295,7 @@ class aecSpaceGroup:
     
     def setColor(self, color: Tuple[int, int, int], index: int = None) -> bool:
         """
-        Sets the color of the indicated or all spaces.
+        Sets the color of the indicated space.
         Affects all spaces if no index is delivered.        
         Returns True on success.
         Returns False on failure.
@@ -305,7 +315,7 @@ class aecSpaceGroup:
 
     def setHeight(self, value: float = 1.0, index: int = None) -> bool:
         """
-        Sets the height as a float for the indicated space.
+        Sets the height for the indicated space.
         Affects all spaces if no index is delivered.     
         Returns True on success.
         Returns False on failure.

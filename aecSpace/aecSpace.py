@@ -16,15 +16,15 @@ from .aecValid import aecValid
 class aecSpace:
     """
     class aecSpace
-    Defines the geometric enclosure of a region described by a list of 2D points,
+    Defines the geometric enclosure of a region described by an anticlockwise list of 2D points,
     a level in relation to the zero plane, and a positive height in relation to the level.
 
     Current assumptions and limitations:
 
     * The XY plane is considered horizontal, the Z dimension vertical.
 
-    * aecSpaces are prisms with bases parallel to the ground plane
-      and having only vertical boundaries.
+    * aecSpaces are prisms with lower boundaries parallel 
+      to the ground plane with only vertical boundaries.
 
     * Curved boundaries must be represented as a series of straight segments.
     """
@@ -47,8 +47,6 @@ class aecSpace:
     def __init__(self, points: List[aecPoint] = None):
         """
         Constructor defaults to a 1 x 1 square with an origin at (0, 0, 0).
-        The first delivered point is examined for its z coordinate and all
-        z coordinates are normalized to that value.
         """
         self.__address = (0, 0, 0)
         self.__color = aecColor()
@@ -70,7 +68,7 @@ class aecSpace:
 
     def __setBoundary(self, points: List[aecPoint]) -> bool:
         """
-        Creates a boundary from a set of counterclockwise points.
+        Creates a boundary from a set of anticlockwise points.
         """
         try:
             prePoints = self.__points_floor
@@ -91,7 +89,7 @@ class aecSpace:
     def address(self) -> Tuple[int, int, int]:
         """
         Property
-        Returns a 3-integer address designed for use when
+        Returns a 3-integer xyz address designed for use when
         the space is employed as a voxel in a grid.
         Returns None on failure.
         """
@@ -105,7 +103,7 @@ class aecSpace:
     def address(self, value: Tuple[int, int]):
         """
         Property
-        Sets a 3-integer address designed for use when
+        Sets a 3-integer xyz address designed for use when
         the space is employed as a voxel in a grid.
         """
         try:
@@ -118,6 +116,7 @@ class aecSpace:
     @property
     def area(self) -> float:
         """
+        Property
         Returns the area of the boundary.
         Returns None on failure.
         """
@@ -130,6 +129,7 @@ class aecSpace:
     @property
     def axis_major(self) -> List[aecPoint]:
         """
+        Property
         Returns the longer of the two orthogonal bounding box axes as two endpoints.
         If both axes are the same length, returns the x-axis endpoints.
         Returns None on failure.
@@ -147,6 +147,7 @@ class aecSpace:
     @property
     def axis_minor(self) -> List[aecPoint]:
         """
+        Property
         Returns the shorter of the two orthogonal bounding box axes as two endpoints.
         If both axes are the same length, returns the y-axis endpoints.
         Returns None on failure.
@@ -164,6 +165,7 @@ class aecSpace:
     @property
     def axis_x(self) -> List[aecPoint]:
         """
+        Property
         Returns the central x-axis of the bounding box as two endpoints.
         Rerurns None on failure.
         """
@@ -178,6 +180,7 @@ class aecSpace:
     @property
     def axis_y(self) -> List[aecPoint]:
         """
+        Property
         Returns the central y-axis of the bounding box as two endpoints.
         Rerurns None on failure.
         """
@@ -192,6 +195,7 @@ class aecSpace:
     @property
     def boundary(self) -> shapely.Polygon:
         """
+        Property
         Returns a polygon representating the boundary.
         Returns None on failure.        
         """
@@ -205,7 +209,7 @@ class aecSpace:
     def boundary(self, value: List[aecPoint]):
         """
         Property
-        Sets the color with RGB integer values from 0 to 255.
+        Sets the boundary from a series of anticlockwise points.
         """
         try:
             self.__setBoundary(value)
@@ -215,6 +219,7 @@ class aecSpace:
     @property
     def box(self) -> shapely.Polygon:
         """
+        Property
         Returns a polygon of the boundary's bounding box.
         Returns None on failure.        
         """
@@ -235,7 +240,8 @@ class aecSpace:
     @property
     def center_ceiling(self) -> aecPoint:
         """
-        Returns the center of the bounding box.
+        Property
+        Returns the center of the ceiling bounding box.
         Returns None on failure.
         """
         try:
@@ -249,7 +255,8 @@ class aecSpace:
     @property
     def center_floor(self) -> aecPoint:
         """
-        Returns the center of the bounding box.
+        Property
+        Returns the center of the floor bounding box.
         Returns None on failure.
         """
         try:
@@ -264,6 +271,7 @@ class aecSpace:
     @property
     def center_space(self) -> aecPoint:
         """
+        Property
         Returns the center of the space determined as the
         halfway point between the ceiling and floor centers.
         """
@@ -278,7 +286,8 @@ class aecSpace:
     @property
     def centroid_ceiling(self) -> aecPoint:
         """
-        Returns the centroid of the boundary.
+        Property
+        Returns the centroid of the ceiling boundary.
         Returns None on failure.
         """
         try:
@@ -291,7 +300,8 @@ class aecSpace:
     @property
     def centroid_floor(self) -> aecPoint:
         """
-        Returns the centroid of the boundary.
+        Property
+        Returns the centroid of the floor boundary.
         Returns None on failure.
         """
         try:
@@ -304,7 +314,8 @@ class aecSpace:
     @property
     def centroid_space(self) -> aecPoint:
         """
-        Returns the centroid of the boundary.
+        Property
+        Returns the centroid of the space as the midpoint between the floor and ceiling centroids.
         Returns None on failure.
         """
         try:
@@ -317,6 +328,7 @@ class aecSpace:
     @property
     def circumference(self) -> float:
         """
+        Property
         Returns the length of the boundary.
         Returns None on failure.
         """
@@ -354,7 +366,7 @@ class aecSpace:
     def color_alpha(self) -> int:
         """
         Property
-        Returns the color as a NamedTuple.
+        Returns the alpha as an integer between 0 and 255.
         Returns None on failure.
         """
         try:
@@ -367,8 +379,7 @@ class aecSpace:
     def color_alpha(self, value: int):
         """
         Property
-        Sets the color with a NamedTuple containing 
-        RGBA integer values from 0 to 255.
+        Sets the color alpha with an integer between 0 and 255.
         """
         try:
             self.__color.alpha = value
@@ -378,6 +389,7 @@ class aecSpace:
     @property
     def copy_properties(self) -> dict:
         """
+        Property
         Returns a dictionary with properties 
         necessary to make a copy of this space.
         """
@@ -408,7 +420,7 @@ class aecSpace:
             return None
         
     @property
-    def elevation(self) -> bool:
+    def elevation(self) -> float:
         """
         Property
         Returns the z coordinate of the ceiling.
@@ -488,7 +500,7 @@ class aecSpace:
     def mesh(self) -> aecGeometry.mesh3D:
         """
         Property
-        Returns a mesh of the space.
+        Returns a mesh of the space including vertices, indices, and surface normals.
         Returns None on failure.
         """
         try:
@@ -556,7 +568,8 @@ class aecSpace:
     def mesh_graphic(self) -> aecGeometry.mesh3Dgraphic:
         """
         Property
-        Returns a mesh of the space as sequences of floats.
+        Returns a mesh of the space as sequences of floats
+        of 3D vertices, indices, and surface normals.
         Returns None on failure.
         """
         try:
@@ -578,7 +591,7 @@ class aecSpace:
     def mesh_sides(self) -> List[aecGeometry.mesh2D]:
         """
         Property
-        Returns a mesh of the upper surface.
+        Returns a series of meshes of the space sides.
         Returns None on failure.
         """
         try:
@@ -671,7 +684,9 @@ class aecSpace:
     @property
     def point_ceiling(self) -> aecPoint:
         """
-        Returns a random point within the space boundary at the floor level.
+        Property        
+        Returns a random point within the space boundary at the ceiling level.
+        Returns None on failure.        
         """
         try:
             box = self.points_box
@@ -688,7 +703,9 @@ class aecSpace:
     @property
     def origin_ceiling(self) -> aecPoint:
         """
-        Returns the first point in the boundary sequence at the floor level.
+        Property
+        Returns the first point in the boundary sequence at the ceiling level.
+        Returns None on failure.        
         """
         try:
             return self.points_ceiling[0]
@@ -699,7 +716,9 @@ class aecSpace:
     @property
     def origin_floor(self) -> aecPoint:
         """
+        Property
         Returns the first point in the boundary sequence at the floor level.
+        Returns None on failure.        
         """
         try:
             return self.points_floor[0]
@@ -710,7 +729,9 @@ class aecSpace:
     @property
     def point_floor(self) -> aecPoint:
         """
+        Property
         Returns a random point within the space boundary at the floor level.
+        Returns None on failure.        
         """
         try:
             box = self.points_box
@@ -727,8 +748,9 @@ class aecSpace:
     @property
     def points_box(self) -> aecGeometry.quad_points:
         """
-        Returns the aecPoints defining the corners of
-        the bounding box at the boundary's level.
+        Property
+        Returns the anticlockwise points defining the corners
+        of the bounding box at the boundary's level.
         Returns None on failure.        
         """
         try:
@@ -747,7 +769,9 @@ class aecSpace:
     @property
     def points_ceiling(self) -> List[aecPoint]:
         """
-        Returns a ceiling boundary.
+        Property
+        Returns the anticlockwise points defining the ceiling boundary.
+        Returns None on failure
         """
         try:
             return [aecPoint(pnt.x, pnt.y, self.elevation) for pnt in self.points_floor]
@@ -759,7 +783,7 @@ class aecSpace:
     def points_floor(self) -> List[aecPoint]:
         """
         Property
-        Returns the points defining the boundary as an aecPoint list in a counterclockwise sequence.
+        Returns the anticlockwise points defining the floor boundary.
         Returns None on failure.
         """
         try:
@@ -808,7 +832,7 @@ class aecSpace:
     def size_y(self) -> float:
         """
         Property
-        Returns the x-axis size of the bounding box.
+        Returns the y-axis size of the bounding box.
         Returns None on failure.
         """
         try:
@@ -836,9 +860,9 @@ class aecSpace:
         If restart is True, constructs a new boundary from the delivered list of points.
         If restart is False, combines the current boundary with boundaries defined by
         the delivered points.
+        Returns True if successful.
         Returns False if the delivered points do not resolve to a single non-crossing
         polygon and leaves the current boundary unchanged.
-        Returns True if successful.
         """
         try:
             if restart: boundaries = []
@@ -855,10 +879,10 @@ class aecSpace:
             traceback.print_exc()
             return False
 
-    def compassLine(self, orient: int = aecGeometry.N) -> aecPoint:
+    def compassLine(self, orient: int = aecGeometry.N) -> List[aecPoint]:
         """
-        Returns a point on the bounding box aligned 
-        with one of 16 cardinal divisions on the box.
+        Returns a line as two endpoints, the spacefloor center and a point
+        on the bounding box aligned with one of 16 cardinal divisions.
         Returns None on failure.
         """
         try:
@@ -934,7 +958,7 @@ class aecSpace:
             traceback.print_exc()
             return None
     
-    def fitWithin(self, points: List[aecPoint]):
+    def fitWithin(self, points: List[aecPoint]) -> bool:
         """
         If the boundary is not wholly within the delivered perimeter as
         described in a list of points, the boundary reconfigures to fit
@@ -997,9 +1021,9 @@ class aecSpace:
 
     def rotate(self, angle: float = 180, point: aecPoint = None) -> bool:
         """
-        Rotates the space counterclockwise around the 2D pivot point
+        Rotates the space anticlockwise around the 2D pivot point
         by the delivered rotation in degrees.
-        If no pivot point is provided, the space will rotate around its centroid.
+        If no pivot point is provided, the space will rotate around its floor centroid.
         Returns True on success.
         Returns False on failure.
         """
@@ -1018,7 +1042,7 @@ class aecSpace:
     def scale(self, x: float = 1, y: float = 1, z: float = 1, point: aecPoint = None) -> bool:
         """
         Scales the boundary by a vector from the delivered point.
-        If no point is provided, the boundary will scale from its centroid.
+        If no point is provided, the boundary will scale from its floor centroid.
         Returns True on success.
         Returns False on failure.
         """

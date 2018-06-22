@@ -145,7 +145,7 @@ def makeDepartment():
     x = 0
     displace = 350
     while x < 4:
-        moveBy[0] = moveBy[0] + displace
+        moveBy[0] += displace
         fixType = randint(0, 4)
         if fixType == 0: nxtFixture = makeRackCross()
         if fixType == 1: nxtFixture = makeRackRound()

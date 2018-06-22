@@ -6,7 +6,6 @@ import OCC.Quantity
 from OCC.gp import gp_Pnt
 from OCC.gp import gp_Vec
 
-from OCC.Display import OCCViewer
 from OCC.BRepBuilderAPI import BRepBuilderAPI_MakeEdge
 from OCC.BRepBuilderAPI import BRepBuilderAPI_MakeWire
 from OCC.BRepBuilderAPI import BRepBuilderAPI_MakeFace
@@ -152,6 +151,4 @@ class aecSpaceDrawOCC:
         except Exception:
             traceback.print_exc()
             return False
-
-# end class
 

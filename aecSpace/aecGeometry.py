@@ -16,7 +16,7 @@ class aecGeometry:
     N, NNE, NE, ENE, E, ESE, SE, SSE, S, SSW, SW, WSW, W, WNW, NW, NNW = range(0, 16)
        
     # Defines a data structure of eight points with locations indicated 
-    # by compass point abbreviations in counterclockwise order for the 
+    # by compass point abbreviations in anticlockwise order for the 
     # (l)ower and (U)pper boundaries.
     
     cube = \
@@ -82,7 +82,7 @@ class aecGeometry:
         ])
     
     # Defines a data structure of four points with locations indicated
-    # by compass point abbreviations in counterclockwise order with an
+    # by compass point abbreviations in anticlockwise order with an
     # associated normal.
     
     quad_points = \
@@ -134,7 +134,7 @@ class aecGeometry:
     def getAngles(self, vtxPoint: aecPoint, prvPoint: aecPoint, nxtPoint: aecPoint) -> vertexAngle:
         """
         Returns whether the delivered point is at a convex or concave angle between
-        the previous and following points in a counterclockwise point sequence.
+        the previous and following points in a anticlockwise point sequence.
         """
         try:
             inVector = (vtxPoint.x - prvPoint.x, vtxPoint.y - prvPoint.y)
@@ -155,7 +155,7 @@ class aecGeometry:
 
     def getBoxPoints(self, origin: aecPoint, xDelta: float, yDelta: float) -> List[aecPoint]:
         """
-        Returns the 3D coordinates of a cube based on diagonally opposite corners.
+        Returns the 2D coordinates of a rectangle derived from diagonally opposite corners.
         Returns None on failure.
         """
         try:
@@ -188,7 +188,7 @@ class aecGeometry:
         """
         Returns a point on the delivered bounding box corresponding to the 
         orientation of 16 compass direction constants defined by aecGeometry.
-        N (north) corresponds to the middle point of maximum y side of the bounding box,
+        N (north) corresponds to the midpoint of the maximum y side of the bounding box,
         with proportionate distances along the axis represented by NNE 
         (3/4 length from minumum X), and NE (bounding box maximum x, maximum y corner).
         Returns None on failure.
@@ -266,27 +266,26 @@ class aecGeometry:
             traceback.print_exc()
             return None
 
-    def getDifference(self, boundary, shape):
-        """
-        [[(2D point),], [(2D point),]]  getDifference([(2D point),], [(2D point),])
-        Returns the points of perimeter(s) not shared between boundary and shape.
-        If more than one perimeter is found, the return value is a list of lists of points
-        defining each perimeter.
-        Returns None if unable to determine the difference perimeter(s).
-        """
-        try:
-            boundary = shapely.polygon.orient(shapely.Polygon(boundary))
-            shape = shapely.polygon.orient(shapely.Polygon(shape))
-            difference = boundary.difference(shape)
-            if difference.type == 'MultiPolygon':
-                differs = []
-                for polygon in list(difference.geoms):
-                    differs.append(polygon.exterior.coords[:-1])
-                return differs
-            return difference.exterior.coords[:-1]
-        except Exception:
-            traceback.print_exc() 
-            return None        
+#    def getDifference(self, boundary, shape):
+#        """
+#        Returns the points of perimeter(s) not shared between boundary and shape.
+#        If more than one perimeter is found, the return value is a list of lists of points
+#        defining each perimeter.
+#        Returns None if unable to determine the difference perimeter(s).
+#        """
+#        try:
+#            boundary = shapely.polygon.orient(shapely.Polygon(boundary))
+#            shape = shapely.polygon.orient(shapely.Polygon(shape))
+#            difference = boundary.difference(shape)
+#            if difference.type == 'MultiPolygon':
+#                differs = []
+#                for polygon in list(difference.geoms):
+#                    differs.append(polygon.exterior.coords[:-1])
+#                return differs
+#            return [aecPoint(pnt[0], pnt[1]) for pnt in difference.exterior.coords[:-1]]
+#        except Exception:
+#            traceback.print_exc() 
+#            return None        
 
     def getIntersect(self, boundary: List[aecPoint], shape: List[aecPoint]) -> List[aecPoint]:
         """
@@ -356,7 +355,7 @@ class aecGeometry:
     
     def getNormal(self, point: aecPoint, prePoint: aecPoint, nxtPoint: aecPoint) -> Tuple[float, float, float]:
         """
-        Returns the normal from three points.
+        Returns the normal from three anticlockwise points.
         """
         try:
             preVector = prePoint.xyz_array - point.xyz_array
@@ -370,7 +369,7 @@ class aecGeometry:
 
     def isConvex(self, points: List[aecPoint]) -> bool:
         """
-        Determines from a set of counterclockwise points 
+        Determines from a set of anticlockwise points 
         whether the implied polygon is convex.
         Returns None on failure.
         """
@@ -389,9 +388,8 @@ class aecGeometry:
             return None          
         
     
-    def mirrorPoints2D (self, points: List[aecPoint], mPoint1: aecPoint, mPoint2: aecPoint):
+    def mirrorPoints2D (self, points: List[aecPoint], mPoint1: aecPoint, mPoint2: aecPoint) -> List[aecPoint]:
         """
-        [(2D point),] mirrorPoints2D([(2D point),], [(2D point), (2D point)])
         Accepts a set of points and a mirror axis defined by two 2D points
         and returns a set of points reflected around the mirror axis.
         Returns None on failure.

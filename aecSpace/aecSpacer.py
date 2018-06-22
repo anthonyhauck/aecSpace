@@ -162,7 +162,6 @@ class aecSpacer:
 
     def stackToArea(self, space, area, plenum = 0):
         """
-        [aecSpace,] buildToArea(aecSpace, number, number)
         Compares the area of the delivered aecSpace to the target area and stacks
         identical spaces from the original space until the target area is met or
         exceeded, returning a list of resulting aecSpaces.
