@@ -1,3 +1,5 @@
+# THIS REPO HAS MOVED TO THE HYPAR-IO ORGANIZATION: https://github.com/hypar-io/aecSpace
+
 # aecSpace 0.7 | 2018.06.22
 Python classes useful for creating and editing volumes indicating building spaces and other objects.
 
